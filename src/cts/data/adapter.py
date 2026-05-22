@@ -27,6 +27,7 @@ class SymbolMeta:
     data_start: date
     data_end: Optional[date]  # None = still active; a date = delisted then
     is_active: bool
+    recent_volume_usd: float = 0.0  # vendor's current 1-day USD volume (ingest scoping only)
 
 
 class DataAdapter(ABC):

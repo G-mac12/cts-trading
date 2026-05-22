@@ -42,6 +42,7 @@ class CoinAPIAdapter(DataAdapter):
             raise ValueError("CoinAPI key required")
         self.exchange = exchange
         self.timeout = timeout
+        self.total_request_cost = 0  # sum of x-ratelimit-request-cost (credits spent)
         self._session = requests.Session()
         self._session.headers.update({"X-CoinAPI-Key": api_key, "Accept": "application/json"})
 
@@ -56,39 +57,53 @@ class CoinAPIAdapter(DataAdapter):
             if resp.status_code == 550:  # CoinAPI "no data" sentinel
                 return []
             resp.raise_for_status()
+            try:
+                self.total_request_cost += int(resp.headers.get("x-ratelimit-request-cost", 0))
+            except (TypeError, ValueError):
+                pass
             return resp.json()
         raise RuntimeError(f"CoinAPI rate limit not cleared after {max_retries} retries: {path}")
 
+    def _to_meta(self, s: dict, today, with_volume: bool) -> Optional[SymbolMeta]:
+        if s.get("symbol_type") != "SPOT":
+            return None
+        quote = (s.get("asset_id_quote") or "").upper()
+        if quote not in ("USD", "USDT"):
+            return None
+        dstart = _parse_dt(s.get("data_start"))
+        if dstart is None:
+            return None
+        dend = _parse_dt(s.get("data_end"))
+        active = dend is not None and (today - dend) <= timedelta(days=_ACTIVE_GRACE_DAYS)
+        vol = 0.0
+        if with_volume:
+            try:
+                vol = float(s.get("volume_1day_usd") or 0.0)
+            except (TypeError, ValueError):
+                vol = 0.0
+        return SymbolMeta(
+            symbol_id=s["symbol_id"], base=(s.get("asset_id_base") or "").upper(), quote=quote,
+            exchange=self.exchange, data_start=dstart, data_end=None if active else dend,
+            is_active=active, recent_volume_usd=vol,
+        )
+
     def list_symbols(self) -> List[SymbolMeta]:
-        """Spot symbols ever listed on the exchange, incl. delisted, USD/USDT quote."""
-        data = self._get(f"/symbols/{self.exchange}/history")
-        if not data:  # fallback to the filtered live endpoint
-            data = self._get("/symbols", params={"filter_exchange_id": self.exchange})
+        """Survivorship-clean USD/USDT spot universe = current listings (with live USD
+        volume) UNION delisted symbols (from the history endpoint, which carries the
+        coins that later went to zero or left Kraken)."""
         today = datetime.now(timezone.utc).date()
-        out: List[SymbolMeta] = []
-        for s in data:
-            if s.get("symbol_type") != "SPOT":
-                continue
-            quote = (s.get("asset_id_quote") or "").upper()
-            if quote not in ("USD", "USDT"):
-                continue
-            dstart = _parse_dt(s.get("data_start"))
-            dend = _parse_dt(s.get("data_end"))
-            if dstart is None:
-                continue
-            active = dend is not None and (today - dend) <= timedelta(days=_ACTIVE_GRACE_DAYS)
-            out.append(
-                SymbolMeta(
-                    symbol_id=s["symbol_id"],
-                    base=(s.get("asset_id_base") or "").upper(),
-                    quote=quote,
-                    exchange=self.exchange,
-                    data_start=dstart,
-                    data_end=None if active else dend,
-                    is_active=active,
-                )
-            )
-        return out
+        out: dict = {}
+        # current/active set — carries volume_1day_usd for ingest scoping
+        for s in self._get("/symbols", params={"filter_exchange_id": self.exchange}):
+            m = self._to_meta(s, today, with_volume=True)
+            if m is not None:
+                out[m.symbol_id] = m
+        # historical set — adds delisted coins not present in the current snapshot
+        for s in self._get(f"/symbols/{self.exchange}/history", params={"limit": 100000}):
+            m = self._to_meta(s, today, with_volume=False)
+            if m is not None and m.symbol_id not in out:
+                out[m.symbol_id] = m
+        return list(out.values())
 
     def daily_ohlcv(self, symbol_id: str, start: date, end: date) -> pd.DataFrame:
         params = {

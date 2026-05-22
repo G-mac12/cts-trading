@@ -27,6 +27,7 @@ htmlcov/
 data/cache/
 data/*.csv
 data/*.json
+data/*.log
 *.parquet
 *.feather
 # keep small committed fixtures used by tests

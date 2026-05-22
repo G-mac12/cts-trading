@@ -37,41 +37,70 @@ def get_coinapi_adapter() -> DataAdapter:
 
 
 def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
-           max_symbols: Optional[int] = None) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta]]:
-    """Pull symbols + daily OHLCV into the cache. Statically-excluded symbols
-    (stablecoin/wrapped/leveraged/quote) are skipped to save credits but still
-    recorded. Returns (panel, metas) for symbols actually downloaded."""
+           max_symbols: Optional[int] = None,
+           min_recent_volume_usd: float = 5_000_000.0) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta]]:
+    """Pull symbols + daily OHLCV into the cache, scoped to bound credit spend.
+
+    Scope: keep ALL delisted coins (the survivorship core — they cost little and
+    matter most) plus active coins whose current USD volume >= min_recent_volume_usd.
+    Order delisted FIRST so that if the credit budget is exhausted mid-run, the
+    survivorship-critical coins are already cached. Fails safe on a quota 403.
+    Statically-excluded symbols (stablecoin/wrapped/leveraged/quote) are skipped
+    but still recorded. Returns (panel, metas) for symbols actually downloaded."""
+    import requests as _rq
+
     cfg_u = universe_config()
     symbols = adapter.list_symbols()
     panel: Dict[str, pd.DataFrame] = {}
     metas: Dict[str, SymbolMeta] = {}
     manifest_syms = []
-    pulled = 0
+    candidates: list = []
     for m in symbols:
         excluded = static_exclusion_reason(m, cfg_u)
-        manifest_syms.append({
+        rec = {
             "symbol_id": m.symbol_id, "base": m.base, "quote": m.quote,
             "data_start": m.data_start, "data_end": m.data_end, "is_active": m.is_active,
-            "static_excluded": excluded,
-        })
+            "recent_volume_usd": m.recent_volume_usd, "static_excluded": excluded,
+        }
+        manifest_syms.append(rec)
         if excluded is not None:
             continue
-        if max_symbols is not None and pulled >= max_symbols:
+        in_scope = (not m.is_active) or (m.recent_volume_usd >= min_recent_volume_usd)
+        if not in_scope:
+            rec["static_excluded"] = "below-ingest-volume"
             continue
-        df = adapter.daily_ohlcv(m.symbol_id, max(start, m.data_start), end)
+        candidates.append(m)
+
+    # delisted first (is_active False sorts before True), then most-liquid actives.
+    candidates.sort(key=lambda m: (m.is_active, -m.recent_volume_usd))
+    if max_symbols is not None:
+        candidates = candidates[:max_symbols]
+
+    truncated = None
+    for m in candidates:
+        try:
+            df = adapter.daily_ohlcv(m.symbol_id, max(start, m.data_start), end)
+        except _rq.HTTPError as e:
+            if e.response is not None and e.response.status_code == 403:
+                truncated = f"quota exhausted at {m.symbol_id} after {len(panel)} symbols"
+                break
+            raise
         if df.empty:
             continue
         cache.write(adapter.source_name, m.symbol_id, df)
         panel[m.symbol_id] = df
         metas[m.symbol_id] = m
-        pulled += 1
+
     cache.write_manifest(adapter.source_name, {
         "source": adapter.source_name,
-        "survivorship_clean": adapter.survivorship_clean,
+        "survivorship_clean": adapter.survivorship_clean and truncated is None,
         "exchange": cfg_u.get("exchange"),
         "range": [start, end],
+        "min_recent_volume_usd": min_recent_volume_usd,
         "symbol_count_total": len(symbols),
-        "symbol_count_pulled": pulled,
+        "symbol_count_pulled": len(panel),
+        "request_cost_credits": getattr(adapter, "total_request_cost", None),
+        "truncated": truncated,
         "symbols": manifest_syms,
     })
     return panel, metas
