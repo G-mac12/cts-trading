@@ -33,6 +33,29 @@ def _parse_dt(s: Optional[str]) -> Optional[date]:
         return datetime.strptime(s[:10], "%Y-%m-%d").date()
 
 
+def rows_to_ohlcv(rows: list) -> pd.DataFrame:
+    """Convert CoinAPI OHLCV rows -> UTC-daily OHLCV DataFrame.
+
+    The columns are built sharing the source RangeIndex (so values align by
+    position), and only THEN is the datetime index assigned. Building the frame
+    with a datetime ``index=`` while the column Series still carry a RangeIndex
+    silently reindexes everything to NaN — the bug this function exists to avoid.
+    """
+    if not rows:
+        return pd.DataFrame(columns=OHLCV_COLUMNS, index=pd.DatetimeIndex([], tz="UTC", name="date"))
+    df = pd.DataFrame(rows)
+    out = pd.DataFrame({
+        "open": df["price_open"].astype("float64"),
+        "high": df["price_high"].astype("float64"),
+        "low": df["price_low"].astype("float64"),
+        "close": df["price_close"].astype("float64"),
+        "volume": df["volume_traded"].astype("float64"),
+    })  # shares df's RangeIndex -> positional alignment, real values
+    out.index = pd.to_datetime(df["time_period_start"], utc=True).dt.normalize()
+    out.index.name = "date"
+    return out[~out.index.duplicated(keep="last")].sort_index()
+
+
 class CoinAPIAdapter(DataAdapter):
     survivorship_clean = True
     source_name = "coinapi"
@@ -46,14 +69,24 @@ class CoinAPIAdapter(DataAdapter):
         self._session = requests.Session()
         self._session.headers.update({"X-CoinAPI-Key": api_key, "Accept": "application/json"})
 
-    def _get(self, path: str, params: Optional[dict] = None, max_retries: int = 5):
+    def _get(self, path: str, params: Optional[dict] = None, max_retries: int = 6):
         url = f"{BASE_URL}{path}"
+        last_exc = None
         for attempt in range(max_retries):
-            resp = self._session.get(url, params=params, timeout=self.timeout)
+            try:
+                resp = self._session.get(url, params=params, timeout=self.timeout)
+            except requests.exceptions.RequestException as e:  # dropped conn / timeout
+                last_exc = e
+                time.sleep(min(2 ** attempt, 30))
+                continue
             if resp.status_code == 429:  # rate limited -> respect reset / back off
                 wait = float(resp.headers.get("Retry-After", 2 ** attempt))
                 time.sleep(min(wait, 60))
                 continue
+            if resp.status_code in (500, 502, 503, 504):  # transient server error -> backoff
+                if attempt < max_retries - 1:
+                    time.sleep(min(2 ** attempt, 30))
+                    continue
             if resp.status_code == 550:  # CoinAPI "no data" sentinel
                 return []
             resp.raise_for_status()
@@ -62,7 +95,9 @@ class CoinAPIAdapter(DataAdapter):
             except (TypeError, ValueError):
                 pass
             return resp.json()
-        raise RuntimeError(f"CoinAPI rate limit not cleared after {max_retries} retries: {path}")
+        if last_exc is not None:
+            raise last_exc
+        raise RuntimeError(f"CoinAPI request not cleared after {max_retries} retries: {path}")
 
     def _to_meta(self, s: dict, today, with_volume: bool) -> Optional[SymbolMeta]:
         if s.get("symbol_type") != "SPOT":
@@ -77,8 +112,14 @@ class CoinAPIAdapter(DataAdapter):
         active = dend is not None and (today - dend) <= timedelta(days=_ACTIVE_GRACE_DAYS)
         vol = 0.0
         if with_volume:
+            v = s.get("volume_1day_usd")
+            if v in (None, 0, 0.0):  # field intermittently null -> derive from price*base-vol
+                try:
+                    v = float(s.get("price") or 0.0) * float(s.get("volume_1day") or 0.0)
+                except (TypeError, ValueError):
+                    v = 0.0
             try:
-                vol = float(s.get("volume_1day_usd") or 0.0)
+                vol = float(v or 0.0)
             except (TypeError, ValueError):
                 vol = 0.0
         return SymbolMeta(
@@ -93,11 +134,17 @@ class CoinAPIAdapter(DataAdapter):
         coins that later went to zero or left Kraken)."""
         today = datetime.now(timezone.utc).date()
         out: dict = {}
-        # current/active set — carries volume_1day_usd for ingest scoping
-        for s in self._get("/symbols", params={"filter_exchange_id": self.exchange}):
-            m = self._to_meta(s, today, with_volume=True)
-            if m is not None:
-                out[m.symbol_id] = m
+        # current/active set — carries USD volume for ingest scoping. CoinAPI sometimes
+        # returns a snapshot with ALL volumes null; retry until volumes look populated.
+        for attempt in range(4):
+            out = {}
+            for s in self._get("/symbols", params={"filter_exchange_id": self.exchange}):
+                m = self._to_meta(s, today, with_volume=True)
+                if m is not None:
+                    out[m.symbol_id] = m
+            if max((m.recent_volume_usd for m in out.values()), default=0.0) > 0:
+                break
+            time.sleep(min(2 ** attempt, 15))
         # historical set — adds delisted coins not present in the current snapshot
         for s in self._get(f"/symbols/{self.exchange}/history", params={"limit": 100000}):
             m = self._to_meta(s, today, with_volume=False)
@@ -112,20 +159,4 @@ class CoinAPIAdapter(DataAdapter):
             "time_end": f"{end.isoformat()}T00:00:00",
             "limit": 100000,
         }
-        rows = self._get(f"/ohlcv/{symbol_id}/history", params=params)
-        if not rows:
-            return pd.DataFrame(columns=OHLCV_COLUMNS, index=pd.DatetimeIndex([], tz="UTC"))
-        df = pd.DataFrame(rows)
-        idx = pd.to_datetime(df["time_period_start"], utc=True).dt.normalize()
-        out = pd.DataFrame(
-            {
-                "open": df["price_open"].astype("float64"),
-                "high": df["price_high"].astype("float64"),
-                "low": df["price_low"].astype("float64"),
-                "close": df["price_close"].astype("float64"),
-                "volume": df["volume_traded"].astype("float64"),
-            },
-            index=idx,
-        )
-        out.index.name = "date"
-        return out[~out.index.duplicated(keep="last")].sort_index()
+        return rows_to_ohlcv(self._get(f"/ohlcv/{symbol_id}/history", params=params))

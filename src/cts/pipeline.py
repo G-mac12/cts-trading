@@ -38,7 +38,8 @@ def get_coinapi_adapter() -> DataAdapter:
 
 def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
            max_symbols: Optional[int] = None,
-           min_recent_volume_usd: float = 5_000_000.0) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta]]:
+           min_recent_volume_usd: float = 5_000_000.0,
+           refresh: bool = False) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta]]:
     """Pull symbols + daily OHLCV into the cache, scoped to bound credit spend.
 
     Scope: keep ALL delisted coins (the survivorship core — they cost little and
@@ -77,17 +78,27 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
         candidates = candidates[:max_symbols]
 
     truncated = None
+    skipped: list = []
     for m in candidates:
         try:
-            df = adapter.daily_ohlcv(m.symbol_id, max(start, m.data_start), end)
+            if not refresh and cache.has(adapter.source_name, m.symbol_id):
+                df = cache.read(adapter.source_name, m.symbol_id)  # resume: reuse cached
+            else:
+                df = adapter.daily_ohlcv(m.symbol_id, max(start, m.data_start), end)
+                if not df.empty:
+                    cache.write(adapter.source_name, m.symbol_id, df)
         except _rq.HTTPError as e:
-            if e.response is not None and e.response.status_code == 403:
+            code = e.response.status_code if e.response is not None else None
+            if code == 403:
                 truncated = f"quota exhausted at {m.symbol_id} after {len(panel)} symbols"
                 break
-            raise
+            skipped.append({"symbol_id": m.symbol_id, "reason": f"http-{code}"})
+            continue
+        except _rq.RequestException:
+            skipped.append({"symbol_id": m.symbol_id, "reason": "network-error"})
+            continue
         if df.empty:
             continue
-        cache.write(adapter.source_name, m.symbol_id, df)
         panel[m.symbol_id] = df
         metas[m.symbol_id] = m
 
@@ -101,6 +112,7 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
         "symbol_count_pulled": len(panel),
         "request_cost_credits": getattr(adapter, "total_request_cost", None),
         "truncated": truncated,
+        "skipped": skipped,
         "symbols": manifest_syms,
     })
     return panel, metas
@@ -268,6 +280,17 @@ def run_analysis(panel, metas, manifest: dict) -> dict:
     if btc_id is None:
         raise RuntimeError("No BTC/USD or BTC/USDT symbol found — regime filter needs BTC.")
     btc_close = panel[btc_id]["close"]
+
+    # Data-sanity guard: never emit a verdict on degenerate (e.g. all-NaN) data.
+    valid_btc = int(btc_close.notna().sum())
+    if valid_btc < 200:
+        raise RuntimeError(
+            f"BTC close has only {valid_btc} non-NaN points — data looks broken. Refusing to "
+            "emit a verdict on degenerate data; re-ingest and check the data adapter."
+        )
+    usable = sum(1 for df in panel.values() if df["close"].notna().sum() >= 90)
+    if usable < 3:
+        raise RuntimeError(f"Only {usable} symbols have >=90 valid closes — universe too degenerate to test.")
 
     rebalance_dates = make_rebalance_dates(panel, cfg_u, cfg_s)
     schedule = build_schedule(panel, metas, cfg_u, cfg_s, rebalance_dates)
