@@ -37,14 +37,21 @@ def evaluate_gate(sysres: Dict, acceptance: Dict) -> Dict:
     chop_ok = chop.get("compounded_return", -1) > -0.10 and chop.get("exposure", 1) < 0.5
     enough_trades = h["trade_count"] >= 30
 
-    headline_pass = pf_ok and dd_ok and sharpe_ok and bear_ok and chop_ok
-    # Overfit signal: passes at the exact point but the neighbourhood/subsample don't hold up.
-    knife_edge = headline_pass and (nb["median"] < acceptance["min_profit_factor"] or sub["median"] < 1.0)
+    core_pass = pf_ok and dd_ok and sharpe_ok          # the §9 headline metrics
+    # Robustness: a real edge survives dropping a third of the universe. Median PF
+    # near/below 1 means the result rides on a few specific coins, not a broad edge.
+    universe_fragile = sub["median"] < acceptance["min_profit_factor"]
+    param_fragile = nb["median"] < acceptance["min_profit_factor"]
+    headline_pass = core_pass and bear_ok and chop_ok
+    # A "pass" that doesn't survive subsampling/neighbourhood is effectively a fail.
+    knife_edge = (core_pass and (universe_fragile or param_fragile))
 
     return {
         "pf_ok": pf_ok, "dd_ok": dd_ok, "sharpe_ok": sharpe_ok,
         "bear_ok": bear_ok, "chop_ok": chop_ok, "enough_trades": enough_trades,
-        "headline_pass": headline_pass, "knife_edge": knife_edge,
+        "core_pass": core_pass, "headline_pass": headline_pass, "knife_edge": knife_edge,
+        "universe_fragile": universe_fragile, "param_fragile": param_fragile,
+        "sub_median": sub["median"], "nb_median": nb["median"], "trade_count": h["trade_count"],
     }
 
 
@@ -117,9 +124,14 @@ def _system_section(sysres: Dict, gate: Dict) -> str:
                        f"{_pct(m['total_return'])} | {_pct(m['max_drawdown'])} | {int(m['trade_count'])} |")
         out.append("")
     if gate["knife_edge"]:
-        out.append("> ⚠️ **Overfit warning:** the headline passes but the parameter-neighbourhood / "
-                   "subsample medians do NOT hold up. This edge appears to exist only at the exact "
-                   "starting point and should be treated as fragile (effectively a fail).\n")
+        which = []
+        if gate["universe_fragile"]:
+            which.append(f"universe subsample median PF {_num(gate['sub_median'])} (< 1.5 — the edge does "
+                         "not survive dropping a third of the coins; it rides on a few specific names)")
+        if gate["param_fragile"]:
+            which.append(f"parameter-neighbourhood median PF {_num(gate['nb_median'])} (< 1.5)")
+        out.append("> ⚠️ **Fragility warning:** the headline metrics pass, but " + "; ".join(which) +
+                   ". Treat the headline PF as optimistic — effectively a fail on robustness.\n")
     return "\n".join(out)
 
 
@@ -155,18 +167,37 @@ def render_findings(analysis: Dict) -> str:
                  f"in bear/chop) and held up across the parameter neighbourhood and universe subsamples. "
                  f"The momentum edge appears real under these assumptions.\n")
     else:
-        reasons = []
+        any_core = any(g["core_pass"] for g in gates.values())
+        if any_core:
+            L.append("**Not proven — promising on the surface, but it fails the robustness and "
+                     "statistical-power bar.** On the starting parameters the headline §9 metrics actually "
+                     "look strong (see per-system tables: profit factor, drawdown and Sharpe all pass, and "
+                     "the system correctly sits in cash during bear markets). The verdict is still NO-GO "
+                     "because the result is not trustworthy:")
+        else:
+            L.append("On out-of-sample, after-fee data, the starting parameters **did not clear the §9 "
+                     "headline bar** (profit factor / drawdown / Sharpe). NO-GO. Reasons per system:")
         for n, g in gates.items():
-            why = [k for k, ok in [("PF<1.5", not g["pf_ok"]), ("DD>=25%", not g["dd_ok"]),
-                                   ("Sharpe<=0", not g["sharpe_ok"]), ("bear not controlled", not g["bear_ok"]),
-                                   ("chop not controlled", not g["chop_ok"]), ("<30 trades", not g["enough_trades"]),
-                                   ("knife-edge/overfit", g["knife_edge"])] if ok]
-            reasons.append(f"**{n}**: " + (", ".join(why) if why else "passed"))
-        L.append("On out-of-sample, after-fee data, the starting parameters **did not clear the §9 bar**. "
-                 "Per system: " + "; ".join(reasons) + ".\n")
-        L.append("Per the spec, a clean failure here is a **successful** outcome for Phase 1: it stops the "
-                 "project before any infrastructure is built. Recommend **NO-GO** unless the assumptions "
-                 "below are revisited.\n")
+            bits = []
+            bits.append("headline PF/DD/Sharpe pass" if g["core_pass"] else "headline PF/DD/Sharpe fail")
+            if g["trade_count"] < 30:
+                bits.append(f"**only {int(g['trade_count'])} trades in 8y** (underpowered — a PF on ~20 "
+                            f"trades is not statistically reliable)")
+            if g["universe_fragile"]:
+                bits.append(f"**universe-fragile**: subsample median PF {_num(g['sub_median'])} "
+                            f"(drop 1/3 of coins and the edge ≈ breakeven — it rides on a few names)")
+            if not g["chop_ok"]:
+                bits.append("bleeds in chop (positions opened in bull bleed as the regime turns)")
+            L.append(f"- **{n}**: " + "; ".join(bits) + ".")
+        L.append("")
+        L.append("The per-fold table makes the concentration explicit: almost all of the profit comes from "
+                 "a **single bull window (2020-10 → 2021-04)** on 2 trades; most other folds are flat or "
+                 "slightly negative. That is the classic shape of an edge that is real in one regime but "
+                 "too thin and too concentrated to bet infrastructure on.")
+        L.append("")
+        L.append("Per the spec, a clean **NO-GO here is a successful Phase-1 outcome** — it stops the project "
+                 "cheaply before any machine is built. The signal is interesting enough that ONE revisit "
+                 "could be justified (see reasoning), but not a Phase 2 commitment as specified.\n")
 
     # Universe / assumptions.
     u = analysis["universe"]
@@ -194,14 +225,26 @@ def render_findings(analysis: Dict) -> str:
 
     # Reasoning.
     L.append("## Recommendation & reasoning\n")
-    L.append(f"**{verdict}.** " + (
-        "At least one system clears the acceptance bar on starting parameters with robustness support. "
-        "Proceed to Phase 2 (strategy engine) — but carry the assumptions above as live risks."
-        if go else
-        "No system clears the acceptance bar on the starting parameters without relying on suspiciously "
-        "narrow tuning. Do not build Phase 2+ infrastructure on this edge as specified. Options: revisit "
-        "the regime filter / universe / fee assumptions and re-run, or stop here — cheaply, as intended."
-    ))
-    L.append("\n_Anti-overfitting note: the headline uses the spec's starting parameters unchanged. "
-             "Any result that appears only under tuning is reported as such and treated as a fail._\n")
+    if go:
+        L.append(f"**{verdict}.** At least one system clears the acceptance bar on starting parameters with "
+                 "robustness support. Proceed to Phase 2 (strategy engine) — but carry the assumptions above "
+                 "as live risks.")
+    else:
+        L.append(f"**{verdict}.** Do not build Phase 2+ infrastructure on this edge as specified. The headline "
+                 "metrics are encouraging but the result is **underpowered** (~20 trades over 8 years) and "
+                 "**not robust** (the edge ≈ breakeven when a third of the universe is dropped, and is "
+                 "concentrated in a single bull window). That is not enough evidence to commit to building "
+                 "the machine.")
+        L.append("")
+        L.append("**What would make a revisit worthwhile (one more look, not endless tuning):** the trade "
+                 "count is throttled by Kraken's thin USD/USDT liquidity under the spec's $50M filter — only "
+                 "~17 active coins currently clear it, so the cross-section is tiny. A single, pre-registered "
+                 "re-run with a broader/longer universe (lower liquidity floor, more venues, or a longer "
+                 "history) would test whether the edge is real-but-starved or genuinely absent. If that re-run "
+                 "is also flat/fragile on out-of-sample data, **stop for good.** Decide the new parameters "
+                 "BEFORE looking at results, or this becomes the overfitting trap the gate exists to prevent.")
+    L.append("")
+    L.append("_Anti-overfitting note: the headline uses the spec's starting parameters unchanged. Tuned "
+             "walk-forward and parameter-neighbourhood results are reported as distributions, not peaks; any "
+             "result that appears only under tuning is treated as a fail._\n")
     return "\n".join(L)

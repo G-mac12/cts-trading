@@ -73,13 +73,11 @@ def _build_features(panel: Dict[str, pd.DataFrame], dates: pd.DatetimeIndex, p: 
         exit_sig = donchian_exit_signal(df, p.n_exit)
         atr_s = atr_ind(df["high"], df["low"], df["close"], p.atr_period)
         f = pd.DataFrame(
-            {
-                "open": df["open"], "high": df["high"], "low": df["low"], "close": df["close"],
-                "entry_sig": entry_sig, "exit_sig": exit_sig, "atr": atr_s,
-            }
+            {"open": df["open"], "high": df["high"], "low": df["low"], "close": df["close"], "atr": atr_s}
         ).reindex(dates)
-        f["entry_sig"] = f["entry_sig"].fillna(False).astype(bool)
-        f["exit_sig"] = f["exit_sig"].fillna(False).astype(bool)
+        # reindex bool signals with fill_value=False (avoids NaN->object downcast warning)
+        f["entry_sig"] = entry_sig.reindex(dates, fill_value=False).astype(bool)
+        f["exit_sig"] = exit_sig.reindex(dates, fill_value=False).astype(bool)
         feat[sym] = f
     return feat
 
