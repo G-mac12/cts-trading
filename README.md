@@ -21,6 +21,7 @@ infrastructure is built. See [`PLAN.md`](PLAN.md) for the design and
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+pip install -e .            # so `python scripts/...` can import cts
 cp .env.example .env        # then add COINAPI_KEY
 pytest                      # run the unit tests (no key needed)
 ```
