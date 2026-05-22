@@ -1,0 +1,22 @@
+# §4 eligibility filters. Applied point-in-time (trailing data only, no lookahead).
+exchange: KRAKEN
+min_24h_usd_volume: 50_000_000      # >= $50M
+liquidity_window_days: 7            # trailing median of daily USD volume used as the
+                                    # liquidity proxy (more stable than a single 24h print)
+max_spread_pct: 0.30                 # <= 0.3% where data available (logged if not enforced)
+min_history_days: 90                 # >= 90 days clean history
+quote_currencies: [USD, USDT]
+universe_size_cap: 50                # top ~30-50 by eligibility
+
+# Exclusions (§4): stablecoins, wrapped, leveraged/ETP tokens.
+exclude_stablecoins: true
+exclude_wrapped: true
+exclude_leveraged: true
+
+# Maintained denylist of base assets (extend as needed). Heuristics in code also catch
+# *UP/*DOWN/*BULL/*BEAR (leveraged) and common wrapped/pegged patterns.
+stablecoin_bases:
+  [USDT, USDC, DAI, TUSD, USDP, GUSD, PYUSD, EUR, EURT, EURR, USTC, FDUSD, USDD, USDS, RLUSD]
+wrapped_bases:
+  [WBTC, WETH, WSTETH, STETH, RETH, CBETH, WAXL, WBETH]
+leveraged_substrings: [UP, DOWN, BULL, BEAR, "3L", "3S", "2L", "2S"]

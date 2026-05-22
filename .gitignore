@@ -1,0 +1,42 @@
+# ---- SECRETS: never commit ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+credentials*.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Data cache + generated run outputs (reproducible; do not commit) ----
+data/cache/
+data/*.csv
+data/*.json
+*.parquet
+*.feather
+# keep small committed fixtures used by tests
+!tests/fixtures/**
+
+# ---- Local-only editor/agent settings ----
+.claude/settings.local.json
+
+# ---- OS / editor ----
+.DS_Store
+.idea/
+.vscode/
+*.swp

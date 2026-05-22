@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+"""Ingest survivorship-clean daily OHLCV for the Kraken universe into the local
+cache. Read-only market data. Needs COINAPI_KEY in .env.
+
+  python scripts/ingest.py --start 2017-01-01 --end 2026-05-22
+"""
+from __future__ import annotations
+
+import argparse
+from datetime import date, datetime
+
+from cts.config import ROOT
+from cts.data.cache import Cache
+from cts.pipeline import get_coinapi_adapter, ingest
+from cts.safety import backtest_only_notice
+
+
+def _d(s: str) -> date:
+    return datetime.strptime(s, "%Y-%m-%d").date()
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--start", type=_d, default=_d("2017-01-01"))
+    ap.add_argument("--end", type=_d, default=date.today())
+    ap.add_argument("--max-symbols", type=int, default=None,
+                    help="cap symbols pulled (saves CoinAPI credits while testing)")
+    args = ap.parse_args()
+
+    print(backtest_only_notice())
+    adapter = get_coinapi_adapter()
+    cache = Cache(ROOT / "data" / "cache")
+    print(f"Ingesting {adapter.source_name} {args.start}..{args.end} (survivorship_clean={adapter.survivorship_clean})")
+    panel, metas = ingest(adapter, cache, args.start, args.end, args.max_symbols)
+    print(f"Pulled {len(panel)} tradable symbols into {cache.root}.")
+    if panel:
+        spans = [(s, df.index.min().date(), df.index.max().date(), len(df)) for s, df in list(panel.items())[:10]]
+        for s, a, b, n in spans:
+            print(f"  {s}: {a}..{b} ({n} bars)")
+        if len(panel) > 10:
+            print(f"  ... and {len(panel) - 10} more")
+
+
+if __name__ == "__main__":
+    main()

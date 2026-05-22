@@ -1,0 +1,61 @@
+# All backtest parameters. The spec's STARTING values are the defaults here and are
+# run UNCHANGED for the headline OOS result. Tuning (if any) happens only on in-sample
+# folds; see walk_forward below.
+
+equity:
+  start_gbp: 2000.0
+  gbp_usd_rate: 1.27          # fixed simulation FX rate (stated, no FX path-dependence)
+
+# §3 strategy starting parameters (LOCKED starting values, run as-given first)
+strategy:
+  systems:
+    system1: { donchian_entry: 20, donchian_exit: 10 }
+    system2: { donchian_entry: 55, donchian_exit: 20 }
+  atr_period: 14
+  atr_stop_mult: 2.0
+  rvol_period: 20
+  rvol_min: 1.5
+  risk_per_position_pct: 1.0   # 1% of equity risked per position
+  xs_momentum_lookback: 30     # 30-day return ranking
+  xs_rebalance_days: 7
+  xs_top_tier_frac: 0.33       # top tier of eligible universe
+  regime:
+    ma_long: 100               # BTC > 100d MA
+    ma_short: 50               # AND 50d MA > 100d MA
+
+portfolio:
+  max_concurrent_positions: 5
+  max_deployed_pct: 50.0       # <= 50% of equity working; rest in cash (zero return)
+
+# §3.5 fees — Kraken Pro start tier
+fees:
+  taker_pct: 0.40              # entries cross the band -> taker
+  maker_pct: 0.25
+  exit_uses_maker: false       # default conservative: exits also taker. Maker variant
+                               # reported separately, never flatters the headline entry.
+
+slippage:
+  per_side_pct: 0.15           # conservative default
+  sensitivity_pcts: [0.05, 0.15, 0.30]   # reported as sensitivity band
+
+# §9 walk-forward (anti-overfitting). Non-overlapping OOS so each day scored once.
+walk_forward:
+  in_sample_months: 18
+  out_of_sample_months: 6
+  step_months: 6
+  rolling: true                # fixed-length IS window (not anchored/expanding)
+
+# Robustness (§9 / Task D)
+robustness:
+  subsample_frac: 0.667        # random 2/3 of universe
+  subsample_seeds: [1, 2, 3, 4, 5]
+  param_neighbourhood:         # report as DISTRIBUTION, never the peak
+    donchian_entry: [15, 20, 25, 30, 45, 55, 65]
+    atr_stop_mult: [1.5, 2.0, 2.5, 3.0]
+    rvol_min: [1.0, 1.5, 2.0]
+
+# Regime classification for decomposition (independent of strategy's own switch)
+regime_decomp:
+  # bull: 50d>100d & price>100d ; bear: price<100d & 50d<100d ; else chop
+  ma_short: 50
+  ma_long: 100
