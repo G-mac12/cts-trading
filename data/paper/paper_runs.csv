@@ -1,0 +1,4 @@
+run_at,as_of,S1-baseline_equity,S1-chopfix_equity,S2-baseline_equity,S2-chopfix_equity,S1-baseline_trades,S1-chopfix_trades,S2-baseline_trades,S2-chopfix_trades
+2026-05-23T16:16:06.052437+00:00,2026-05-22,2540.0,2540.0,2540.0,2540.0,0,0,0,0
+2026-05-23T16:16:47.179442+00:00,2026-05-22,2540.0,2540.0,2540.0,2540.0,0,0,0,0
+2026-05-23T20:24:32.740247+00:00,2026-05-22,2540.0,2540.0,0,0

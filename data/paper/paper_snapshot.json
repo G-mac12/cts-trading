@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-05-23T20:24:32.740247+00:00",
+  "paper_start": "2026-05-22",
+  "as_of": "2026-05-22",
+  "inception_equity_usd": 2540.0,
+  "data_source": "coinapi",
+  "survivorship_clean": true,
+  "universe_symbols": 157,
+  "variants": {
+    "S1-baseline": {
+      "regime_exit": false,
+      "n_entry": 20,
+      "n_exit": 10,
+      "equity_last": 2540.0,
+      "forward_metrics": {
+        "profit_factor": 0.0,
+        "total_return": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "sortino": 0.0,
+        "win_rate": 0.0,
+        "payoff_ratio": 0.0,
+        "expectancy": 0.0,
+        "trade_count": 0.0,
+        "exposure": 0.0
+      },
+      "n_forward_trades": 0,
+      "open_positions": [],
+      "next_session_orders": {
+        "entries": [],
+        "exits": {}
+      }
+    },
+    "S1-chopfix": {
+      "regime_exit": true,
+      "n_entry": 20,
+      "n_exit": 10,
+      "equity_last": 2540.0,
+      "forward_metrics": {
+        "profit_factor": 0.0,
+        "total_return": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "sortino": 0.0,
+        "win_rate": 0.0,
+        "payoff_ratio": 0.0,
+        "expectancy": 0.0,
+        "trade_count": 0.0,
+        "exposure": 0.0
+      },
+      "n_forward_trades": 0,
+      "open_positions": [],
+      "next_session_orders": {
+        "entries": [],
+        "exits": {}
+      }
+    }
+  }
+}

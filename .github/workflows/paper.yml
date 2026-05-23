@@ -1,0 +1,60 @@
+name: paper-trader (daily, simulated)
+
+# Runs the PAPER-trader once a day on GitHub's servers — no machine of yours
+# involved. SIMULATED ONLY: no real orders, no real money.
+on:
+  schedule:
+    - cron: "30 0 * * *"      # 00:30 UTC daily, just after the daily candle close
+  workflow_dispatch: {}        # lets you (or me) run it on demand from the Actions tab
+
+permissions:
+  contents: write              # to commit the updated paper record back to the repo
+
+concurrency:
+  group: paper-trader
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Persist the price cache between runs (no repo bloat). Cold start falls back
+      # to the cache seed committed in the repo.
+      - uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: cts-cache-${{ github.run_id }}
+          restore-keys: |
+            cts-cache-
+
+      - name: Install
+        run: |
+          python -m pip install --quiet --upgrade pip
+          pip install --quiet -r requirements.txt
+          pip install --quiet -e .
+
+      - name: Run paper update
+        env:
+          COINAPI_KEY: ${{ secrets.COINAPI_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/run_paper.py --update
+
+      - name: Commit the day's paper record
+        run: |
+          git config user.name "cts-bot"
+          git config user.email "cts-bot@users.noreply.github.com"
+          git add data/paper/PAPER_STATUS.md data/paper/paper_runs.csv \
+                  data/paper/paper_state.json data/paper/paper_snapshot.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "paper: daily update $(date -u +%F)"
+            git push
+          fi

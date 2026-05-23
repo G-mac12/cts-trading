@@ -23,15 +23,15 @@ env/
 .coverage
 htmlcov/
 
-# ---- Data cache + generated run outputs (reproducible; do not commit) ----
-data/cache/
-data/paper/
-data/*.csv
-data/*.json
-data/*.log
+# ---- Data ----
+# Track the cache SEED (so GitHub Actions can run with no server) and the PAPER
+# RECORD (so the forward track persists). Ignore top-level regenerable outputs + logs.
+data/*.csv          # top-level only (e.g. universe_log.csv) — regenerable
+data/*.json         # top-level only (e.g. analysis.json) — regenerable
 data/*.html
-*.parquet
-*.feather
+data/*.log
+data/paper/daily.log
+data/paper/*.html
 # keep small committed fixtures used by tests
 !tests/fixtures/**
 
