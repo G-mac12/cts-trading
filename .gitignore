@@ -29,6 +29,7 @@ data/paper/
 data/*.csv
 data/*.json
 data/*.log
+data/*.html
 *.parquet
 *.feather
 # keep small committed fixtures used by tests
