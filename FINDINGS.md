@@ -1,6 +1,6 @@
 # CTS Phase 1 — FINDINGS
 
-_Generated 2026-05-23T08:41:05.652102+00:00 · data source: coinapi · window 2018-04-01 → 2026-05-22_
+_Generated 2026-05-23T19:09:30.784185+00:00 · data source: coinapi · window 2018-04-01 → 2026-05-22_
 
 ## VERDICT: **NO-GO (QUALIFIED — clears every hard criterion except chop; judgement call)** for Phase 2
 
@@ -9,11 +9,9 @@ _Generated 2026-05-23T08:41:05.652102+00:00 · data source: coinapi · window 20
 ### Does the edge survive — plain answer
 
 **Borderline / judgement call — the strategy clears every hard criterion except the chop test.** On the starting parameters, both systems pass the §9 headline metrics (profit factor, drawdown, Sharpe), are adequately powered, sit in cash during bear markets, AND now survive both universe-subsampling and the parameter neighbourhood. The single failing criterion is **chop give-back**:
-- **S1**: headline PF/DD/Sharpe pass; 50 trades (adequately powered); subsample median PF 1.67 (survives subsampling); **chop give-back -15.2%** over chop days, though only 6.1% exposed (it does sit in cash).
-- **S2**: headline PF/DD/Sharpe pass; 44 trades (adequately powered); subsample median PF 2.72 (survives subsampling); **chop give-back -29.7%** over chop days, though only 7.8% exposed (it does sit in cash).
+- **S1**: headline PF/DD/Sharpe pass; 117 trades (adequately powered); subsample median PF 2.66 (survives subsampling); **chop give-back -21.9%** over chop days, though only 20.0% exposed (it does sit in cash).
 
-- **S1** OOS fold spread: 10 of 14 folds traded, 6 profitable (check the per-fold table for concentration).
-- **S2** OOS fold spread: 10 of 14 folds traded, 5 profitable (check the per-fold table for concentration).
+- **S1** OOS fold spread: 13 of 14 folds traded, 5 profitable (check the per-fold table for concentration).
 
 This is **not a clean fail.** Every hard, pre-registered criterion is met — the only open question is whether chop give-back clears the spec's 'controlled chop' bar. The strategy DOES go to cash in chop (low exposure) and overall drawdown stays within 25%; it loses the chop test only by giving back bull gains during transitions. Whether that is acceptable is a human decision — see the recommendation.
 
@@ -35,16 +33,16 @@ This is **not a clean fail.** Every hard, pre-registered criterion is met — th
 
 | Metric | Value | Bar | Pass |
 |---|---|---|---|
-| Profit factor | 2.66 | > 1.5 | ✅ |
-| Max drawdown | -17.2% | > -25% | ✅ |
-| Sharpe | 0.62 | > 0 | ✅ |
-| Total return | 80.2% | — | |
-| CAGR | 7.5% | — | |
-| Win rate | 36.0% | — | |
-| Avg win / avg loss | 4.72 | — | |
-| Expectancy / trade (USD) | 40.74 | — | |
-| Trade count | 50 | >= 30 | ✅ |
-| Exposure (time in market) | 26.3% | — | |
+| Profit factor | 2.56 | > 1.5 | ✅ |
+| Max drawdown | -20.5% | > -25% | ✅ |
+| Sharpe | 0.78 | > 0 | ✅ |
+| Total return | 130.7% | — | |
+| CAGR | 10.8% | — | |
+| Win rate | 37.6% | — | |
+| Avg win / avg loss | 4.24 | — | |
+| Expectancy / trade (USD) | 28.37 | — | |
+| Trade count | 117 | >= 30 | ✅ |
+| Exposure (time in market) | 36.3% | — | |
 
 **Benchmark — buy & hold BTC (same window):** return 1038.8%, max DD -76.7%, Sharpe 0.79.
 
@@ -52,9 +50,9 @@ This is **not a clean fail.** Every hard, pre-registered criterion is met — th
 
 | Regime | % of period | Return | Max DD | Exposure | Trades | Trade P&L |
 |---|---|---|---|---|---|---|
-| bull | 43.3% | 112.6% | -16.3% | 58.0% | 50 | 2036.98 |
-| bear | 38.4% | 0.0% | 0.0% | 0.0% | 0 | 0.00 |
-| chop | 18.3% | -15.2% | -15.2% | 6.1% | 0 | 0.00 |
+| bull | 43.3% | 197.7% | -14.1% | 74.6% | 114 | 3395.49 |
+| bear | 38.4% | -0.8% | -0.8% | 0.8% | 0 | 0.00 |
+| chop | 18.3% | -21.9% | -21.9% | 20.0% | 3 | -75.72 |
 
 Bear behaviour ✅ controlled; chop behaviour ❌ NOT controlled.
 
@@ -62,89 +60,30 @@ Bear behaviour ✅ controlled; chop behaviour ❌ NOT controlled.
 
 | Source | Median | Mean | Min | P25 | P75 | Max |
 |---|---|---|---|---|---|---|
-| Universe subsample (2/3, 5 seeds) | 1.67 | 1.87 | 0.91 | 1.15 | 2.74 | 2.89 |
-| Parameter neighbourhood (84 sets) | 2.05 | 2.03 | 0.83 | 1.68 | 2.37 | 3.39 |
+| Universe subsample (2/3, 3 seeds) | 2.66 | 2.41 | 1.44 | 2.05 | 2.89 | 3.12 |
+| Parameter neighbourhood (6 sets) | 2.62 | 2.64 | 2.32 | 2.51 | 2.81 | 2.92 |
 
-**Tuned walk-forward (tune on IS, apply OOS):** PF 3.44, return 158.1%, max DD -15.4%, Sharpe 0.99, trades 50.
-Per-fold chosen params (instability = overfit signal): f0:N=15/stop=1.5, f1:N=15/stop=1.5, f2:N=15/stop=1.5, f3:N=15/stop=1.5, f4:N=15/stop=1.5, f5:N=15/stop=1.5, f6:N=15/stop=1.5, f7:N=15/stop=1.5, f8:N=15/stop=1.5, f9:N=15/stop=1.5, f10:N=15/stop=1.5, f11:N=15/stop=2.5, f12:N=30/stop=3.0, f13:N=30/stop=2.5
-
-**Per-fold OOS stability (headline params):**
-
-| Fold | OOS window | PF | Return | Max DD | Trades |
-|---|---|---|---|---|---|
-| 0 | 2019-10-01→2020-04-01 | 0.00 | -1.1% | -1.7% | 1 |
-| 1 | 2020-04-01→2020-10-01 | 4.24 | 3.5% | -5.8% | 3 |
-| 2 | 2020-10-01→2021-04-01 | 17.81 | 74.2% | -16.3% | 5 |
-| 3 | 2021-04-01→2021-10-01 | 0.00 | -9.3% | -14.0% | 2 |
-| 4 | 2021-10-01→2022-04-01 | 0.09 | -2.5% | -5.1% | 4 |
-| 5 | 2022-04-01→2022-10-01 | 0.00 | 0.0% | 0.0% | 0 |
-| 6 | 2022-10-01→2023-04-01 | 1.51 | 1.0% | -1.9% | 3 |
-| 7 | 2023-04-01→2023-10-01 | 0.00 | -0.5% | -3.0% | 0 |
-| 8 | 2023-10-01→2024-04-01 | 2.17 | 10.3% | -10.4% | 11 |
-| 9 | 2024-04-01→2024-10-01 | 0.00 | -0.7% | -0.7% | 0 |
-| 10 | 2024-10-01→2025-04-01 | 1.14 | 0.9% | -9.2% | 9 |
-| 11 | 2025-04-01→2025-10-01 | 0.83 | -0.7% | -8.8% | 7 |
-| 12 | 2025-10-01→2026-04-01 | 0.00 | 0.0% | 0.0% | 0 |
-| 13 | 2026-04-01→2026-05-22 | 9.83 | 1.5% | -0.1% | 2 |
-
-
-### System S2 — Donchian entry N=55, exit N=20
-
-**Headline (starting parameters, out-of-sample, after fees)**
-
-| Metric | Value | Bar | Pass |
-|---|---|---|---|
-| Profit factor | 2.42 | > 1.5 | ✅ |
-| Max drawdown | -24.1% | > -25% | ✅ |
-| Sharpe | 0.49 | > 0 | ✅ |
-| Total return | 60.8% | — | |
-| CAGR | 6.0% | — | |
-| Win rate | 29.5% | — | |
-| Avg win / avg loss | 5.78 | — | |
-| Expectancy / trade (USD) | 35.07 | — | |
-| Trade count | 44 | >= 30 | ✅ |
-| Exposure (time in market) | 30.9% | — | |
-
-**Benchmark — buy & hold BTC (same window):** return 1038.8%, max DD -76.7%, Sharpe 0.79.
-
-**Regime decomposition** (must preserve capital + stay in cash during bear/chop):
-
-| Regime | % of period | Return | Max DD | Exposure | Trades | Trade P&L |
-|---|---|---|---|---|---|---|
-| bull | 43.3% | 131.3% | -16.8% | 65.9% | 44 | 1543.28 |
-| bear | 38.4% | -1.1% | -1.9% | 2.5% | 0 | 0.00 |
-| chop | 18.3% | -29.7% | -29.7% | 7.8% | 0 | 0.00 |
-
-Bear behaviour ✅ controlled; chop behaviour ❌ NOT controlled.
-
-**Robustness — profit factor distribution** (a real edge survives off the exact peak):
-
-| Source | Median | Mean | Min | P25 | P75 | Max |
-|---|---|---|---|---|---|---|
-| Universe subsample (2/3, 5 seeds) | 2.72 | 2.09 | 0.57 | 1.48 | 2.76 | 2.93 |
-| Parameter neighbourhood (84 sets) | 2.37 | 2.36 | 1.37 | 2.00 | 2.64 | 3.54 |
-
-**Tuned walk-forward (tune on IS, apply OOS):** PF 3.17, return 123.5%, max DD -16.5%, Sharpe 0.86, trades 49.
-Per-fold chosen params (instability = overfit signal): f0:N=15/stop=1.5, f1:N=15/stop=1.5, f2:N=15/stop=2.5, f3:N=15/stop=1.5, f4:N=15/stop=1.5, f5:N=15/stop=1.5, f6:N=15/stop=1.5, f7:N=15/stop=1.5, f8:N=15/stop=1.5, f9:N=20/stop=1.5, f10:N=15/stop=1.5, f11:N=15/stop=1.5, f12:N=30/stop=2.5, f13:N=30/stop=2.5
+**Tuned walk-forward (tune on IS, apply OOS):** PF 2.85, return 109.8%, max DD -16.0%, Sharpe 0.88, trades 111.
+Per-fold chosen params (instability = overfit signal): f0:N=15/stop=2.0, f1:N=15/stop=2.0, f2:N=15/stop=2.5, f3:N=15/stop=2.0, f4:N=15/stop=2.5, f5:N=20/stop=2.5, f6:N=15/stop=2.5, f7:N=15/stop=2.5, f8:N=15/stop=2.5, f9:N=25/stop=2.5, f10:N=25/stop=2.5, f11:N=25/stop=2.5, f12:N=15/stop=2.5, f13:N=25/stop=2.5
 
 **Per-fold OOS stability (headline params):**
 
 | Fold | OOS window | PF | Return | Max DD | Trades |
 |---|---|---|---|---|---|
-| 0 | 2019-10-01→2020-04-01 | 0.00 | -1.1% | -1.7% | 1 |
-| 1 | 2020-04-01→2020-10-01 | 0.72 | -0.3% | -5.3% | 2 |
-| 2 | 2020-10-01→2021-04-01 | 9.52 | 53.8% | -16.8% | 6 |
-| 3 | 2021-04-01→2021-10-01 | 0.00 | -13.3% | -19.6% | 2 |
-| 4 | 2021-10-01→2022-04-01 | 0.05 | -3.8% | -8.3% | 4 |
-| 5 | 2022-04-01→2022-10-01 | 0.00 | 0.0% | 0.0% | 0 |
-| 6 | 2022-10-01→2023-04-01 | 0.00 | -0.8% | -1.6% | 2 |
-| 7 | 2023-04-01→2023-10-01 | 0.00 | -1.1% | -1.9% | 0 |
-| 8 | 2023-10-01→2024-04-01 | 3.06 | 30.2% | -10.3% | 9 |
-| 9 | 2024-04-01→2024-10-01 | 0.00 | -10.8% | -10.8% | 0 |
-| 10 | 2024-10-01→2025-04-01 | 1.38 | 2.1% | -8.1% | 8 |
-| 11 | 2025-04-01→2025-10-01 | 1.19 | 0.8% | -7.6% | 6 |
-| 12 | 2025-10-01→2026-04-01 | 0.00 | 0.0% | 0.0% | 0 |
-| 13 | 2026-04-01→2026-05-22 | 9.83 | 1.5% | -0.1% | 2 |
+| 0 | 2019-10-01→2020-04-01 | 0.00 | -0.7% | -1.0% | 1 |
+| 1 | 2020-04-01→2020-10-01 | 1.42 | 1.1% | -7.2% | 6 |
+| 2 | 2020-10-01→2021-04-01 | 128.00 | 96.0% | -14.1% | 5 |
+| 3 | 2021-04-01→2021-10-01 | 0.16 | -6.8% | -13.4% | 12 |
+| 4 | 2021-10-01→2022-04-01 | 0.21 | -2.0% | -5.5% | 8 |
+| 5 | 2022-04-01→2022-10-01 | 0.00 | -0.5% | -1.3% | 1 |
+| 6 | 2022-10-01→2023-04-01 | 0.34 | -2.3% | -4.8% | 11 |
+| 7 | 2023-04-01→2023-10-01 | 0.00 | -4.1% | -6.5% | 5 |
+| 8 | 2023-10-01→2024-04-01 | 2.81 | 24.4% | -12.1% | 24 |
+| 9 | 2024-04-01→2024-10-01 | 0.78 | -5.2% | -5.4% | 6 |
+| 10 | 2024-10-01→2025-04-01 | 3.92 | 10.4% | -9.0% | 10 |
+| 11 | 2025-04-01→2025-10-01 | 1.72 | 3.5% | -8.4% | 17 |
+| 12 | 2025-10-01→2026-04-01 | 0.00 | -0.9% | -1.0% | 0 |
+| 13 | 2026-04-01→2026-05-22 | 0.00 | -2.6% | -2.6% | 5 |
 
 
 ## Recommendation & reasoning

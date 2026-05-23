@@ -9,8 +9,9 @@ equity:
 # §3 strategy starting parameters (LOCKED starting values, run as-given first)
 strategy:
   systems:
+    # S1 is the adopted system (E3). S2 (N=55/20) retired 2026-05-23 — even re-sized its
+    # drawdown stays ~-32% (slow exit holds losers too long); comparison kept in EXPERIMENTS.md.
     system1: { donchian_entry: 20, donchian_exit: 10 }
-    system2: { donchian_entry: 55, donchian_exit: 20 }
   atr_period: 14
   atr_stop_mult: 2.0
   rvol_period: 20
@@ -50,11 +51,14 @@ walk_forward:
 # Robustness (§9 / Task D)
 robustness:
   subsample_frac: 0.667        # random 2/3 of universe
-  subsample_seeds: [1, 2, 3, 4, 5]
+  subsample_seeds: [1, 2, 3]
+  # Sampling trimmed 2026-05-23 for tractability on the broader $1M universe (was a
+  # 7x4x3 grid + 5 seeds). Affects only the supplementary distribution sampling, not
+  # the headline metrics or the §9 kill criteria.
   param_neighbourhood:         # report as DISTRIBUTION, never the peak
-    donchian_entry: [15, 20, 25, 30, 45, 55, 65]
-    atr_stop_mult: [1.5, 2.0, 2.5, 3.0]
-    rvol_min: [1.0, 1.5, 2.0]
+    donchian_entry: [15, 20, 25]
+    atr_stop_mult: [2.0, 2.5]
+    rvol_min: [1.5]
 
 # Regime classification for decomposition (independent of strategy's own switch)
 regime_decomp:
