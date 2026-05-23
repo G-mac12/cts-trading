@@ -49,6 +49,7 @@ class StrategyParams:
     risk_per_position_pct: float = 1.0
     regime_ma_short: int = 50
     regime_ma_long: int = 100
+    regime_exit: bool = False  # chop-fix: when regime flips off, exit open positions (next open)
 
 
 @dataclass
@@ -60,6 +61,8 @@ class BacktestResult:
     end: pd.Timestamp
     params: StrategyParams
     meta: Dict = field(default_factory=dict)
+    open_positions: List[Position] = field(default_factory=list)   # held at end (paper mode)
+    pending_orders: Dict = field(default_factory=dict)             # decided last close, for next open
 
     @property
     def daily_returns(self) -> pd.Series:
@@ -109,6 +112,7 @@ def run_backtest(
     max_positions: int = 5,
     max_deployed_pct: float = 50.0,
     system_name: str = "S1",
+    close_at_end: bool = True,
 ) -> BacktestResult:
     start = pd.Timestamp(start);  end = pd.Timestamp(end)
     # union trading calendar within [start, end]
@@ -120,12 +124,12 @@ def run_backtest(
 
     feat = _build_features(panel, dates, params)
     close_wide = pd.DataFrame({s: df["close"] for s, df in panel.items()}).reindex(dates).ffill()
-    regime = regime_on(btc_close, params.regime_ma_short, params.regime_ma_long).reindex(dates).fillna(False)
+    regime = regime_on(btc_close, params.regime_ma_short, params.regime_ma_long).reindex(dates, fill_value=False).astype(bool)
     top_for_t = _top_tier_walker(schedule, dates)
 
     pf = Portfolio(start_equity_usd)
     pending_entries: List[dict] = []
-    pending_exits: set = set()
+    pending_exits: Dict[str, str] = {}   # symbol -> reason ("donchian" | "regime")
     fee_factor = 1.0 + fee_model.taker_pct / 100.0
     equity_curve: Dict[pd.Timestamp, float] = {}
 
@@ -146,20 +150,20 @@ def run_backtest(
                 exit_price = slippage.sell_price(ref)
                 fee = fee_model.exit_fee(pos.units * exit_price, is_stop=True)
                 pf.close(sym, t, exit_price, fee, "stop")
-                pending_exits.discard(sym)
+                pending_exits.pop(sym, None)
 
-        # 2) queued Donchian exits at this open
-        for sym in list(pending_exits):
+        # 2) queued exits at this open (Donchian = maker-eligible; regime exit = market/taker)
+        for sym, reason in list(pending_exits.items()):
             if sym not in pf.positions:
-                pending_exits.discard(sym); continue
+                pending_exits.pop(sym, None); continue
             open_t = feat[sym].at[t, "open"] if t in feat[sym].index else np.nan
             if pd.isna(open_t):
                 continue  # carry forward
             pos = pf.positions[sym]
             exit_price = slippage.sell_price(open_t)
-            fee = fee_model.exit_fee(pos.units * exit_price, is_stop=False)
-            pf.close(sym, t, exit_price, fee, "donchian")
-            pending_exits.discard(sym)
+            fee = fee_model.exit_fee(pos.units * exit_price, is_stop=(reason == "regime"))
+            pf.close(sym, t, exit_price, fee, reason)
+            pending_exits.pop(sym, None)
 
         # 3) queued entries at this open
         still: List[dict] = []
@@ -187,11 +191,15 @@ def run_backtest(
         pending_entries = still
 
         # 4) end-of-day signals at close[t]
-        for sym, pos in pf.positions.items():
+        regime_on_today = bool(regime.loc[t])
+        for sym in pf.positions:
             f = feat[sym]
             if t in f.index and bool(f.at[t, "exit_sig"]):
-                pending_exits.add(sym)
-        if bool(regime.loc[t]):
+                pending_exits[sym] = "donchian"
+        if params.regime_exit and not regime_on_today:
+            for sym in pf.positions:                       # chop-fix: de-risk on regime flip
+                pending_exits.setdefault(sym, "regime")
+        if regime_on_today:
             for sym in top_for_t.get(t, []):
                 if sym in pf.positions or sym not in feat:
                     continue
@@ -204,21 +212,25 @@ def run_backtest(
 
         equity_curve[t] = pf.equity(mtm)
 
-    # force-close survivors at the last close for complete trade stats
     last_t = dates[-1]
     last_prices = close_wide.loc[last_t].to_dict()
-    for sym in list(pf.positions):
-        pos = pf.positions[sym]
-        px = last_prices.get(sym, pos.entry_price)
-        exit_price = slippage.sell_price(px)
-        fee = fee_model.exit_fee(pos.units * exit_price, is_stop=False)
-        pf.close(sym, last_t, exit_price, fee, "end-of-test")
-    equity_curve[last_t] = pf.equity(last_prices)
+    if close_at_end:
+        # backtest: force-close survivors at the last close for complete trade stats
+        for sym in list(pf.positions):
+            pos = pf.positions[sym]
+            px = last_prices.get(sym, pos.entry_price)
+            exit_price = slippage.sell_price(px)
+            fee = fee_model.exit_fee(pos.units * exit_price, is_stop=False)
+            pf.close(sym, last_t, exit_price, fee, "end-of-test")
+        equity_curve[last_t] = pf.equity(last_prices)
 
+    open_positions = list(pf.positions.values())  # empty when close_at_end (backtest)
     return BacktestResult(
         system=system_name,
         equity_curve=pd.Series(equity_curve).sort_index(),
         trades=pf.trades,
         start=start, end=end, params=params,
         meta={"n_dates": len(dates), "survivorship_clean": schedule is not None},
+        open_positions=open_positions,
+        pending_orders={"entries": [o["symbol"] for o in pending_entries], "exits": dict(pending_exits)},
     )

@@ -25,6 +25,7 @@ htmlcov/
 
 # ---- Data cache + generated run outputs (reproducible; do not commit) ----
 data/cache/
+data/paper/
 data/*.csv
 data/*.json
 data/*.log

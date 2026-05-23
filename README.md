@@ -33,6 +33,18 @@ python scripts/ingest.py           # cache daily OHLCV locally (reproducible)
 python scripts/run_backtest.py     # walk-forward OOS run -> writes FINDINGS.md
 ```
 
+## Paper trading (Phase 3-lite — SIMULATED, no real orders)
+Runs the validated strategy forward from a fixed paper-start date with a fresh
+£2,000 sim portfolio, on freshly-pulled data. Four variants in parallel:
+S1/S2 × {baseline, chopfix}, where `chopfix` exits open positions when the regime
+flips off (the candidate fix for chop give-back). Live data — not in-sample
+tuning — decides which wins.
+```bash
+python scripts/run_paper.py            # run on current cached data
+python scripts/run_paper.py --update   # pull new daily candles first, then run (daily)
+```
+Forward record accumulates locally in `data/paper/` (state, run log, PAPER_STATUS.md).
+
 ## Layout
 `src/cts/data` data adapters + cache + universe · `src/cts/strategy` deterministic
 signal/regime/ranking/sizing/exit functions · `src/cts/engine` fees, slippage,

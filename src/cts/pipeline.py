@@ -125,6 +125,36 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
     return panel, metas
 
 
+def update_cache(adapter: DataAdapter, cache: Cache, source: str, end: date) -> int:
+    """Incrementally append new daily candles up to `end` for cached ACTIVE symbols
+    (delisted are frozen). Cheap forward refresh for paper trading — only the new
+    days are fetched. Returns the number of symbols updated."""
+    manifest = cache.read_manifest(source)
+    if manifest is None:
+        raise RuntimeError(f"No cached data for {source!r}; run ingest first.")
+    updated = 0
+    for s in manifest["symbols"]:
+        if s.get("static_excluded") is not None or not s.get("is_active", False):
+            continue
+        sid = s["symbol_id"]
+        if not cache.has(source, sid):
+            continue
+        df = cache.read(source, sid)
+        if df.empty:
+            continue
+        last = df.index.max().date()
+        if last >= end:
+            continue
+        new = adapter.daily_ohlcv(sid, last, end)  # re-fetches `last` too; dedup below
+        if new.empty:
+            continue
+        merged = pd.concat([df, new])
+        merged = merged[~merged.index.duplicated(keep="last")].sort_index()
+        cache.write(source, sid, merged)
+        updated += 1
+    return updated
+
+
 def load_cached(cache: Cache, source: str) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta], dict]:
     manifest = cache.read_manifest(source)
     if manifest is None:
