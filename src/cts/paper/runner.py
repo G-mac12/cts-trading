@@ -30,6 +30,7 @@ from cts.engine.fees import FeeModel
 from cts.engine.slippage import SlippageModel
 from cts.metrics.performance import metrics_summary
 from cts.pipeline import _params, find_btc, load_cached, make_rebalance_dates
+from cts.strategy.regime import regime_on
 
 PAPER_DIR = ROOT / "data" / "paper"
 
@@ -55,20 +56,22 @@ def _save_state(state: dict) -> None:
 
 
 def _append_runlog(report: dict) -> None:
+    """Append one row per variant in LONG format (stable schema even if the set of
+    variants changes) — this is the equity-curve history the dashboard plots."""
     PAPER_DIR.mkdir(parents=True, exist_ok=True)
     path = PAPER_DIR / "paper_runs.csv"
-    fields = ["run_at", "as_of"] + [f"{v}_equity" for v in report["variants"]] + \
-             [f"{v}_trades" for v in report["variants"]]
-    row = {"run_at": report["generated_at"], "as_of": report["as_of"]}
-    for v, vr in report["variants"].items():
-        row[f"{v}_equity"] = round(vr["equity_last"], 2)
-        row[f"{v}_trades"] = vr["n_forward_trades"]
+    fields = ["as_of", "run_at", "variant", "equity", "fwd_trades", "fwd_return"]
     write_header = not path.exists()
     with path.open("a", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fields)
         if write_header:
             w.writeheader()
-        w.writerow(row)
+        for v, vr in report["variants"].items():
+            w.writerow({
+                "as_of": report["as_of"], "run_at": report["generated_at"], "variant": v,
+                "equity": round(vr["equity_last"], 2), "fwd_trades": vr["n_forward_trades"],
+                "fwd_return": round(vr["forward_metrics"]["total_return"], 6),
+            })
 
 
 def run_paper(as_of: Optional[str] = None, source: str = "coinapi") -> dict:
@@ -104,6 +107,17 @@ def run_paper(as_of: Optional[str] = None, source: str = "coinapi") -> dict:
     maxpos = int(cfg_bt["portfolio"]["max_concurrent_positions"])
     maxdep = float(cfg_bt["portfolio"]["max_deployed_pct"])
 
+    # Current regime (is the market risk-on right now?) and the watchlist it's scanning.
+    reg = regime_on(btc_close, int(cfg_s["regime"]["ma_short"]), int(cfg_s["regime"]["ma_long"]))
+    reg_upto = reg[reg.index <= as_of_ts]
+    regime_on_now = bool(reg_upto.iloc[-1]) if len(reg_upto) else False
+    past_rbs = [d for d in rebalance_dates if d <= as_of_ts]
+    watch_ids = schedule.top_tier_by_date.get(past_rbs[-1], []) if past_rbs else []
+    watchlist = [metas[s].base for s in watch_ids if s in metas]
+
+    def _base(sym):
+        return metas[sym].base if sym in metas else sym
+
     variants_out = {}
     for name, p in _variants(cfg_s).items():
         r = run_backtest(panel, btc_close, schedule, p, fees, slip, eq_usd,
@@ -117,13 +131,21 @@ def run_paper(as_of: Optional[str] = None, source: str = "coinapi") -> dict:
             "forward_metrics": metrics_summary(r.equity_curve, r.trades),
             "n_forward_trades": len(r.trades),
             "open_positions": [
-                {"symbol": pos.symbol, "entry_date": pos.entry_date.date().isoformat(),
-                 "entry_price": round(pos.entry_price, 6), "units": pos.units,
+                {"symbol": _base(pos.symbol), "entry_date": pos.entry_date.date().isoformat(),
+                 "entry_price": round(pos.entry_price, 6), "units": round(pos.units, 6),
                  "stop": round(pos.stop, 6),
                  "mark": round(float(last_prices.get(pos.symbol, pos.entry_price)), 6)}
                 for pos in r.open_positions
             ],
-            "next_session_orders": r.pending_orders,
+            "trades": [
+                {"symbol": _base(t.symbol), "entry_date": t.entry_date.date().isoformat(),
+                 "exit_date": t.exit_date.date().isoformat(), "entry_price": round(t.entry_price, 6),
+                 "exit_price": round(t.exit_price, 6), "net_pnl": round(t.net_pnl, 2),
+                 "return_pct": round(t.return_pct, 4), "reason": t.exit_reason}
+                for t in r.trades
+            ],
+            "next_session_orders": {"entries": [_base(s) for s in r.pending_orders.get("entries", [])],
+                                    "exits": [_base(s) for s in r.pending_orders.get("exits", {})]},
         }
 
     report = {
@@ -134,6 +156,8 @@ def run_paper(as_of: Optional[str] = None, source: str = "coinapi") -> dict:
         "data_source": manifest.get("source"),
         "survivorship_clean": manifest.get("survivorship_clean", False),
         "universe_symbols": len(panel),
+        "regime_on": regime_on_now,
+        "watchlist": watchlist,
         "variants": variants_out,
     }
     PAPER_DIR.mkdir(parents=True, exist_ok=True)
