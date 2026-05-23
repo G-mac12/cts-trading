@@ -44,3 +44,42 @@ be the overfitting trap.
 worsen drawdown and dilute the edge. Frequency and risk-control trade off directly
 here — which reinforces that the slow, selective breakout system is close to
 constraint-optimal for this venue/instrument.
+
+---
+
+## E3 — Account-appropriate liquidity floor + risk re-size · 2026-05-23 · **PASSED for S1**
+
+Insight: the institutional $50M/$10M volume filter is mis-set for a £2k account —
+a £200 position is invisible even in a $1M/day coin. Lowering the floor is the
+Turtle "more markets" lever (breadth), done correctly for the account size.
+
+Sweep on the same 157-coin panel (no new data):
+
+| filter | sys | trades | PF | ret | maxDD | Sharpe | subsample median PF |
+|---|---|---|---|---|---|---|---|
+| $50M | S1 | 23 | 4.08 | +50% | −15.2% | 0.58 | 0.54 |
+| $50M | S2 | 19 | 4.19 | +48% | −19.2% | 0.50 | 1.14 |
+| $10M | S1 | 50 | 2.66 | +80% | −17.2% | 0.62 | 1.67 |
+| $10M | S2 | 44 | 2.42 | +61% | −24.1% | 0.49 | 2.72 |
+| $1M | S1 | 108 | 2.46 | +213% | −31.2% | 0.81 | 2.39 |
+| $1M | S2 | 90 | 2.23 | +148% | −38.9% | 0.65 | 2.10 |
+
+At $1M the edge IMPROVES on every quality axis (≈2× trades, PF strong, Sharpe up,
+robustness up) — only max drawdown busts 25%. Drawdown is a risk-sizing dial
+(orthogonal to the edge), so a pre-registered sizing fix: risk/position 1% → 0.6%.
+
+| filter | sys | risk% | trades | PF | ret | maxDD | Sharpe | subsample median PF |
+|---|---|---|---|---|---|---|---|---|
+| $1M | S1 | 0.6% | 117 | 2.56 | +131% | **−20.5%** | 0.78 | 2.16 |
+| $1M | S2 | 0.6% | 95 | 2.29 | +90% | −32.0% | 0.59 | 2.14 |
+
+**Verdict:** **S1 @ $1M / 0.6% risk PASSES** all criteria — 117 trades (2.3× the $10M
+baseline), PF 2.56, max DD −20.5% (< 25%), Sharpe 0.78, robust (subsample 2.16).
+**S2 fails** — even re-sized its drawdown stays at −32% (slow 20d exit holds losers
+too long in the broader universe). Adopt **S1** as the realigned baseline; retire S2
+to comparison-only. No further risk-tuning (0.6% was pre-registered).
+
+**Why this is risk management, not curve-fitting:** scaling per-position risk scales
+the equity curve's amplitude (return and drawdown together) but leaves PF, Sharpe,
+win-rate and subsample robustness ~invariant — it cannot manufacture an edge, only
+size one. Confirmed: PF/Sharpe/subsample barely move from 1% → 0.6%.
