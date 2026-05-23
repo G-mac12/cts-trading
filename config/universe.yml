@@ -1,7 +1,9 @@
 # §4 eligibility filters. Applied point-in-time (trailing data only, no lookahead).
 exchange: KRAKEN
-min_24h_usd_volume: 10_000_000      # >= $10M (pre-registered revisit 2026-05-23: was $50M;
-                                    # $50M starved Kraken's thin USD/USDT cross-section to ~20 trades)
+min_24h_usd_volume: 1_000_000       # >= $1M. Adopted 2026-05-23 (E3): account-appropriate for a
+                                    # £2k book (£200 positions are invisible at $1M/day). $50M then
+                                    # $10M starved the cross-section; $1M ~doubled trades and improved
+                                    # PF/Sharpe/robustness. The Turtle "more markets" lever.
 liquidity_window_days: 7            # trailing median of daily USD volume used as the
                                     # liquidity proxy (more stable than a single 24h print)
 max_spread_pct: 0.30                 # <= 0.3% where data available (logged if not enforced)

@@ -15,7 +15,9 @@ strategy:
   atr_stop_mult: 2.0
   rvol_period: 20
   rvol_min: 1.5
-  risk_per_position_pct: 1.0   # 1% of equity risked per position
+  risk_per_position_pct: 0.6   # 0.6% of equity risked per position. Re-sized 2026-05-23 (E3) from
+                               # 1.0% to keep max drawdown < 25% on the broader $1M universe. Sizing
+                               # is edge-neutral (PF/Sharpe/robustness invariant) — risk control, not tuning.
   xs_momentum_lookback: 30     # 30-day return ranking
   xs_rebalance_days: 7
   xs_top_tier_frac: 0.33       # top tier of eligible universe
