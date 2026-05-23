@@ -38,7 +38,8 @@ def get_coinapi_adapter() -> DataAdapter:
 
 def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
            max_symbols: Optional[int] = None,
-           min_recent_volume_usd: float = 5_000_000.0,
+           min_recent_volume_usd: float = 0.0,
+           active_top_n: int = 120,
            refresh: bool = False) -> Tuple[Dict[str, pd.DataFrame], Dict[str, SymbolMeta]]:
     """Pull symbols + daily OHLCV into the cache, scoped to bound credit spend.
 
@@ -55,7 +56,8 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
     panel: Dict[str, pd.DataFrame] = {}
     metas: Dict[str, SymbolMeta] = {}
     manifest_syms = []
-    candidates: list = []
+    delisted_c: list = []
+    active_c: list = []
     for m in symbols:
         excluded = static_exclusion_reason(m, cfg_u)
         rec = {
@@ -66,14 +68,18 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
         manifest_syms.append(rec)
         if excluded is not None:
             continue
-        in_scope = (not m.is_active) or (m.recent_volume_usd >= min_recent_volume_usd)
-        if not in_scope:
-            rec["static_excluded"] = "below-ingest-volume"
-            continue
-        candidates.append(m)
+        if not m.is_active:
+            delisted_c.append(m)              # always keep delisted (survivorship core)
+        elif m.recent_volume_usd >= min_recent_volume_usd:
+            active_c.append(m)
 
-    # delisted first (is_active False sorts before True), then most-liquid actives.
-    candidates.sort(key=lambda m: (m.is_active, -m.recent_volume_usd))
+    # Scope actives by volume RANK, not an absolute floor: CoinAPI's volume_1day_usd
+    # is cumulative-since-00:00-UTC, so absolute levels swing with time of day, but the
+    # relative ranking (which coins are biggest) is stable. The backtest's point-in-time
+    # filter then selects on HISTORICAL volume.
+    active_c.sort(key=lambda m: -m.recent_volume_usd)
+    kept_active = active_c[:active_top_n]
+    candidates = delisted_c + kept_active     # delisted first (protect survivorship)
     if max_symbols is not None:
         candidates = candidates[:max_symbols]
 
@@ -108,6 +114,7 @@ def ingest(adapter: DataAdapter, cache: Cache, start: date, end: date,
         "exchange": cfg_u.get("exchange"),
         "range": [start, end],
         "min_recent_volume_usd": min_recent_volume_usd,
+        "active_top_n": active_top_n,
         "symbol_count_total": len(symbols),
         "symbol_count_pulled": len(panel),
         "request_cost_credits": getattr(adapter, "total_request_cost", None),

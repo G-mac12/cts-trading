@@ -1,6 +1,7 @@
 # §4 eligibility filters. Applied point-in-time (trailing data only, no lookahead).
 exchange: KRAKEN
-min_24h_usd_volume: 50_000_000      # >= $50M
+min_24h_usd_volume: 10_000_000      # >= $10M (pre-registered revisit 2026-05-23: was $50M;
+                                    # $50M starved Kraken's thin USD/USDT cross-section to ~20 trades)
 liquidity_window_days: 7            # trailing median of daily USD volume used as the
                                     # liquidity proxy (more stable than a single 24h print)
 max_spread_pct: 0.30                 # <= 0.3% where data available (logged if not enforced)
