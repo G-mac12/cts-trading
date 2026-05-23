@@ -37,6 +37,11 @@ def main() -> None:
     print("\n" + md)
     print(f"\nWrote {PAPER_DIR / 'PAPER_STATUS.md'}, paper_snapshot.json, paper_runs.csv")
 
+    # Optional heartbeat (no-op unless Telegram is configured) — for hands-off runs.
+    from cts.notify import paper_summary_line, send
+    if send(paper_summary_line(report)):
+        print("Sent Telegram heartbeat.")
+
 
 if __name__ == "__main__":
     main()
