@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from cts.strategy.signals import breakout_signal
+from cts.strategy.signals import breakout_signal, pullback_signal
 
 
 def _idx(n):
@@ -40,3 +40,19 @@ def test_breakout_needs_strict_break():
     )
     sig = breakout_signal(df, n_entry=3, rvol_period=2, rvol_min=1.0)
     assert bool(sig.iloc[3]) is False
+
+
+def test_pullback_fires_on_dip_and_recover_in_uptrend():
+    # close dips to/below the 2-day MA at idx5 then closes back above it (and above the
+    # 3-day trend MA) at idx6 -> pullback entry only at idx6.
+    close = [10, 11, 12, 13, 14, 13, 15]
+    df = pd.DataFrame({"close": close}, index=_idx(7))
+    sig = pullback_signal(df, ma_trend=3, ma_pull=2)
+    assert bool(sig.iloc[6]) is True
+    assert sig.sum() == 1
+
+
+def test_pullback_needs_uptrend():
+    # steadily falling: never above the trend MA -> never fires
+    df = pd.DataFrame({"close": [20, 19, 18, 17, 16, 15, 14]}, index=_idx(7))
+    assert pullback_signal(df, ma_trend=3, ma_pull=2).sum() == 0

@@ -32,7 +32,7 @@ from cts.engine.slippage import SlippageModel
 from cts.indicators import atr as atr_ind
 from cts.strategy.exits import donchian_exit_signal
 from cts.strategy.regime import regime_on
-from cts.strategy.signals import breakout_signal
+from cts.strategy.signals import breakout_signal, pullback_signal
 from cts.strategy.sizing import position_units
 
 _MIN_NOTIONAL = 1.0  # USD; below this an entry is not worth opening
@@ -50,6 +50,9 @@ class StrategyParams:
     regime_ma_short: int = 50
     regime_ma_long: int = 100
     regime_exit: bool = False  # chop-fix: when regime flips off, exit open positions (next open)
+    pullback_entry: bool = False     # add pullback-in-uptrend as a 2nd entry trigger
+    pullback_ma_trend: int = 50
+    pullback_ma_pull: int = 10
 
 
 @dataclass
@@ -73,6 +76,8 @@ def _build_features(panel: Dict[str, pd.DataFrame], dates: pd.DatetimeIndex, p: 
     feat: Dict[str, pd.DataFrame] = {}
     for sym, df in panel.items():
         entry_sig = breakout_signal(df, p.n_entry, p.rvol_period, p.rvol_min)
+        if p.pullback_entry:
+            entry_sig = entry_sig | pullback_signal(df, p.pullback_ma_trend, p.pullback_ma_pull)
         exit_sig = donchian_exit_signal(df, p.n_exit)
         atr_s = atr_ind(df["high"], df["low"], df["close"], p.atr_period)
         f = pd.DataFrame(
