@@ -83,3 +83,44 @@ to comparison-only. No further risk-tuning (0.6% was pre-registered).
 the equity curve's amplitude (return and drawdown together) but leaves PF, Sharpe,
 win-rate and subsample robustness ~invariant — it cannot manufacture an edge, only
 size one. Confirmed: PF/Sharpe/subsample barely move from 1% → 0.6%.
+
+---
+
+## S3 — Daily cross-sectional momentum rotation · 2026-05-24 · **FAILED → RETIRED**
+
+A separate parallel track (NOT a change to S1): rank a broad segmented universe daily
+by risk-adjusted relative strength (90d return/vol, skip-7) and rotate into a dynamic
+top-6 (max 2/segment, hysteresis buffer), regime-gated to cash, equal-weight, net of
+Kraken-Pro taker + ADV-proxy slippage. Universe: $1M floor, ~30 names, 7 segments,
+survivorship-clean incl. delisted. Spec: `S3_SPEC.md`. Gate locked in code before the
+run (`scripts/s3_gate.py`): net OOS PF ≥ 1.3 · Sharpe ≥ 0.78 · maxDD ≤ −25% · lower-CI
+net PF > 1.0 · S3↔S1 correlation < 0.6 · survive 2× slippage · sweep-robust.
+
+**Full-period SMOKE (in-sample, NOT the verdict):** +705%, PF 2.23 — looked great.
+
+**Held-out OOS (2023-01 → 2026-05; deployment sized to 45% on IS to target 25% DD):**
+
+| metric | value | bar | pass |
+|---|---|---|---|
+| trades | 306 — but **N_eff ≈ 1.9** (ρ̄ 0.52) | — | — |
+| net PF | 1.27, **CI [0.70, 2.13]** | ≥1.3 / lower-CI>1.0 | ❌ / ❌ |
+| Sharpe | 0.21, CI [−0.73, 1.12] | ≥0.78 | ❌ |
+| max DD | **−30.4%** | ≤−25% | ❌ |
+| 2× slippage PF | 1.24 | ≥1.3 | ❌ |
+| sweep median PF | 1.22 (9 combos) | ≥1.3 | ❌ |
+| **S3↔S1 corr** | **0.71** | <0.6 | ❌ |
+
+**Verdict: RETIRE (failed all 7).** Why, honestly:
+- The smoke's +705% was **in-sample**, dominated by the 2021 bull. Out-of-sample, net of
+  cost and honestly sized, the edge is weak and noisy.
+- **Lower CI of net PF = 0.70 (< 1.0)** — the spec's explicit "apparent edge is noise"
+  retire trigger.
+- **N_eff ≈ 1.9**: 306 nominal trades are ~2 independent bets (ρ̄ 0.52) → the CIs are huge.
+- **S3↔S1 correlation 0.71** — even though S3 does NOT hold the same names (majors only
+  24%, held/universe vol ratio 1.08, low-vol-majors-hug FALSE), its equity co-moves with
+  S1 because crypto correlates in risk-on/off. So S3 adds cost + drawdown without adding
+  diversification.
+
+Did **not** loosen any signal/threshold to rescue it. The S3 harness (`src/cts/s3/`,
+`scripts/s3_*.py`) stays in the repo as a tested, **retired** reference — it is **not**
+wired into the paper-trader or dashboard. S1 untouched throughout.

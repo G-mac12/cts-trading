@@ -15,7 +15,7 @@ import pandas as pd
 
 def realized_vol(close: pd.Series, window: int, skip: int = 0) -> pd.Series:
     """Std of daily returns over `window` bars ending `skip` days ago."""
-    daily = close.pct_change()
+    daily = close.pct_change(fill_method=None)
     return daily.shift(skip).rolling(window, min_periods=max(2, window // 2)).std()
 
 

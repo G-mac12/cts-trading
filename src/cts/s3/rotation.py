@@ -87,7 +87,7 @@ def run_s3(panel: Dict[str, pd.DataFrame], btc_close: pd.Series, universe: S3Uni
         return S3Result(empty, empty, [], {}, empty, {})
 
     close_wide = pd.DataFrame({s: df["close"] for s, df in panel.items()}).reindex(dates).ffill()
-    ret_wide = close_wide.pct_change()
+    ret_wide = close_wide.pct_change(fill_method=None)
     sig_wide = pd.DataFrame(
         {s: risk_adjusted_momentum(df["close"], params.lookback_days, params.skip_days, params.vol_window_days)
          for s, df in panel.items()}).reindex(dates)
