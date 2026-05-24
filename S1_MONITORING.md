@@ -6,7 +6,7 @@ data exists, so that future-me cannot move the goalposts after seeing a good or 
 This is the discipline that saved us on S2, the pullback experiment, and S3: decide the
 bar first, then read the result honestly.
 
-**One-line summary:** S1 trades rarely (~14/yr, clustered in bull bursts). That means
+**One-line summary:** S1 trades rarely (~16/yr, clustered in bull bursts). That means
 **early live numbers are mostly noise.** Do not act on PF, Sharpe, or a single drawdown
 until enough *independent* trades have closed. Most of this sheet is about **not**
 over-reacting.
@@ -15,28 +15,39 @@ over-reacting.
 
 ## 0. The validated backtest baseline (the reference we measure against)
 
-From experiment **E3** (`EXPERIMENTS.md`), S1 @ $1M liquidity floor / 0.6% risk, 8-year
-survivorship-clean OOS:
+S1 @ $1M liquidity floor / 0.6% risk, 8-year survivorship-clean OOS, measured on the
+**complete 341-coin cache** (this is the re-baselined, honest reference — see note below):
 
 | metric | backtest reference |
 |---|---|
-| profit factor | **2.56** |
-| max drawdown | **−20.5%** |
-| Sharpe | **0.78** |
-| trades | ~117 over 8y → **~14/yr** |
-| subsample-median PF | 2.16 |
+| profit factor | **2.23** |
+| max drawdown | **−25.6%** |
+| Sharpe | **0.71** |
+| trades | ~129 over 8y → **~16/yr** |
+| subsample-median PF | 1.99 |
 | §9 acceptance floor | PF > 1.5 · maxDD < 25% · Sharpe > 0 |
+
+> **Re-baselined 2026-05-24.** The earlier reference (PF 2.56 / DD −20.5% / Sharpe 0.78)
+> came from a 157-coin ingest that had *missed* ~36 legitimately ≥$1M-eligible names
+> (2023–25 alts: ARB, ONDO, TIA, SUI, ENA, AERO…). On the complete 341-coin cache those
+> names — which S1 *would* have traded live — are included; most stopped out in 2024–25
+> chop, so the honest numbers are **softer** (2.23 / −25.6%). This is correcting a
+> measurement to the honest one, not a change to the system. See `S1_ROBUSTNESS.md` §5b.
+> **Note the drawdown now slightly exceeds the §9 25% line at 0.6% risk** — that is a
+> *separate, parked decision* (b): risk-sizing is **edge-neutral** (per the audit), so
+> 0.6%→0.4% is purely a drawdown/return tradeoff (≈−25.6% vs ≈−19%, return ≈+117% vs +72%),
+> **not** an edge improvement. It will be decided on its own terms later. **No change now.**
 
 > These are *backtest* numbers on historical data. Live will be **worse** than backtest
 > almost by definition (slippage realism, regime luck, no hindsight on the universe). The
-> job of monitoring is not "does live equal 2.56" — it is "is live *consistent with the
+> job of monitoring is not "does live equal 2.23" — it is "is live *consistent with the
 > same edge*, or has the edge broken?"
 
 ---
 
 ## 1. The power problem — how many trades before live-vs-backtest means anything
 
-S1 closes **~14 trades/year**, and they are **not independent**: entries cluster in the
+S1 closes **~16 trades/year**, and they are **not independent**: entries cluster in the
 same BTC bull bursts and the book holds ≤5 names at once, so they rise and fall together.
 S3 showed this concretely — 306 nominal trades behaved like **~2 independent bets**
 (ρ̄ 0.52, N_eff 1.9). S1 will be milder (different exits, ≤5 concurrent) but the same
@@ -58,12 +69,12 @@ independent bets, not 30. **Do not promote paper→live, or retire S1, on < 30 t
 
 ## 2. Profit-factor tripwires (only once ≥ 30 closed trades)
 
-Backtest PF = 2.56. Live degradation is expected; collapse is not.
+Backtest PF = 2.23 (re-baselined). Live degradation is expected; collapse is not.
 
 | live PF (rolling, ≥30 trades) | reading | action |
 |---|---|---|
-| **≥ 1.8** | consistent with the edge | none — running as designed |
-| **1.3 – 1.8** | softer than backtest, still a real edge (above §9 floor of 1.5-ish) | note it; keep running; widen the sample |
+| **≥ 1.7** | consistent with the edge | none — running as designed |
+| **1.3 – 1.7** | softer than backtest, still a real edge (around the §9 1.5 floor) | note it; keep running; widen the sample |
 | **1.0 – 1.3** | edge has materially weakened; at/under the §9 acceptance floor | **investigate** — is it regime (bear/chop drag, expected) or signal decay (not)? Pause any live-scaling. |
 | **< 1.0 over ≥30 trades** | losing money net of cost — the backtest edge is not showing up live | **stop trusting S1**: halt promotion to live / size down live; full review before continuing |
 
@@ -75,21 +86,26 @@ trades), not the signal breaking. Decompose by regime before concluding.
 
 ## 3. Drawdown tripwires (live, from peak equity)
 
-Backtest worst drawdown = **−20.5%**. The §9 hard limit = **−25%**.
+Backtest worst drawdown (re-baselined) = **−25.6%** at 0.6% risk. Note this is itself a
+hair past the §9 −25% line — see the parked decision (b) below; bands are set against the
+**actual −25.6% backtest envelope** we run at today.
 
 | live drawdown | band | action |
 |---|---|---|
-| **0 to −15%** | **normal** — within routine backtest experience | none |
-| **−15% to −20.5%** | **elevated** but still inside the backtested envelope | watch closely; confirm regime filter is behaving (§4); no new risk-scaling |
-| **−20.5% to −25%** | **alarming** — worse than anything in the 8-year backtest | **review now**: pause any plan to add capital; verify it's market-driven, not a bug (stops firing? regime exits working?) |
-| **beyond −25%** | **breach** — through the §9 acceptance limit | **halt**: stop promotion to live / cut live size; treat the edge as unproven until explained |
+| **0 to −18%** | **normal** — within routine backtest experience | none |
+| **−18% to −25.6%** | **elevated** but still inside the backtested envelope | watch closely; confirm regime filter is behaving (§4); no new risk-scaling |
+| **−25.6% to −30%** | **alarming** — worse than the worst 8-year backtest | **review now**: pause any plan to add capital; verify it's market-driven, not a bug (stops firing? regime exits working?) |
+| **beyond −30%** | **breach** — well past anything backtested | **halt**: stop promotion to live / cut live size; treat the edge as unproven until explained |
 
-Drawdown is the **fastest** real signal (you don't need 30 trades to see a −25% drop), so
+Drawdown is the **fastest** real signal (you don't need 30 trades to see a −30% drop), so
 it gets a hard line even when the trade count is still too low for a PF verdict.
 
-> Note: per-position risk (0.6%) sets the *amplitude* of drawdown, not the edge. If live
-> DD is uncomfortable but PF/behaviour are fine, the correct lever is **smaller risk %**
-> (edge-neutral), not changing the signal. See the risk-sweep in `S1_ROBUSTNESS.md`.
+> **Parked decision (b) — risk sizing.** Per-position risk (0.6%) sets the *amplitude* of
+> drawdown, not the edge: the audit confirms PF/Sharpe are ~flat across 0.4–1.0% while
+> return & drawdown scale. So cutting risk **0.6%→0.4%** would re-seat the backtest DD to
+> ≈−19% (back under the §9 25% line) at the cost of return (≈+72% vs +117%) — a pure
+> drawdown/return tradeoff, **not** an edge improvement. **This is a separate pre-registered
+> decision, not made now; S1 runs at 0.6%.** See the risk-sweep in `S1_ROBUSTNESS.md` §5.
 
 ---
 
@@ -109,7 +125,7 @@ regardless of trade count.
   rides far below its stop without exiting = **bug**.
 - **≤ 5 concurrent positions, ≤ 50% deployed.** If the book exceeds either, the
   portfolio constraints are broken = **bug**.
-- **Trade cadence sanity.** ~14/yr *on average*, bursty. A whole **bull** market (regime
+- **Trade cadence sanity.** ~16/yr *on average*, bursty. A whole **bull** market (regime
   on for months) with near-zero entries would be suspect (signal/universe wiring); a quiet
   **bear** is not.
 
@@ -121,7 +137,7 @@ regardless of trade count.
 - A single month of negative return.
 - PF/Sharpe wobble under 30 closed trades.
 - No trades for a few months while the regime is off.
-- Live trailing backtest's 2.56 — it *should* trail. Only a *collapse* (§2) matters.
+- Live trailing backtest's 2.23 — it *should* trail. Only a *collapse* (§2) matters.
 
 ---
 

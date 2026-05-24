@@ -199,10 +199,13 @@ extra names are real members of S1's ≥$1M live universe, so the 341 number mus
 filed as "informational over a non-traded superset." Instead, the **157-coin 2.56 / −20.5%
 was mildly survivorship-optimistic** (its ingest under-sampled the eligible universe), and
 the **341-coin 2.23 / −25.6% is the more complete, more honest estimate** of S1's live
-behaviour. The committed FINDINGS baseline therefore warrants updating to the 341 numbers —
-**flagged for your decision; no baseline rewrite or risk change made** (we're in a hold).
-The drawdown crossing 25% at 0.6% risk is the same discussion: the edge-neutral fix is a
-smaller risk % (0.4% → −19.0% here), to decide separately with a fresh go-ahead.
+behaviour. **Decision (a): DONE** — the committed `FINDINGS.md` is re-baselined to the 341
+numbers (PF 2.23 / DD −25.6% / Sharpe 0.71, subsample median 1.99) and fully regenerated for
+consistency. At 0.6% risk the −25.6% drawdown fails the §9 `<25%` gate by 0.6pp, so the
+**mechanical verdict is now NO-GO**; FINDINGS represents it as **CONDITIONAL on decision (b)**
+(0.6% → fails by 0.6pp; 0.4% → passes at ≈−19%; same edge, different dial) — the gate is
+respected, not overridden. **Decision (b) stays PARKED** — risk is unchanged at 0.6%; it is
+decided cold and separately, never to flip a gate.
 
 ---
 
@@ -221,8 +224,13 @@ is logged here and folded into `S1_MONITORING.md` — specifically, *expect PF ~
 ordinary years and only headline numbers in trend years*. The cache/baseline question is
 **resolved** (§5b): S1 trades no sub-$1M names, but the broader cache is a *more complete*
 view of its real ≥$1M universe, so **2.23 / −25.6% is the more honest baseline** and the
-157-coin 2.56 was mildly optimistic. Two items are now **flagged for your decision** (no
-action taken): (a) updating the committed FINDINGS baseline to the 341 numbers; (b) whether
-to re-seat drawdown under the §9 25% line via the edge-neutral risk lever (0.4% → −19.0%).
-Any actual change to S1 — including those two and wiring `regime_exit` — remains a separate,
+157-coin 2.56 was mildly optimistic. Status of the two flagged items:
+- **(a) DONE** — `FINDINGS.md` re-baselined to the 341 numbers and regenerated; verdict is
+  **mechanical NO-GO, represented as CONDITIONAL on (b)** (the §9 DD gate is sizing-dependent
+  and risk is edge-neutral). `S1_MONITORING.md` now references 2.23 / −25.6%.
+- **(b) PARKED** — whether to re-seat drawdown under the §9 25% line via the edge-neutral risk
+  lever (0.4% → −19.0%) is a *separate* pre-registered decision, taken cold on its own terms,
+  **not** to flip the gate. Risk stays at 0.6% now.
+
+Any actual change to S1 — including (b) and wiring `regime_exit` — remains a separate,
 pre-registered decision requiring your go-ahead.
