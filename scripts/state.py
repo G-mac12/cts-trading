@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-"""Generate STATE.md — a single, daily-auto-updated snapshot of the live system for
-brainstorming/Project sync: current paper status + validated metrics + a change log
-(recent commits) + links. Regenerated and committed by the daily GitHub Action, so
-the file is always current with no manual action.
+"""Generate docs/PROJECT_CONTEXT.md — a single, daily-auto-updated snapshot of the
+live system for brainstorming / Claude.ai Project sync (mirrors the GTS pattern):
+current paper status + validated metrics + a change log (recent commits) + links.
+Regenerated and committed by the daily GitHub Action, so the repo copy is always
+current with no manual action.
 
   python scripts/state.py
 """
@@ -38,7 +39,7 @@ def _changelog(n: int = 15) -> str:
 def main() -> None:
     paper = _load(ROOT / "data" / "paper" / "paper_snapshot.json")
     analysis = _load(ROOT / "data" / "analysis.json")
-    L = ["# CTS — Live State (auto-updated daily)\n"]
+    L = ["# CTS — Project Context (auto-updated daily)\n"]
     L.append(f"_Generated {datetime.now(timezone.utc).isoformat(timespec='seconds')} · "
              "SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_\n")
 
@@ -70,8 +71,10 @@ def main() -> None:
     L.append("## More")
     L.append("- Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`")
 
-    (ROOT / "STATE.md").write_text("\n".join(L) + "\n")
-    print("Wrote STATE.md")
+    out = ROOT / "docs" / "PROJECT_CONTEXT.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text("\n".join(L) + "\n")
+    print(f"Wrote {out}")
 
 
 if __name__ == "__main__":

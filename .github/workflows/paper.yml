@@ -48,18 +48,18 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/run_paper.py --update
 
-      - name: Build dashboard + state file
+      - name: Build dashboard + project context
         run: |
           python scripts/dashboard.py
           python scripts/state.py
 
-      - name: Commit the day's record + dashboard + state
+      - name: Commit the day's record + dashboard + context
         run: |
           git config user.name "cts-bot"
           git config user.email "cts-bot@users.noreply.github.com"
           git add data/paper/PAPER_STATUS.md data/paper/paper_runs.csv \
                   data/paper/paper_state.json data/paper/paper_snapshot.json \
-                  docs/index.html STATE.md 2>/dev/null || true
+                  docs/index.html docs/PROJECT_CONTEXT.md 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

@@ -1,6 +1,6 @@
-# CTS — Live State (auto-updated daily)
+# CTS — Project Context (auto-updated daily)
 
-_Generated 2026-05-24T09:06:41+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
+_Generated 2026-05-24T09:17:32+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
 
 ## Paper status (forward, simulated)
 - As of **2026-05-23** (paper started 2026-05-22).
@@ -13,6 +13,7 @@ _Generated 2026-05-24T09:06:41+00:00 · SIMULATED — no real money · dashboard
 - **System S1**: profit factor 2.56 · max DD -20.5% · Sharpe 0.78 · 117 trades.
 
 ## Recent changes (log)
+- 2026-05-24 — state: daily auto-updated STATE.md (status + change log) for Project sync
 - 2026-05-24 — docs: add SYSTEM_OVERVIEW.md — single-page current-state map for brainstorming/Projects
 - 2026-05-24 — pages: add .nojekyll for plain-HTML serving
 - 2026-05-24 — dashboard: auto-refresh every 5s
@@ -27,7 +28,6 @@ _Generated 2026-05-24T09:06:41+00:00 · SIMULATED — no real money · dashboard
 - 2026-05-23 — dashboard: self-contained local HTML view of backtest + paper status
 - 2026-05-23 — adopt realigned baseline: $1M eligibility floor + 0.6% per-position risk
 - 2026-05-23 — experiments: E3 result — S1 @ $1M / 0.6% risk PASSES (realigned baseline)
-- 2026-05-23 — experiment E3: liquidity-floor sweep ($50M/$10M/$1M), pre-registered
 
 ## More
 - Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`
