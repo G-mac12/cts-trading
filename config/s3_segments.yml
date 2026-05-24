@@ -1,0 +1,35 @@
+# S3 segment map: base asset -> segment. Drives the per-segment position cap and the
+# rho-bar (correlation) reduction that segmentation exists for. Spec's 6 segments plus
+# gaming_nft (a genuinely distinct demand driver). Goal: ~100% of the eligible ($1M+)
+# universe classified; anything left "other" is flagged, not silently allowed.
+segments:
+  majors: [BTC, XBT, ETH]
+
+  # L1 includes L2 scaling chains (ARB/OPTIM) — same demand driver for ranking purposes.
+  L1: [SOL, ADA, AVAX, DOT, NEAR, ATOM, ALGO, APT, SUI, TON, TRX, FTM, S, SEI, INJ, TIA,
+        KAS, ICP, EGLD, HBAR, XLM, LTC, BCH, ETC, KAVA, MINA, FLOW, EOS, WAVES, LUNA, LUNA2,
+        LUNC, ROSE, CRO, XTZ, NEO, ZIL, ONE, QTUM, IOTA, KSM, GLMR, MOVR, ASTR, CELO, KDA,
+        XDC, CORE, BERA, MOVE, MNT, STX, SCROLL, TARA, CHEEL, OMNI, DYM, SAGA, ALEPH, ZETA,
+        ARB, OPTIM, FLR, NANO, XRP]
+
+  DeFi: [UNI, AAVE, MKR, SKY, CRV, COMP, SNX, LDO, SUSHI, GMX, DYDX, PENDLE, JUP, RUNE, CAKE,
+          1INCH, BAL, YFI, ENA, AERO, MORPHO, RAY, JTO, ETHFI, EIGEN, SPELL, KNC, ZRX, LRC,
+          BNT, OSMO, KUJI, UMA, RPL, FXS, CVX, GMT, DRIFT, KMNO, HFT, SD, ALCX, BADGER]
+
+  RWA_infra: [ONDO, LINK, FIL, AR, RNDR, RENDER, GRT, THETA, HNT, AKT, FET, TAO, OCEAN, IOTX,
+               ANKR, STORJ, QNT, POL, MATIC, ENS, BAND, API3, NMR, RLC, LPT, GLM, FLUX, NOS,
+               DIMO, PYTH, W, ZRO, ATH, AIOZ, LPT, COTI, CTSI, POND, ARKM, MASK, HONEY, USUAL,
+               PLUME, KAITO, VIRTUAL, AI16Z, GRASS, IO, AERGO, NTRN, BAT, JASMY]
+
+  privacy: [XMR, ZEC, DASH, SCRT, ZEN, ARRR]
+
+  meme: [DOGE, SHIB, PEPE, WIF, BONK, FLOKI, USELESS, BANANAS31, MEW, POPCAT, TURBO, BRETT,
+          TRUMP, FARTCOIN, VVV, MOG, PNUT, GIGA, GOAT, SPX, WEN, BOME, MELANIA, PENGU, MOODENG,
+          ACT, CHILLGUY, NEIRO, DEGEN, MICHI, SLERF, BODEN, MUMU]
+
+  gaming_nft: [SAND, MANA, AXS, IMX, GALA, APE, BLUR, RON, PRIME, BIGTIME, ILV, PIXEL, YGG,
+                GHST, ALICE, TLM, BEAM, PORTAL, NAKA, SUPER, MAGIC, GODS]
+
+# Excluded from S3's universe — fiat / stablecoin / commodity-peg, not momentum-crypto
+# (these leak past S1's stablecoin filter; S3 drops them explicitly).
+exclude: [GBP, ZAUD, ZUSD, ZEUR, ZGBP, ZCAD, ZJPY, USDG, PAXG, EURQ, USDQ, AUD, EUR, USD]

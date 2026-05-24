@@ -11,25 +11,16 @@ from __future__ import annotations
 
 import pandas as pd
 
-from cts.config import ROOT, backtest_config
+import yaml
+
+from cts.config import CONFIG_DIR, ROOT, backtest_config
 from cts.data.cache import Cache
 from cts.pipeline import load_cached
 
-# First-pass segment map (base asset -> segment). Refine later; unmapped = "other".
-SEGMENTS = {
-    "majors": ["BTC", "XBT", "ETH"],
-    "L1": ["SOL", "ADA", "AVAX", "DOT", "NEAR", "ATOM", "ALGO", "APT", "SUI", "TON", "TRX",
-            "FTM", "S", "SEI", "INJ", "TIA", "KAS", "ICP", "EGLD", "HBAR", "XLM", "LTC",
-            "BCH", "ETC", "KAVA", "MINA", "FLOW", "EOS", "WAVES", "LUNA", "LUNA2", "ROSE", "CRO"],
-    "DeFi": ["UNI", "AAVE", "MKR", "CRV", "COMP", "SNX", "LDO", "SUSHI", "GMX", "DYDX",
-              "PENDLE", "JUP", "RUNE", "CAKE", "1INCH", "BAL", "YFI", "ENA", "AERO"],
-    "RWA_infra": ["ONDO", "LINK", "FIL", "AR", "RNDR", "RENDER", "GRT", "THETA", "HNT", "AKT",
-                   "FET", "TAO", "OCEAN", "IOTX", "ANKR", "STORJ", "QNT", "POL", "MATIC"],
-    "privacy": ["XMR", "ZEC", "DASH", "SCRT"],
-    "meme": ["DOGE", "SHIB", "PEPE", "WIF", "BONK", "FLOKI", "USELESS", "BANANAS31", "MEW",
-              "POPCAT", "TURBO", "BRETT", "TRUMP", "FARTCOIN", "VVV"],
-}
-BASE_TO_SEG = {b: seg for seg, bs in SEGMENTS.items() for b in bs}
+_SEG_CFG = yaml.safe_load((CONFIG_DIR / "s3_segments.yml").read_text())
+SEGMENTS = _SEG_CFG["segments"]
+BASE_TO_SEG = {b.upper(): seg for seg, bs in SEGMENTS.items() for b in bs}
+EXCLUDE = {b.upper() for b in _SEG_CFG.get("exclude", [])}
 
 FLOORS = [0.5e6, 1e6, 2e6, 5e6, 10e6, 25e6, 50e6, 100e6]
 SNAPSHOTS = ["2021-11-10", "2022-11-10", "2023-11-10", "2024-12-15", "2025-11-10", "2026-05-23"]
@@ -49,6 +40,8 @@ def main() -> None:
         d = pd.Timestamp(date_str, tz="UTC")
         names = []
         for s, series in adv.items():
+            if metas[s].base.upper() in EXCLUDE:        # fiat/stable/commodity — not S3 universe
+                continue
             s_upto = series[series.index <= d].dropna()
             if s_upto.empty:
                 continue
@@ -79,15 +72,24 @@ def main() -> None:
           "coins liquid TODAY (+37 delisted). Recent columns are the reliable ones; for honest "
           "historical breadth we'd ingest more names (flag).\n")
 
-    # segment breakdown at two candidate floors, latest date
-    for f in (1e6, 5e6):
-        names = latest_by_floor[f]
-        seg_counts: dict = {}
-        for s in names:
-            seg = BASE_TO_SEG.get(metas[s].base, "other")
-            seg_counts[seg] = seg_counts.get(seg, 0) + 1
-        print(f"Segment breakdown at ${f/1e6:.0f}M floor (latest, {len(names)} names): "
-              + ", ".join(f"{k}={v}" for k, v in sorted(seg_counts.items())))
+    # segment breakdown at the $1M floor (latest)
+    names = latest_by_floor[1e6]
+    seg_counts: dict = {}
+    for s in names:
+        seg = BASE_TO_SEG.get(metas[s].base.upper(), "other")
+        seg_counts[seg] = seg_counts.get(seg, 0) + 1
+    print(f"Segment breakdown at $1M floor (latest, {len(names)} names): "
+          + ", ".join(f"{k}={v}" for k, v in sorted(seg_counts.items())))
+
+    # union of every base that EVER clears $1M across the snapshots, and which are unclassified
+    union_bases = set()
+    for d in SNAPSHOTS:
+        for s in count_at(d, 1e6):
+            union_bases.add(metas[s].base.upper())
+    unclassified = sorted(b for b in union_bases if b not in BASE_TO_SEG)
+    print(f"\nEligible bases ever clearing $1M across snapshots: {len(union_bases)}")
+    print(f"UNCLASSIFIED ({len(unclassified)}, {100*len(unclassified)/max(len(union_bases),1):.0f}%): "
+          + (", ".join(unclassified) if unclassified else "none — 100% classified"))
 
 
 if __name__ == "__main__":

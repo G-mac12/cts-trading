@@ -4,13 +4,13 @@
   "exchange": "KRAKEN",
   "range": [
     "2018-01-01",
-    "2026-05-23"
+    "2026-05-24"
   ],
   "min_recent_volume_usd": 0.0,
-  "active_top_n": 120,
+  "active_top_n": 300,
   "symbol_count_total": 945,
-  "symbol_count_pulled": 157,
-  "request_cost_credits": 954,
+  "symbol_count_pulled": 337,
+  "request_cost_credits": 1419,
   "truncated": null,
   "skipped": [],
   "symbols": [
@@ -21,7 +21,7 @@
       "data_start": "2014-01-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 45667466.42,
+      "recent_volume_usd": 126900191.21,
       "static_excluded": null
     },
     {
@@ -31,7 +31,7 @@
       "data_start": "2014-06-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1440367.41,
+      "recent_volume_usd": 1090948.67,
       "static_excluded": null
     },
     {
@@ -41,7 +41,7 @@
       "data_start": "2015-08-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4835150.09,
+      "recent_volume_usd": 16082827.81,
       "static_excluded": null
     },
     {
@@ -51,7 +51,7 @@
       "data_start": "2016-07-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 35238.55,
+      "recent_volume_usd": 91023.43,
       "static_excluded": null
     },
     {
@@ -61,7 +61,7 @@
       "data_start": "2016-10-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 231.13,
+      "recent_volume_usd": 65.98,
       "static_excluded": null
     },
     {
@@ -71,7 +71,7 @@
       "data_start": "2016-11-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6533528.41,
+      "recent_volume_usd": 23636092.39,
       "static_excluded": null
     },
     {
@@ -81,7 +81,7 @@
       "data_start": "2017-01-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 715265.97,
+      "recent_volume_usd": 2803693.24,
       "static_excluded": null
     },
     {
@@ -91,7 +91,7 @@
       "data_start": "2017-01-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 355562.4,
+      "recent_volume_usd": 506731.62,
       "static_excluded": null
     },
     {
@@ -101,7 +101,7 @@
       "data_start": "2017-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6978924.94,
+      "recent_volume_usd": 27962022.71,
       "static_excluded": "stablecoin"
     },
     {
@@ -111,7 +111,7 @@
       "data_start": "2017-04-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1063866.45,
+      "recent_volume_usd": 963821.24,
       "static_excluded": null
     },
     {
@@ -121,7 +121,7 @@
       "data_start": "2017-05-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 548.08,
+      "recent_volume_usd": 1610.86,
       "static_excluded": null
     },
     {
@@ -131,7 +131,7 @@
       "data_start": "2017-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6016335.78,
+      "recent_volume_usd": 11406153.06,
       "static_excluded": null
     },
     {
@@ -141,7 +141,7 @@
       "data_start": "2017-08-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 462350.88,
+      "recent_volume_usd": 473521.0,
       "static_excluded": null
     },
     {
@@ -151,7 +151,7 @@
       "data_start": "2018-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 766108.89,
+      "recent_volume_usd": 1747980.73,
       "static_excluded": null
     },
     {
@@ -161,7 +161,7 @@
       "data_start": "2018-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1511.38,
+      "recent_volume_usd": 18026.4,
       "static_excluded": null
     },
     {
@@ -171,7 +171,7 @@
       "data_start": "2018-10-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14344.08,
+      "recent_volume_usd": 19670.36,
       "static_excluded": null
     },
     {
@@ -181,7 +181,7 @@
       "data_start": "2019-04-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 236890.34,
+      "recent_volume_usd": 299553.88,
       "static_excluded": null
     },
     {
@@ -191,7 +191,7 @@
       "data_start": "2019-08-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4319.48,
+      "recent_volume_usd": 24325.67,
       "static_excluded": null
     },
     {
@@ -201,7 +201,7 @@
       "data_start": "2019-09-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19516.34,
+      "recent_volume_usd": 17591.01,
       "static_excluded": null
     },
     {
@@ -211,7 +211,7 @@
       "data_start": "2019-09-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 469531.55,
+      "recent_volume_usd": 4529972.35,
       "static_excluded": null
     },
     {
@@ -221,7 +221,7 @@
       "data_start": "2019-09-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 193360.65,
       "static_excluded": "stablecoin"
     },
     {
@@ -231,7 +231,7 @@
       "data_start": "2019-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11941.99,
+      "recent_volume_usd": 58612.31,
       "static_excluded": "stablecoin"
     },
     {
@@ -241,7 +241,7 @@
       "data_start": "2019-10-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14512.01,
+      "recent_volume_usd": 957.32,
       "static_excluded": null
     },
     {
@@ -251,7 +251,7 @@
       "data_start": "2019-10-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 45356.94,
+      "recent_volume_usd": 997651.58,
       "static_excluded": null
     },
     {
@@ -261,7 +261,7 @@
       "data_start": "2019-10-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20309.02,
+      "recent_volume_usd": 6092.33,
       "static_excluded": null
     },
     {
@@ -271,7 +271,7 @@
       "data_start": "2019-11-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8613.07,
+      "recent_volume_usd": 42108.09,
       "static_excluded": null
     },
     {
@@ -281,7 +281,7 @@
       "data_start": "2019-11-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 180034.79,
+      "recent_volume_usd": 5789.81,
       "static_excluded": null
     },
     {
@@ -291,7 +291,7 @@
       "data_start": "2019-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1600412.49,
+      "recent_volume_usd": 5537733.66,
       "static_excluded": null
     },
     {
@@ -301,7 +301,7 @@
       "data_start": "2019-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4320358.95,
+      "recent_volume_usd": 2880523.6,
       "static_excluded": null
     },
     {
@@ -311,7 +311,7 @@
       "data_start": "2019-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 280072.28,
+      "recent_volume_usd": 2985756.49,
       "static_excluded": null
     },
     {
@@ -321,7 +321,7 @@
       "data_start": "2019-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13496.89,
+      "recent_volume_usd": 38611.85,
       "static_excluded": null
     },
     {
@@ -331,7 +331,7 @@
       "data_start": "2020-01-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6364430.47,
+      "recent_volume_usd": 36649244.31,
       "static_excluded": "stablecoin"
     },
     {
@@ -341,7 +341,7 @@
       "data_start": "2020-01-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 530233.73,
+      "recent_volume_usd": 1923659.5,
       "static_excluded": "stablecoin"
     },
     {
@@ -351,7 +351,7 @@
       "data_start": "2020-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 64217.53,
+      "recent_volume_usd": 404759.27,
       "static_excluded": null
     },
     {
@@ -361,7 +361,7 @@
       "data_start": "2020-03-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 211170.72,
+      "recent_volume_usd": 1340499.9,
       "static_excluded": null
     },
     {
@@ -371,7 +371,7 @@
       "data_start": "2020-03-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1199275.94,
+      "recent_volume_usd": 7630392.5,
       "static_excluded": "stablecoin"
     },
     {
@@ -381,7 +381,7 @@
       "data_start": "2020-03-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 247782.43,
+      "recent_volume_usd": 1725134.77,
       "static_excluded": null
     },
     {
@@ -391,7 +391,7 @@
       "data_start": "2020-04-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 255129.97,
+      "recent_volume_usd": 726999.89,
       "static_excluded": null
     },
     {
@@ -401,7 +401,7 @@
       "data_start": "2020-04-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 34846.21,
+      "recent_volume_usd": 79297.12,
       "static_excluded": null
     },
     {
@@ -411,7 +411,7 @@
       "data_start": "2020-04-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 56458.33,
+      "recent_volume_usd": 24867.69,
       "static_excluded": null
     },
     {
@@ -421,7 +421,7 @@
       "data_start": "2020-06-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12014.83,
+      "recent_volume_usd": 12751.03,
       "static_excluded": null
     },
     {
@@ -431,7 +431,7 @@
       "data_start": "2020-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 232773.14,
+      "recent_volume_usd": 493959.5,
       "static_excluded": null
     },
     {
@@ -441,7 +441,7 @@
       "data_start": "2020-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 259800.53,
+      "recent_volume_usd": 17116.15,
       "static_excluded": null
     },
     {
@@ -451,7 +451,7 @@
       "data_start": "2020-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 17205.69,
+      "recent_volume_usd": 15896.7,
       "static_excluded": null
     },
     {
@@ -461,7 +461,7 @@
       "data_start": "2020-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4760.27,
+      "recent_volume_usd": 20868.41,
       "static_excluded": null
     },
     {
@@ -471,7 +471,7 @@
       "data_start": "2020-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2695.04,
+      "recent_volume_usd": 7509.41,
       "static_excluded": null
     },
     {
@@ -481,7 +481,7 @@
       "data_start": "2020-08-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 340.97,
+      "recent_volume_usd": 288.82,
       "static_excluded": null
     },
     {
@@ -491,7 +491,7 @@
       "data_start": "2020-08-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 238820.54,
+      "recent_volume_usd": 366748.4,
       "static_excluded": null
     },
     {
@@ -501,7 +501,7 @@
       "data_start": "2020-09-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 128372.18,
+      "recent_volume_usd": 342667.87,
       "static_excluded": null
     },
     {
@@ -511,7 +511,7 @@
       "data_start": "2020-09-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3498.53,
+      "recent_volume_usd": 26894.35,
       "static_excluded": null
     },
     {
@@ -521,7 +521,7 @@
       "data_start": "2020-09-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3004.8,
+      "recent_volume_usd": 8495.01,
       "static_excluded": null
     },
     {
@@ -531,7 +531,7 @@
       "data_start": "2020-09-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9546.34,
+      "recent_volume_usd": 2392.25,
       "static_excluded": null
     },
     {
@@ -541,7 +541,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 977262.07,
+      "recent_volume_usd": 309983.18,
       "static_excluded": null
     },
     {
@@ -551,7 +551,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 34624.73,
+      "recent_volume_usd": 115114.99,
       "static_excluded": null
     },
     {
@@ -561,7 +561,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 54370.65,
+      "recent_volume_usd": 454480.61,
       "static_excluded": null
     },
     {
@@ -571,7 +571,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 105390.19,
+      "recent_volume_usd": 147092.44,
       "static_excluded": null
     },
     {
@@ -581,7 +581,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3960.53,
+      "recent_volume_usd": 11579.03,
       "static_excluded": null
     },
     {
@@ -591,7 +591,7 @@
       "data_start": "2020-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1267.36,
+      "recent_volume_usd": 24447.72,
       "static_excluded": null
     },
     {
@@ -601,7 +601,7 @@
       "data_start": "2020-11-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 50.94,
+      "recent_volume_usd": 126.87,
       "static_excluded": null
     },
     {
@@ -611,7 +611,7 @@
       "data_start": "2020-11-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 38.14,
+      "recent_volume_usd": 21.26,
       "static_excluded": null
     },
     {
@@ -621,7 +621,7 @@
       "data_start": "2020-12-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 128100.71,
+      "recent_volume_usd": 196209.01,
       "static_excluded": null
     },
     {
@@ -631,7 +631,7 @@
       "data_start": "2020-12-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13260.02,
+      "recent_volume_usd": 29375.77,
       "static_excluded": null
     },
     {
@@ -641,7 +641,7 @@
       "data_start": "2020-12-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 128817.41,
+      "recent_volume_usd": 194888.07,
       "static_excluded": null
     },
     {
@@ -651,7 +651,7 @@
       "data_start": "2021-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11745.02,
+      "recent_volume_usd": 27384.52,
       "static_excluded": null
     },
     {
@@ -661,7 +661,7 @@
       "data_start": "2021-03-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4907.88,
+      "recent_volume_usd": 11069.78,
       "static_excluded": null
     },
     {
@@ -671,7 +671,7 @@
       "data_start": "2021-03-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2004.35,
+      "recent_volume_usd": 985.7,
       "static_excluded": null
     },
     {
@@ -681,7 +681,7 @@
       "data_start": "2021-04-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 357449.64,
+      "recent_volume_usd": 293273.23,
       "static_excluded": null
     },
     {
@@ -691,7 +691,7 @@
       "data_start": "2021-05-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1087.33,
+      "recent_volume_usd": 5523.21,
       "static_excluded": null
     },
     {
@@ -701,7 +701,7 @@
       "data_start": "2021-05-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 563.56,
+      "recent_volume_usd": 1451.8,
       "static_excluded": null
     },
     {
@@ -711,7 +711,7 @@
       "data_start": "2021-05-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2956.96,
+      "recent_volume_usd": 665.93,
       "static_excluded": null
     },
     {
@@ -721,7 +721,7 @@
       "data_start": "2021-05-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 52.98,
+      "recent_volume_usd": 2769.36,
       "static_excluded": null
     },
     {
@@ -731,7 +731,7 @@
       "data_start": "2021-05-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 41438.54,
+      "recent_volume_usd": 26392.71,
       "static_excluded": null
     },
     {
@@ -741,7 +741,7 @@
       "data_start": "2021-05-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12868.09,
+      "recent_volume_usd": 38103.01,
       "static_excluded": null
     },
     {
@@ -751,7 +751,7 @@
       "data_start": "2021-05-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 56114.17,
+      "recent_volume_usd": 50790.59,
       "static_excluded": null
     },
     {
@@ -761,7 +761,7 @@
       "data_start": "2021-05-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2026.26,
+      "recent_volume_usd": 38022.96,
       "static_excluded": null
     },
     {
@@ -771,7 +771,7 @@
       "data_start": "2021-05-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 201.09,
+      "recent_volume_usd": 1593.76,
       "static_excluded": null
     },
     {
@@ -781,7 +781,7 @@
       "data_start": "2021-05-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1035.55,
+      "recent_volume_usd": 11125.05,
       "static_excluded": null
     },
     {
@@ -791,7 +791,7 @@
       "data_start": "2021-06-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1331.85,
+      "recent_volume_usd": 25871.27,
       "static_excluded": null
     },
     {
@@ -801,7 +801,7 @@
       "data_start": "2021-06-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3836170.35,
+      "recent_volume_usd": 16069788.05,
       "static_excluded": null
     },
     {
@@ -811,7 +811,7 @@
       "data_start": "2021-06-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 397.74,
+      "recent_volume_usd": 233.73,
       "static_excluded": null
     },
     {
@@ -821,7 +821,7 @@
       "data_start": "2021-07-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 2127.77,
       "static_excluded": null
     },
     {
@@ -831,7 +831,7 @@
       "data_start": "2021-07-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 204159.1,
+      "recent_volume_usd": 587870.65,
       "static_excluded": null
     },
     {
@@ -841,7 +841,7 @@
       "data_start": "2021-07-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 25350.34,
+      "recent_volume_usd": 14482.55,
       "static_excluded": null
     },
     {
@@ -851,7 +851,7 @@
       "data_start": "2021-07-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1860.07,
+      "recent_volume_usd": 10713.23,
       "static_excluded": null
     },
     {
@@ -861,7 +861,7 @@
       "data_start": "2021-07-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 7992.4,
       "static_excluded": null
     },
     {
@@ -871,7 +871,7 @@
       "data_start": "2021-08-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 950.84,
+      "recent_volume_usd": 185665.04,
       "static_excluded": "wrapped"
     },
     {
@@ -881,7 +881,7 @@
       "data_start": "2021-08-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3358.79,
+      "recent_volume_usd": 7905.42,
       "static_excluded": null
     },
     {
@@ -891,7 +891,7 @@
       "data_start": "2021-08-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5095.81,
+      "recent_volume_usd": 1033.33,
       "static_excluded": null
     },
     {
@@ -901,7 +901,7 @@
       "data_start": "2021-08-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 156.17,
+      "recent_volume_usd": 299.5,
       "static_excluded": null
     },
     {
@@ -911,7 +911,7 @@
       "data_start": "2021-08-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1272773.22,
+      "recent_volume_usd": 1132116.46,
       "static_excluded": null
     },
     {
@@ -921,7 +921,7 @@
       "data_start": "2021-08-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1332.45,
+      "recent_volume_usd": 3973.46,
       "static_excluded": null
     },
     {
@@ -931,7 +931,7 @@
       "data_start": "2021-08-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 36.95,
+      "recent_volume_usd": 1219.55,
       "static_excluded": null
     },
     {
@@ -941,7 +941,7 @@
       "data_start": "2021-08-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5.06,
+      "recent_volume_usd": 41.72,
       "static_excluded": null
     },
     {
@@ -951,7 +951,7 @@
       "data_start": "2021-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1642.68,
+      "recent_volume_usd": 42318.69,
       "static_excluded": null
     },
     {
@@ -961,7 +961,7 @@
       "data_start": "2021-09-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 145.97,
+      "recent_volume_usd": 94.63,
       "static_excluded": null
     },
     {
@@ -971,7 +971,7 @@
       "data_start": "2021-09-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 222267.23,
+      "recent_volume_usd": 47606.93,
       "static_excluded": null
     },
     {
@@ -981,7 +981,7 @@
       "data_start": "2021-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1860.73,
+      "recent_volume_usd": 98662.69,
       "static_excluded": null
     },
     {
@@ -991,7 +991,7 @@
       "data_start": "2021-10-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1299.5,
+      "recent_volume_usd": 293662.71,
       "static_excluded": null
     },
     {
@@ -1001,7 +1001,7 @@
       "data_start": "2021-10-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 58.53,
+      "recent_volume_usd": 1935.55,
       "static_excluded": null
     },
     {
@@ -1011,7 +1011,7 @@
       "data_start": "2021-11-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 68409.34,
+      "recent_volume_usd": 91794.02,
       "static_excluded": null
     },
     {
@@ -1021,7 +1021,7 @@
       "data_start": "2021-12-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 372086.63,
+      "recent_volume_usd": 414120.9,
       "static_excluded": null
     },
     {
@@ -1031,7 +1031,7 @@
       "data_start": "2021-12-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 212495.94,
+      "recent_volume_usd": 1905162.06,
       "static_excluded": null
     },
     {
@@ -1041,7 +1041,7 @@
       "data_start": "2022-01-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 294.58,
+      "recent_volume_usd": 3794.92,
       "static_excluded": null
     },
     {
@@ -1051,7 +1051,7 @@
       "data_start": "2022-01-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 166.77,
+      "recent_volume_usd": 1034.65,
       "static_excluded": null
     },
     {
@@ -1061,7 +1061,7 @@
       "data_start": "2022-01-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 95.79,
+      "recent_volume_usd": 954.73,
       "static_excluded": null
     },
     {
@@ -1071,7 +1071,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8773.28,
+      "recent_volume_usd": 19314.94,
       "static_excluded": null
     },
     {
@@ -1081,7 +1081,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 173919.26,
+      "recent_volume_usd": 870527.42,
       "static_excluded": null
     },
     {
@@ -1091,7 +1091,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1110.45,
+      "recent_volume_usd": 1075.69,
       "static_excluded": null
     },
     {
@@ -1101,7 +1101,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 430.19,
+      "recent_volume_usd": 0.0,
       "static_excluded": null
     },
     {
@@ -1111,7 +1111,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 654.61,
       "static_excluded": null
     },
     {
@@ -1121,7 +1121,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 361.48,
+      "recent_volume_usd": 207.1,
       "static_excluded": null
     },
     {
@@ -1131,7 +1131,7 @@
       "data_start": "2022-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 173.94,
+      "recent_volume_usd": 453.25,
       "static_excluded": null
     },
     {
@@ -1151,7 +1151,7 @@
       "data_start": "2022-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 608749.66,
+      "recent_volume_usd": 935965.54,
       "static_excluded": null
     },
     {
@@ -1171,7 +1171,7 @@
       "data_start": "2022-02-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3980.68,
+      "recent_volume_usd": 6089.77,
       "static_excluded": null
     },
     {
@@ -1181,7 +1181,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 46876.14,
+      "recent_volume_usd": 170711.72,
       "static_excluded": null
     },
     {
@@ -1191,7 +1191,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12882.16,
+      "recent_volume_usd": 37592.16,
       "static_excluded": null
     },
     {
@@ -1201,7 +1201,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10447.75,
+      "recent_volume_usd": 18838.2,
       "static_excluded": null
     },
     {
@@ -1211,7 +1211,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 49363.32,
+      "recent_volume_usd": 172287.74,
       "static_excluded": null
     },
     {
@@ -1221,7 +1221,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 53.18,
+      "recent_volume_usd": 0.0,
       "static_excluded": null
     },
     {
@@ -1231,7 +1231,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 31.72,
+      "recent_volume_usd": 1067.49,
       "static_excluded": null
     },
     {
@@ -1241,7 +1241,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3143.92,
+      "recent_volume_usd": 1438.55,
       "static_excluded": null
     },
     {
@@ -1251,7 +1251,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6591.81,
+      "recent_volume_usd": 56891.09,
       "static_excluded": null
     },
     {
@@ -1261,7 +1261,7 @@
       "data_start": "2022-02-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 25.21,
+      "recent_volume_usd": 1594.88,
       "static_excluded": null
     },
     {
@@ -1271,7 +1271,7 @@
       "data_start": "2022-03-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 27185.54,
+      "recent_volume_usd": 33569.86,
       "static_excluded": null
     },
     {
@@ -1281,7 +1281,7 @@
       "data_start": "2022-03-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 377547.38,
+      "recent_volume_usd": 1590934.73,
       "static_excluded": null
     },
     {
@@ -1291,7 +1291,7 @@
       "data_start": "2022-03-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1893.09,
       "static_excluded": null
     },
     {
@@ -1301,7 +1301,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 241038.37,
+      "recent_volume_usd": 970046.18,
       "static_excluded": null
     },
     {
@@ -1311,7 +1311,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19550.63,
+      "recent_volume_usd": 41176.34,
       "static_excluded": null
     },
     {
@@ -1321,7 +1321,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 797.84,
+      "recent_volume_usd": 3475.77,
       "static_excluded": null
     },
     {
@@ -1331,7 +1331,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 694.01,
       "static_excluded": null
     },
     {
@@ -1341,7 +1341,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1206.33,
+      "recent_volume_usd": 738.49,
       "static_excluded": null
     },
     {
@@ -1351,7 +1351,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3631.94,
+      "recent_volume_usd": 543.44,
       "static_excluded": null
     },
     {
@@ -1361,7 +1361,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 286.66,
+      "recent_volume_usd": 6250.29,
       "static_excluded": null
     },
     {
@@ -1371,7 +1371,7 @@
       "data_start": "2022-03-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 103.04,
       "static_excluded": null
     },
     {
@@ -1381,7 +1381,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 120444.23,
+      "recent_volume_usd": 35219.96,
       "static_excluded": null
     },
     {
@@ -1391,7 +1391,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 17504.6,
+      "recent_volume_usd": 45315.56,
       "static_excluded": null
     },
     {
@@ -1401,7 +1401,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 486.22,
+      "recent_volume_usd": 1912.22,
       "static_excluded": null
     },
     {
@@ -1411,7 +1411,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2588.58,
+      "recent_volume_usd": 825.59,
       "static_excluded": null
     },
     {
@@ -1421,7 +1421,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 65.37,
+      "recent_volume_usd": 1214.48,
       "static_excluded": null
     },
     {
@@ -1431,7 +1431,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2621.42,
+      "recent_volume_usd": 3934.23,
       "static_excluded": null
     },
     {
@@ -1441,7 +1441,7 @@
       "data_start": "2022-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 700.25,
+      "recent_volume_usd": 419.34,
       "static_excluded": null
     },
     {
@@ -1451,7 +1451,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 178511.99,
+      "recent_volume_usd": 239993.94,
       "static_excluded": null
     },
     {
@@ -1461,7 +1461,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 199345.36,
+      "recent_volume_usd": 370844.79,
       "static_excluded": null
     },
     {
@@ -1471,7 +1471,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 43.97,
+      "recent_volume_usd": 503.76,
       "static_excluded": null
     },
     {
@@ -1481,7 +1481,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 543.74,
+      "recent_volume_usd": 462.31,
       "static_excluded": null
     },
     {
@@ -1491,7 +1491,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3572.77,
+      "recent_volume_usd": 14559.75,
       "static_excluded": null
     },
     {
@@ -1501,7 +1501,7 @@
       "data_start": "2022-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 461.29,
+      "recent_volume_usd": 8618.43,
       "static_excluded": null
     },
     {
@@ -1511,7 +1511,7 @@
       "data_start": "2022-05-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7912.08,
+      "recent_volume_usd": 37310.91,
       "static_excluded": null
     },
     {
@@ -1521,7 +1521,7 @@
       "data_start": "2022-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 37183.94,
+      "recent_volume_usd": 76578.29,
       "static_excluded": null
     },
     {
@@ -1531,7 +1531,7 @@
       "data_start": "2022-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 24710.38,
+      "recent_volume_usd": 8556.94,
       "static_excluded": null
     },
     {
@@ -1541,7 +1541,7 @@
       "data_start": "2022-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7254.37,
+      "recent_volume_usd": 3133.15,
       "static_excluded": null
     },
     {
@@ -1551,7 +1551,7 @@
       "data_start": "2022-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 251.54,
+      "recent_volume_usd": 3655.54,
       "static_excluded": null
     },
     {
@@ -1561,7 +1561,7 @@
       "data_start": "2022-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12248.95,
+      "recent_volume_usd": 476.28,
       "static_excluded": null
     },
     {
@@ -1571,7 +1571,7 @@
       "data_start": "2022-05-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 284452.41,
+      "recent_volume_usd": 1299786.25,
       "static_excluded": null
     },
     {
@@ -1581,7 +1581,7 @@
       "data_start": "2022-05-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5068.96,
+      "recent_volume_usd": 64863.9,
       "static_excluded": null
     },
     {
@@ -1591,7 +1591,7 @@
       "data_start": "2022-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4088.16,
+      "recent_volume_usd": 593149.2,
       "static_excluded": null
     },
     {
@@ -1601,7 +1601,7 @@
       "data_start": "2022-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7225.04,
+      "recent_volume_usd": 2004.68,
       "static_excluded": null
     },
     {
@@ -1611,7 +1611,7 @@
       "data_start": "2022-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 58.33,
+      "recent_volume_usd": 227.22,
       "static_excluded": null
     },
     {
@@ -1621,7 +1621,7 @@
       "data_start": "2022-05-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11570.88,
+      "recent_volume_usd": 15229.72,
       "static_excluded": null
     },
     {
@@ -1631,7 +1631,7 @@
       "data_start": "2022-05-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1594.86,
+      "recent_volume_usd": 2894.92,
       "static_excluded": null
     },
     {
@@ -1641,7 +1641,7 @@
       "data_start": "2022-05-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 28.49,
+      "recent_volume_usd": 0.0,
       "static_excluded": null
     },
     {
@@ -1651,7 +1651,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4400.55,
+      "recent_volume_usd": 30173.38,
       "static_excluded": null
     },
     {
@@ -1661,7 +1661,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2853.23,
+      "recent_volume_usd": 798.65,
       "static_excluded": null
     },
     {
@@ -1671,7 +1671,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 36597.49,
+      "recent_volume_usd": 5906.21,
       "static_excluded": null
     },
     {
@@ -1681,7 +1681,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 31.38,
       "static_excluded": null
     },
     {
@@ -1691,7 +1691,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 27.83,
+      "recent_volume_usd": 398.59,
       "static_excluded": null
     },
     {
@@ -1701,7 +1701,7 @@
       "data_start": "2022-06-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1.85,
+      "recent_volume_usd": 228.05,
       "static_excluded": null
     },
     {
@@ -1711,7 +1711,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7478933.85,
+      "recent_volume_usd": 8181349.87,
       "static_excluded": null
     },
     {
@@ -1721,7 +1721,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 100419.11,
+      "recent_volume_usd": 273438.06,
       "static_excluded": null
     },
     {
@@ -1731,7 +1731,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1779.26,
+      "recent_volume_usd": 12441.71,
       "static_excluded": null
     },
     {
@@ -1741,7 +1741,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1563.2,
+      "recent_volume_usd": 30438.9,
       "static_excluded": null
     },
     {
@@ -1751,7 +1751,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 273.3,
+      "recent_volume_usd": 3094.38,
       "static_excluded": null
     },
     {
@@ -1761,7 +1761,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14448.83,
+      "recent_volume_usd": 9370.27,
       "static_excluded": null
     },
     {
@@ -1771,7 +1771,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4023.32,
+      "recent_volume_usd": 61657.43,
       "static_excluded": null
     },
     {
@@ -1781,7 +1781,7 @@
       "data_start": "2022-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 643.02,
+      "recent_volume_usd": 6614.67,
       "static_excluded": null
     },
     {
@@ -1801,7 +1801,7 @@
       "data_start": "2022-07-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 765.51,
+      "recent_volume_usd": 4082.86,
       "static_excluded": null
     },
     {
@@ -1811,7 +1811,7 @@
       "data_start": "2022-07-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 857.01,
+      "recent_volume_usd": 2063.83,
       "static_excluded": null
     },
     {
@@ -1821,7 +1821,7 @@
       "data_start": "2022-07-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 238.77,
+      "recent_volume_usd": 3029.68,
       "static_excluded": null
     },
     {
@@ -1831,7 +1831,7 @@
       "data_start": "2022-07-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9.64,
+      "recent_volume_usd": 198.92,
       "static_excluded": null
     },
     {
@@ -1841,7 +1841,7 @@
       "data_start": "2022-07-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2566.16,
+      "recent_volume_usd": 2386.08,
       "static_excluded": null
     },
     {
@@ -1851,7 +1851,7 @@
       "data_start": "2022-08-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 252.57,
+      "recent_volume_usd": 1977.71,
       "static_excluded": null
     },
     {
@@ -1861,7 +1861,7 @@
       "data_start": "2022-08-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 555.65,
+      "recent_volume_usd": 11682.34,
       "static_excluded": null
     },
     {
@@ -1871,17 +1871,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 91763.9,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_TRU_USD",
-      "base": "TRU",
-      "quote": "USD",
-      "data_start": "2022-08-26",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 8827.67,
+      "recent_volume_usd": 176509.77,
       "static_excluded": null
     },
     {
@@ -1891,7 +1881,17 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2104.13,
+      "recent_volume_usd": 15106.82,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_TRU_USD",
+      "base": "TRU",
+      "quote": "USD",
+      "data_start": "2022-08-26",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 43901.45,
       "static_excluded": null
     },
     {
@@ -1901,7 +1901,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 231855.5,
+      "recent_volume_usd": 120253.15,
       "static_excluded": null
     },
     {
@@ -1911,7 +1911,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 397.36,
+      "recent_volume_usd": 1055.16,
       "static_excluded": null
     },
     {
@@ -1921,7 +1921,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5318.9,
+      "recent_volume_usd": 8941.97,
       "static_excluded": null
     },
     {
@@ -1931,7 +1931,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 90.43,
+      "recent_volume_usd": 106.06,
       "static_excluded": null
     },
     {
@@ -1941,7 +1941,7 @@
       "data_start": "2022-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 580.94,
+      "recent_volume_usd": 855.91,
       "static_excluded": null
     },
     {
@@ -1951,7 +1951,7 @@
       "data_start": "2022-09-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 23271.39,
+      "recent_volume_usd": 68819.71,
       "static_excluded": null
     },
     {
@@ -1961,7 +1961,7 @@
       "data_start": "2022-09-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7373.78,
+      "recent_volume_usd": 24412.45,
       "static_excluded": null
     },
     {
@@ -1971,7 +1971,7 @@
       "data_start": "2022-09-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 919.14,
+      "recent_volume_usd": 1581.18,
       "static_excluded": null
     },
     {
@@ -1981,7 +1981,7 @@
       "data_start": "2022-09-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1863.66,
       "static_excluded": null
     },
     {
@@ -1991,7 +1991,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 753706.9,
+      "recent_volume_usd": 2551785.53,
       "static_excluded": null
     },
     {
@@ -2001,7 +2001,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 715501.67,
+      "recent_volume_usd": 2646178.54,
       "static_excluded": null
     },
     {
@@ -2011,7 +2011,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 17265.82,
+      "recent_volume_usd": 101377.94,
       "static_excluded": null
     },
     {
@@ -2021,7 +2021,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4023.45,
+      "recent_volume_usd": 1059.33,
       "static_excluded": null
     },
     {
@@ -2031,7 +2031,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2293.45,
+      "recent_volume_usd": 42763.31,
       "static_excluded": null
     },
     {
@@ -2041,7 +2041,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18209.51,
+      "recent_volume_usd": 27416.61,
       "static_excluded": null
     },
     {
@@ -2051,7 +2051,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5664.03,
+      "recent_volume_usd": 10581.54,
       "static_excluded": null
     },
     {
@@ -2061,7 +2061,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2021.65,
+      "recent_volume_usd": 486.85,
       "static_excluded": null
     },
     {
@@ -2071,7 +2071,7 @@
       "data_start": "2022-10-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1445.82,
+      "recent_volume_usd": 3122.25,
       "static_excluded": null
     },
     {
@@ -2081,7 +2081,7 @@
       "data_start": "2022-10-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 43114.41,
+      "recent_volume_usd": 122365.57,
       "static_excluded": null
     },
     {
@@ -2091,7 +2091,7 @@
       "data_start": "2022-10-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 31953.63,
+      "recent_volume_usd": 52396.65,
       "static_excluded": null
     },
     {
@@ -2101,7 +2101,7 @@
       "data_start": "2022-11-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13929.16,
+      "recent_volume_usd": 35461.12,
       "static_excluded": null
     },
     {
@@ -2111,7 +2111,7 @@
       "data_start": "2022-12-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4389.57,
+      "recent_volume_usd": 19890.11,
       "static_excluded": null
     },
     {
@@ -2121,7 +2121,7 @@
       "data_start": "2022-12-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4598.03,
+      "recent_volume_usd": 1255.8,
       "static_excluded": "wrapped"
     },
     {
@@ -2131,7 +2131,7 @@
       "data_start": "2023-01-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 192584.22,
+      "recent_volume_usd": 104320.49,
       "static_excluded": null
     },
     {
@@ -2141,7 +2141,7 @@
       "data_start": "2023-01-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 22.22,
+      "recent_volume_usd": 843.44,
       "static_excluded": null
     },
     {
@@ -2151,7 +2151,7 @@
       "data_start": "2023-02-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10109.04,
+      "recent_volume_usd": 2510.03,
       "static_excluded": null
     },
     {
@@ -2161,7 +2161,7 @@
       "data_start": "2023-03-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 11259.84,
       "static_excluded": null
     },
     {
@@ -2171,7 +2171,7 @@
       "data_start": "2023-03-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12817.21,
+      "recent_volume_usd": 191685.26,
       "static_excluded": null
     },
     {
@@ -2181,7 +2181,7 @@
       "data_start": "2023-05-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3218757.03,
+      "recent_volume_usd": 7558255.4,
       "static_excluded": null
     },
     {
@@ -2191,7 +2191,7 @@
       "data_start": "2023-05-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 306690.74,
+      "recent_volume_usd": 434022.2,
       "static_excluded": null
     },
     {
@@ -2201,7 +2201,7 @@
       "data_start": "2023-05-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6203.92,
+      "recent_volume_usd": 15769.96,
       "static_excluded": null
     },
     {
@@ -2211,7 +2211,7 @@
       "data_start": "2023-08-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5717.77,
+      "recent_volume_usd": 3213.62,
       "static_excluded": null
     },
     {
@@ -2221,7 +2221,7 @@
       "data_start": "2023-08-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 66292.61,
+      "recent_volume_usd": 172964.09,
       "static_excluded": null
     },
     {
@@ -2231,7 +2231,7 @@
       "data_start": "2023-08-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 36241.46,
+      "recent_volume_usd": 68643.22,
       "static_excluded": "stablecoin"
     },
     {
@@ -2241,7 +2241,7 @@
       "data_start": "2023-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 103340.92,
+      "recent_volume_usd": 140184.21,
       "static_excluded": null
     },
     {
@@ -2251,7 +2251,7 @@
       "data_start": "2023-10-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 122058.51,
+      "recent_volume_usd": 491567.87,
       "static_excluded": null
     },
     {
@@ -2261,7 +2261,7 @@
       "data_start": "2023-11-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14055.52,
+      "recent_volume_usd": 16400.41,
       "static_excluded": null
     },
     {
@@ -2271,7 +2271,7 @@
       "data_start": "2023-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39162.31,
+      "recent_volume_usd": 239889.56,
       "static_excluded": null
     },
     {
@@ -2281,7 +2281,7 @@
       "data_start": "2023-12-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 57782.66,
+      "recent_volume_usd": 285247.63,
       "static_excluded": null
     },
     {
@@ -2291,7 +2291,7 @@
       "data_start": "2023-12-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 49151.0,
+      "recent_volume_usd": 123551.12,
       "static_excluded": null
     },
     {
@@ -2301,7 +2301,7 @@
       "data_start": "2024-01-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 82773.54,
+      "recent_volume_usd": 197928.14,
       "static_excluded": "leveraged"
     },
     {
@@ -2311,7 +2311,7 @@
       "data_start": "2024-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 112428.94,
+      "recent_volume_usd": 583959.27,
       "static_excluded": null
     },
     {
@@ -2321,7 +2321,7 @@
       "data_start": "2024-02-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 67547.63,
+      "recent_volume_usd": 282636.43,
       "static_excluded": null
     },
     {
@@ -2331,7 +2331,7 @@
       "data_start": "2024-02-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 45625.27,
+      "recent_volume_usd": 184848.58,
       "static_excluded": null
     },
     {
@@ -2341,7 +2341,7 @@
       "data_start": "2024-03-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5877.25,
+      "recent_volume_usd": 12963.13,
       "static_excluded": null
     },
     {
@@ -2351,7 +2351,7 @@
       "data_start": "2024-04-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 27382.73,
+      "recent_volume_usd": 22436.54,
       "static_excluded": null
     },
     {
@@ -2361,7 +2361,7 @@
       "data_start": "2024-04-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1451243.79,
+      "recent_volume_usd": 4760952.55,
       "static_excluded": null
     },
     {
@@ -2371,7 +2371,7 @@
       "data_start": "2024-04-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7269.41,
+      "recent_volume_usd": 33973.84,
       "static_excluded": null
     },
     {
@@ -2381,7 +2381,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 160153.98,
+      "recent_volume_usd": 195376.09,
       "static_excluded": null
     },
     {
@@ -2391,7 +2391,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14146.6,
+      "recent_volume_usd": 263255.12,
       "static_excluded": null
     },
     {
@@ -2401,7 +2401,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 41716.69,
+      "recent_volume_usd": 31270.41,
       "static_excluded": null
     },
     {
@@ -2411,7 +2411,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9623.53,
+      "recent_volume_usd": 11004.89,
       "static_excluded": null
     },
     {
@@ -2421,7 +2421,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2956.67,
+      "recent_volume_usd": 1807.15,
       "static_excluded": null
     },
     {
@@ -2431,7 +2431,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3446.28,
+      "recent_volume_usd": 12885.82,
       "static_excluded": null
     },
     {
@@ -2441,7 +2441,7 @@
       "data_start": "2024-05-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2652.65,
+      "recent_volume_usd": 3499.19,
       "static_excluded": null
     },
     {
@@ -2451,7 +2451,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 57066.57,
+      "recent_volume_usd": 116236.54,
       "static_excluded": null
     },
     {
@@ -2461,7 +2461,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8721.2,
+      "recent_volume_usd": 10410.52,
       "static_excluded": null
     },
     {
@@ -2471,7 +2471,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 145.82,
+      "recent_volume_usd": 1020.47,
       "static_excluded": null
     },
     {
@@ -2481,7 +2481,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2450.68,
+      "recent_volume_usd": 2052.75,
       "static_excluded": null
     },
     {
@@ -2491,7 +2491,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 61.43,
+      "recent_volume_usd": 372.96,
       "static_excluded": null
     },
     {
@@ -2501,7 +2501,7 @@
       "data_start": "2024-06-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 353.16,
+      "recent_volume_usd": 1687.01,
       "static_excluded": null
     },
     {
@@ -2511,7 +2511,7 @@
       "data_start": "2024-06-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 204028.24,
+      "recent_volume_usd": 202072.75,
       "static_excluded": null
     },
     {
@@ -2521,7 +2521,7 @@
       "data_start": "2024-06-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5501.28,
+      "recent_volume_usd": 13713.25,
       "static_excluded": null
     },
     {
@@ -2541,7 +2541,7 @@
       "data_start": "2024-06-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 238.95,
+      "recent_volume_usd": 174.75,
       "static_excluded": null
     },
     {
@@ -2551,7 +2551,7 @@
       "data_start": "2024-06-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 22119.05,
+      "recent_volume_usd": 67021.46,
       "static_excluded": null
     },
     {
@@ -2561,7 +2561,7 @@
       "data_start": "2024-06-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1126085.0,
+      "recent_volume_usd": 3350767.39,
       "static_excluded": null
     },
     {
@@ -2571,7 +2571,7 @@
       "data_start": "2024-06-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 71863.46,
+      "recent_volume_usd": 47566.08,
       "static_excluded": null
     },
     {
@@ -2581,7 +2581,7 @@
       "data_start": "2024-06-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 26664.47,
+      "recent_volume_usd": 48494.82,
       "static_excluded": null
     },
     {
@@ -2591,7 +2591,7 @@
       "data_start": "2024-07-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39856.04,
+      "recent_volume_usd": 163003.04,
       "static_excluded": null
     },
     {
@@ -2601,17 +2601,7 @@
       "data_start": "2024-07-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8120.07,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_SAGA_USD",
-      "base": "SAGA",
-      "quote": "USD",
-      "data_start": "2024-07-16",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 48614.73,
+      "recent_volume_usd": 11142.62,
       "static_excluded": null
     },
     {
@@ -2621,7 +2611,17 @@
       "data_start": "2024-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39160.83,
+      "recent_volume_usd": 130344.41,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_SAGA_USD",
+      "base": "SAGA",
+      "quote": "USD",
+      "data_start": "2024-07-16",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 30919.32,
       "static_excluded": null
     },
     {
@@ -2631,7 +2631,7 @@
       "data_start": "2024-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 438.39,
+      "recent_volume_usd": 19392.99,
       "static_excluded": null
     },
     {
@@ -2641,7 +2641,7 @@
       "data_start": "2024-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 687.41,
+      "recent_volume_usd": 3751.5,
       "static_excluded": null
     },
     {
@@ -2661,7 +2661,7 @@
       "data_start": "2024-07-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1019.9,
       "static_excluded": null
     },
     {
@@ -2671,7 +2671,7 @@
       "data_start": "2024-07-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 2144.71,
       "static_excluded": null
     },
     {
@@ -2681,7 +2681,7 @@
       "data_start": "2024-08-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 162820.81,
+      "recent_volume_usd": 820866.73,
       "static_excluded": null
     },
     {
@@ -2691,7 +2691,7 @@
       "data_start": "2024-08-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 711.14,
+      "recent_volume_usd": 3362.46,
       "static_excluded": null
     },
     {
@@ -2701,7 +2701,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29078.6,
+      "recent_volume_usd": 65838.6,
       "static_excluded": null
     },
     {
@@ -2711,7 +2711,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5744.23,
+      "recent_volume_usd": 15275.67,
       "static_excluded": null
     },
     {
@@ -2721,7 +2721,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3006.65,
+      "recent_volume_usd": 27015.89,
       "static_excluded": null
     },
     {
@@ -2731,7 +2731,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1635.43,
+      "recent_volume_usd": 16974.47,
       "static_excluded": null
     },
     {
@@ -2741,7 +2741,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 861.37,
+      "recent_volume_usd": 6188.23,
       "static_excluded": null
     },
     {
@@ -2751,7 +2751,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8235.95,
+      "recent_volume_usd": 13592.63,
       "static_excluded": null
     },
     {
@@ -2761,7 +2761,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4197.73,
+      "recent_volume_usd": 47.54,
       "static_excluded": null
     },
     {
@@ -2771,7 +2771,7 @@
       "data_start": "2024-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29.74,
+      "recent_volume_usd": 628.08,
       "static_excluded": null
     },
     {
@@ -2781,7 +2781,7 @@
       "data_start": "2024-08-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13504.49,
+      "recent_volume_usd": 30381.95,
       "static_excluded": null
     },
     {
@@ -2791,7 +2791,7 @@
       "data_start": "2024-08-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 60.31,
+      "recent_volume_usd": 130.92,
       "static_excluded": null
     },
     {
@@ -2801,7 +2801,7 @@
       "data_start": "2024-08-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 452.01,
+      "recent_volume_usd": 6180.83,
       "static_excluded": null
     },
     {
@@ -2811,7 +2811,7 @@
       "data_start": "2024-09-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 15013.5,
+      "recent_volume_usd": 36690.39,
       "static_excluded": null
     },
     {
@@ -2821,7 +2821,7 @@
       "data_start": "2024-09-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2648.9,
+      "recent_volume_usd": 21753.91,
       "static_excluded": null
     },
     {
@@ -2831,7 +2831,7 @@
       "data_start": "2024-10-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 414950.11,
+      "recent_volume_usd": 518262.72,
       "static_excluded": null
     },
     {
@@ -2841,7 +2841,7 @@
       "data_start": "2024-10-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 60165.43,
+      "recent_volume_usd": 734337.77,
       "static_excluded": null
     },
     {
@@ -2851,7 +2851,7 @@
       "data_start": "2024-10-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8849.48,
+      "recent_volume_usd": 75595.12,
       "static_excluded": null
     },
     {
@@ -2861,7 +2861,7 @@
       "data_start": "2024-10-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 149.11,
+      "recent_volume_usd": 25471.46,
       "static_excluded": "stablecoin"
     },
     {
@@ -2871,7 +2871,7 @@
       "data_start": "2024-10-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 53897.69,
+      "recent_volume_usd": 26456.06,
       "static_excluded": null
     },
     {
@@ -2881,7 +2881,7 @@
       "data_start": "2024-10-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 682.8,
+      "recent_volume_usd": 36.92,
       "static_excluded": null
     },
     {
@@ -2891,7 +2891,7 @@
       "data_start": "2024-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 24526.35,
+      "recent_volume_usd": 113672.59,
       "static_excluded": null
     },
     {
@@ -2901,7 +2901,7 @@
       "data_start": "2024-10-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 216.41,
+      "recent_volume_usd": 303.54,
       "static_excluded": null
     },
     {
@@ -2911,7 +2911,7 @@
       "data_start": "2024-10-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 138294.43,
+      "recent_volume_usd": 217964.5,
       "static_excluded": null
     },
     {
@@ -2921,7 +2921,7 @@
       "data_start": "2024-11-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 419362.2,
+      "recent_volume_usd": 916212.17,
       "static_excluded": null
     },
     {
@@ -2931,7 +2931,7 @@
       "data_start": "2024-11-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3824.7,
+      "recent_volume_usd": 197.34,
       "static_excluded": null
     },
     {
@@ -2941,7 +2941,7 @@
       "data_start": "2024-11-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 33592.66,
+      "recent_volume_usd": 62437.22,
       "static_excluded": null
     },
     {
@@ -2951,7 +2951,7 @@
       "data_start": "2024-11-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1447.8,
+      "recent_volume_usd": 23773.36,
       "static_excluded": null
     },
     {
@@ -2961,7 +2961,7 @@
       "data_start": "2024-11-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 26395.9,
+      "recent_volume_usd": 96998.42,
       "static_excluded": "leveraged"
     },
     {
@@ -2971,7 +2971,7 @@
       "data_start": "2024-11-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 212034.57,
+      "recent_volume_usd": 391803.33,
       "static_excluded": null
     },
     {
@@ -2981,7 +2981,7 @@
       "data_start": "2024-11-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 165987.47,
+      "recent_volume_usd": 1184647.83,
       "static_excluded": null
     },
     {
@@ -2991,7 +2991,7 @@
       "data_start": "2024-11-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 671.39,
+      "recent_volume_usd": 1237.36,
       "static_excluded": null
     },
     {
@@ -3001,7 +3001,7 @@
       "data_start": "2024-11-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 22.2,
+      "recent_volume_usd": 179.54,
       "static_excluded": null
     },
     {
@@ -3021,7 +3021,7 @@
       "data_start": "2024-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11842.91,
+      "recent_volume_usd": 41830.25,
       "static_excluded": null
     },
     {
@@ -3031,7 +3031,7 @@
       "data_start": "2024-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 23.76,
+      "recent_volume_usd": 14.28,
       "static_excluded": null
     },
     {
@@ -3041,7 +3041,7 @@
       "data_start": "2024-12-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 120.66,
+      "recent_volume_usd": 6321.57,
       "static_excluded": null
     },
     {
@@ -3051,7 +3051,7 @@
       "data_start": "2024-12-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 119.9,
+      "recent_volume_usd": 24.52,
       "static_excluded": null
     },
     {
@@ -3061,7 +3061,7 @@
       "data_start": "2024-12-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 92621.01,
+      "recent_volume_usd": 400163.05,
       "static_excluded": null
     },
     {
@@ -3071,7 +3071,7 @@
       "data_start": "2024-12-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19821.14,
+      "recent_volume_usd": 42484.24,
       "static_excluded": null
     },
     {
@@ -3081,7 +3081,7 @@
       "data_start": "2024-12-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7133.98,
+      "recent_volume_usd": 6148.49,
       "static_excluded": null
     },
     {
@@ -3091,7 +3091,7 @@
       "data_start": "2024-12-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29730.3,
+      "recent_volume_usd": 69337.09,
       "static_excluded": null
     },
     {
@@ -3101,7 +3101,7 @@
       "data_start": "2024-12-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 26064.19,
+      "recent_volume_usd": 34760.38,
       "static_excluded": null
     },
     {
@@ -3111,7 +3111,7 @@
       "data_start": "2025-01-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 424.17,
+      "recent_volume_usd": 50186.31,
       "static_excluded": null
     },
     {
@@ -3121,7 +3121,7 @@
       "data_start": "2025-01-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 317.43,
+      "recent_volume_usd": 41.11,
       "static_excluded": null
     },
     {
@@ -3131,7 +3131,7 @@
       "data_start": "2025-01-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 583.05,
+      "recent_volume_usd": 336.1,
       "static_excluded": null
     },
     {
@@ -3141,7 +3141,7 @@
       "data_start": "2025-01-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 373929.83,
+      "recent_volume_usd": 521431.8,
       "static_excluded": null
     },
     {
@@ -3151,7 +3151,7 @@
       "data_start": "2025-01-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18047.44,
+      "recent_volume_usd": 1037.35,
       "static_excluded": null
     },
     {
@@ -3161,7 +3161,7 @@
       "data_start": "2025-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 22737.51,
+      "recent_volume_usd": 21193.31,
       "static_excluded": null
     },
     {
@@ -3171,7 +3171,7 @@
       "data_start": "2025-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5301.87,
+      "recent_volume_usd": 4108.81,
       "static_excluded": null
     },
     {
@@ -3181,7 +3181,7 @@
       "data_start": "2025-01-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4549.68,
+      "recent_volume_usd": 59914.64,
       "static_excluded": null
     },
     {
@@ -3191,7 +3191,7 @@
       "data_start": "2025-01-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2352.93,
+      "recent_volume_usd": 2032.3,
       "static_excluded": null
     },
     {
@@ -3211,7 +3211,7 @@
       "data_start": "2025-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 470045.97,
+      "recent_volume_usd": 691443.84,
       "static_excluded": null
     },
     {
@@ -3221,7 +3221,7 @@
       "data_start": "2025-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4908.52,
+      "recent_volume_usd": 5369.36,
       "static_excluded": null
     },
     {
@@ -3231,7 +3231,7 @@
       "data_start": "2025-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9203.22,
+      "recent_volume_usd": 11564.66,
       "static_excluded": null
     },
     {
@@ -3241,17 +3241,7 @@
       "data_start": "2025-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 57.2,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_AI16Z_USDT",
-      "base": "AI16Z",
-      "quote": "USDT",
-      "data_start": "2025-01-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 207.97,
       "static_excluded": null
     },
     {
@@ -3265,13 +3255,23 @@
       "static_excluded": null
     },
     {
+      "symbol_id": "KRAKEN_SPOT_AI16Z_USDT",
+      "base": "AI16Z",
+      "quote": "USDT",
+      "data_start": "2025-01-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
       "symbol_id": "KRAKEN_SPOT_ZEREBRO_USD",
       "base": "ZEREBRO",
       "quote": "USD",
       "data_start": "2025-01-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 45054.15,
+      "recent_volume_usd": 91550.54,
       "static_excluded": null
     },
     {
@@ -3281,7 +3281,7 @@
       "data_start": "2025-01-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 40188.51,
+      "recent_volume_usd": 192923.6,
       "static_excluded": null
     },
     {
@@ -3291,7 +3291,7 @@
       "data_start": "2025-01-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3342.81,
+      "recent_volume_usd": 1305.8,
       "static_excluded": null
     },
     {
@@ -3301,7 +3301,7 @@
       "data_start": "2025-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 876794.1,
+      "recent_volume_usd": 1459132.27,
       "static_excluded": null
     },
     {
@@ -3311,7 +3311,7 @@
       "data_start": "2025-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 44217.24,
+      "recent_volume_usd": 47219.08,
       "static_excluded": null
     },
     {
@@ -3321,7 +3321,7 @@
       "data_start": "2025-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2745.56,
+      "recent_volume_usd": 107038.61,
       "static_excluded": null
     },
     {
@@ -3331,7 +3331,7 @@
       "data_start": "2025-01-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6602.48,
+      "recent_volume_usd": 40776.99,
       "static_excluded": null
     },
     {
@@ -3341,7 +3341,7 @@
       "data_start": "2025-01-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 522.31,
+      "recent_volume_usd": 3759.54,
       "static_excluded": null
     },
     {
@@ -3351,7 +3351,7 @@
       "data_start": "2025-01-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 87.12,
+      "recent_volume_usd": 785.89,
       "static_excluded": null
     },
     {
@@ -3361,7 +3361,7 @@
       "data_start": "2025-01-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12061.67,
+      "recent_volume_usd": 1553.26,
       "static_excluded": null
     },
     {
@@ -3371,7 +3371,7 @@
       "data_start": "2025-01-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 574.75,
+      "recent_volume_usd": 919.21,
       "static_excluded": null
     },
     {
@@ -3381,7 +3381,7 @@
       "data_start": "2025-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 144.26,
+      "recent_volume_usd": 1903993.08,
       "static_excluded": "stablecoin"
     },
     {
@@ -3391,7 +3391,7 @@
       "data_start": "2025-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 4538544.68,
       "static_excluded": null
     },
     {
@@ -3401,7 +3401,7 @@
       "data_start": "2025-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 422653.73,
       "static_excluded": "stablecoin"
     },
     {
@@ -3411,7 +3411,7 @@
       "data_start": "2025-02-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1251678.12,
       "static_excluded": null
     },
     {
@@ -3421,7 +3421,7 @@
       "data_start": "2025-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12969.29,
+      "recent_volume_usd": 45302.44,
       "static_excluded": null
     },
     {
@@ -3431,7 +3431,7 @@
       "data_start": "2025-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1986.56,
+      "recent_volume_usd": 5469.78,
       "static_excluded": null
     },
     {
@@ -3441,7 +3441,7 @@
       "data_start": "2025-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11.97,
+      "recent_volume_usd": 1558.81,
       "static_excluded": null
     },
     {
@@ -3451,7 +3451,7 @@
       "data_start": "2025-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 157.88,
+      "recent_volume_usd": 69.09,
       "static_excluded": null
     },
     {
@@ -3461,7 +3461,7 @@
       "data_start": "2025-02-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 443.09,
+      "recent_volume_usd": 8402.98,
       "static_excluded": null
     },
     {
@@ -3471,7 +3471,7 @@
       "data_start": "2025-02-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4009.24,
+      "recent_volume_usd": 29.28,
       "static_excluded": null
     },
     {
@@ -3481,7 +3481,7 @@
       "data_start": "2025-02-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 795.53,
+      "recent_volume_usd": 331.81,
       "static_excluded": null
     },
     {
@@ -3491,7 +3491,7 @@
       "data_start": "2025-02-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 68534.11,
+      "recent_volume_usd": 62432.18,
       "static_excluded": null
     },
     {
@@ -3501,7 +3501,7 @@
       "data_start": "2025-02-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7379.47,
+      "recent_volume_usd": 2651.06,
       "static_excluded": null
     },
     {
@@ -3511,7 +3511,7 @@
       "data_start": "2025-02-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2.13,
+      "recent_volume_usd": 5504.32,
       "static_excluded": null
     },
     {
@@ -3521,7 +3521,7 @@
       "data_start": "2025-02-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 149170.58,
+      "recent_volume_usd": 171701.02,
       "static_excluded": null
     },
     {
@@ -3531,7 +3531,7 @@
       "data_start": "2025-02-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13395.03,
+      "recent_volume_usd": 40586.13,
       "static_excluded": null
     },
     {
@@ -3541,7 +3541,7 @@
       "data_start": "2025-02-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 69.36,
+      "recent_volume_usd": 1083.61,
       "static_excluded": null
     },
     {
@@ -3551,7 +3551,7 @@
       "data_start": "2025-02-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4620.36,
+      "recent_volume_usd": 31471.09,
       "static_excluded": null
     },
     {
@@ -3561,7 +3561,7 @@
       "data_start": "2025-02-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20814.8,
+      "recent_volume_usd": 7937.19,
       "static_excluded": null
     },
     {
@@ -3581,7 +3581,7 @@
       "data_start": "2025-02-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 678.47,
+      "recent_volume_usd": 613.69,
       "static_excluded": null
     },
     {
@@ -3591,7 +3591,7 @@
       "data_start": "2025-02-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 65.71,
+      "recent_volume_usd": 317.89,
       "static_excluded": null
     },
     {
@@ -3601,7 +3601,7 @@
       "data_start": "2025-02-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 15858.96,
+      "recent_volume_usd": 138084.86,
       "static_excluded": null
     },
     {
@@ -3611,7 +3611,7 @@
       "data_start": "2025-02-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29631.66,
+      "recent_volume_usd": 11897.9,
       "static_excluded": null
     },
     {
@@ -3621,7 +3621,7 @@
       "data_start": "2025-02-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10938.54,
+      "recent_volume_usd": 40543.72,
       "static_excluded": null
     },
     {
@@ -3631,7 +3631,7 @@
       "data_start": "2025-02-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 86.01,
+      "recent_volume_usd": 1151.15,
       "static_excluded": null
     },
     {
@@ -3641,7 +3641,7 @@
       "data_start": "2025-02-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3944.3,
+      "recent_volume_usd": 5028.94,
       "static_excluded": null
     },
     {
@@ -3651,7 +3651,7 @@
       "data_start": "2025-02-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1668.67,
+      "recent_volume_usd": 17626.47,
       "static_excluded": "wrapped"
     },
     {
@@ -3661,7 +3661,7 @@
       "data_start": "2025-02-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1250674.06,
+      "recent_volume_usd": 5309977.37,
       "static_excluded": null
     },
     {
@@ -3671,7 +3671,7 @@
       "data_start": "2025-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 169449.2,
+      "recent_volume_usd": 250741.14,
       "static_excluded": null
     },
     {
@@ -3681,7 +3681,7 @@
       "data_start": "2025-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 151131.15,
+      "recent_volume_usd": 765146.38,
       "static_excluded": null
     },
     {
@@ -3691,7 +3691,7 @@
       "data_start": "2025-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 23.57,
+      "recent_volume_usd": 4071.72,
       "static_excluded": null
     },
     {
@@ -3701,7 +3701,7 @@
       "data_start": "2025-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2407.73,
+      "recent_volume_usd": 30872.46,
       "static_excluded": null
     },
     {
@@ -3711,7 +3711,7 @@
       "data_start": "2025-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 323.85,
+      "recent_volume_usd": 149.81,
       "static_excluded": null
     },
     {
@@ -3731,7 +3731,7 @@
       "data_start": "2025-03-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10445.53,
+      "recent_volume_usd": 86861.45,
       "static_excluded": null
     },
     {
@@ -3741,7 +3741,7 @@
       "data_start": "2025-03-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4131.35,
+      "recent_volume_usd": 106396.57,
       "static_excluded": null
     },
     {
@@ -3751,7 +3751,7 @@
       "data_start": "2025-03-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 216.88,
+      "recent_volume_usd": 1307767.98,
       "static_excluded": null
     },
     {
@@ -3761,7 +3761,7 @@
       "data_start": "2025-03-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 78.86,
+      "recent_volume_usd": 4683.01,
       "static_excluded": null
     },
     {
@@ -3771,7 +3771,7 @@
       "data_start": "2025-03-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4.46,
+      "recent_volume_usd": 414.63,
       "static_excluded": null
     },
     {
@@ -3781,7 +3781,7 @@
       "data_start": "2025-03-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 400.53,
+      "recent_volume_usd": 27536.43,
       "static_excluded": null
     },
     {
@@ -3791,7 +3791,7 @@
       "data_start": "2025-03-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 167.43,
       "static_excluded": null
     },
     {
@@ -3801,7 +3801,7 @@
       "data_start": "2025-03-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 225.98,
+      "recent_volume_usd": 168.61,
       "static_excluded": null
     },
     {
@@ -3811,7 +3811,7 @@
       "data_start": "2025-03-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 281.11,
+      "recent_volume_usd": 10095.74,
       "static_excluded": null
     },
     {
@@ -3821,7 +3821,7 @@
       "data_start": "2025-03-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1725.54,
+      "recent_volume_usd": 1642.47,
       "static_excluded": null
     },
     {
@@ -3831,7 +3831,7 @@
       "data_start": "2025-03-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 34647.39,
+      "recent_volume_usd": 1500090.05,
       "static_excluded": null
     },
     {
@@ -3841,7 +3841,7 @@
       "data_start": "2025-03-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9708.38,
+      "recent_volume_usd": 2337.4,
       "static_excluded": null
     },
     {
@@ -3871,7 +3871,7 @@
       "data_start": "2025-03-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 92.62,
+      "recent_volume_usd": 7596.44,
       "static_excluded": null
     },
     {
@@ -3881,7 +3881,7 @@
       "data_start": "2025-03-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 27119.49,
+      "recent_volume_usd": 31505.72,
       "static_excluded": null
     },
     {
@@ -3891,7 +3891,7 @@
       "data_start": "2025-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12704.65,
+      "recent_volume_usd": 26868.59,
       "static_excluded": null
     },
     {
@@ -3901,7 +3901,7 @@
       "data_start": "2025-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4640.59,
+      "recent_volume_usd": 16567.61,
       "static_excluded": "stablecoin"
     },
     {
@@ -3911,7 +3911,7 @@
       "data_start": "2025-04-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20.27,
+      "recent_volume_usd": 0.0,
       "static_excluded": "stablecoin"
     },
     {
@@ -3921,7 +3921,7 @@
       "data_start": "2025-04-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18.0,
+      "recent_volume_usd": 0.0,
       "static_excluded": "stablecoin"
     },
     {
@@ -3931,7 +3931,7 @@
       "data_start": "2025-04-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39557.78,
+      "recent_volume_usd": 12857.8,
       "static_excluded": null
     },
     {
@@ -3941,7 +3941,7 @@
       "data_start": "2025-04-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1708.21,
+      "recent_volume_usd": 4822.94,
       "static_excluded": null
     },
     {
@@ -3951,7 +3951,7 @@
       "data_start": "2025-04-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10507.49,
+      "recent_volume_usd": 1091.44,
       "static_excluded": null
     },
     {
@@ -3961,7 +3961,7 @@
       "data_start": "2025-04-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8923.23,
+      "recent_volume_usd": 37102.02,
       "static_excluded": null
     },
     {
@@ -3971,7 +3971,7 @@
       "data_start": "2025-04-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 23.25,
+      "recent_volume_usd": 2037.21,
       "static_excluded": null
     },
     {
@@ -3981,7 +3981,7 @@
       "data_start": "2025-04-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 26155.64,
+      "recent_volume_usd": 6.8,
       "static_excluded": null
     },
     {
@@ -3991,17 +3991,7 @@
       "data_start": "2025-04-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 16504.71,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_FHE_USD",
-      "base": "FHE",
-      "quote": "USD",
-      "data_start": "2025-04-10",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 44797.71,
+      "recent_volume_usd": 2074.5,
       "static_excluded": null
     },
     {
@@ -4011,7 +4001,17 @@
       "data_start": "2025-04-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 35458.72,
+      "recent_volume_usd": 13199.26,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_FHE_USD",
+      "base": "FHE",
+      "quote": "USD",
+      "data_start": "2025-04-10",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 79742.28,
       "static_excluded": null
     },
     {
@@ -4021,7 +4021,7 @@
       "data_start": "2025-04-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3063.26,
+      "recent_volume_usd": 17589.23,
       "static_excluded": null
     },
     {
@@ -4031,7 +4031,7 @@
       "data_start": "2025-04-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4621.66,
+      "recent_volume_usd": 9704.25,
       "static_excluded": null
     },
     {
@@ -4041,7 +4041,7 @@
       "data_start": "2025-04-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 47540.68,
+      "recent_volume_usd": 10398.99,
       "static_excluded": null
     },
     {
@@ -4051,7 +4051,7 @@
       "data_start": "2025-04-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 53969.47,
+      "recent_volume_usd": 51614.71,
       "static_excluded": null
     },
     {
@@ -4061,7 +4061,7 @@
       "data_start": "2025-04-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 2272.45,
       "static_excluded": null
     },
     {
@@ -4071,7 +4071,7 @@
       "data_start": "2025-04-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 379682.31,
+      "recent_volume_usd": 528208.12,
       "static_excluded": null
     },
     {
@@ -4081,7 +4081,7 @@
       "data_start": "2025-04-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 4018.85,
       "static_excluded": null
     },
     {
@@ -4091,7 +4091,7 @@
       "data_start": "2025-04-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 94778.2,
+      "recent_volume_usd": 44845.85,
       "static_excluded": null
     },
     {
@@ -4101,7 +4101,7 @@
       "data_start": "2025-04-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1210.67,
       "static_excluded": null
     },
     {
@@ -4111,7 +4111,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 61505.56,
+      "recent_volume_usd": 697338.13,
       "static_excluded": null
     },
     {
@@ -4121,7 +4121,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 64674.17,
+      "recent_volume_usd": 61913.45,
       "static_excluded": null
     },
     {
@@ -4131,7 +4131,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 26727.01,
+      "recent_volume_usd": 24164.84,
       "static_excluded": null
     },
     {
@@ -4141,7 +4141,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13816.61,
+      "recent_volume_usd": 15995.79,
       "static_excluded": null
     },
     {
@@ -4151,7 +4151,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10828.76,
+      "recent_volume_usd": 26260.19,
       "static_excluded": null
     },
     {
@@ -4161,17 +4161,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_RIZE_USD",
-      "base": "RIZE",
-      "quote": "USD",
-      "data_start": "2025-05-27",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 7276.67,
+      "recent_volume_usd": 11253.84,
       "static_excluded": null
     },
     {
@@ -4181,7 +4171,17 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2627.29,
+      "recent_volume_usd": 7274.94,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_RIZE_USD",
+      "base": "RIZE",
+      "quote": "USD",
+      "data_start": "2025-05-27",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 8516.81,
       "static_excluded": null
     },
     {
@@ -4191,7 +4191,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10780.63,
+      "recent_volume_usd": 4947.92,
       "static_excluded": null
     },
     {
@@ -4201,7 +4201,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3646.21,
+      "recent_volume_usd": 9976.94,
       "static_excluded": null
     },
     {
@@ -4211,7 +4211,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13963.99,
+      "recent_volume_usd": 9566.71,
       "static_excluded": null
     },
     {
@@ -4221,7 +4221,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 210.36,
+      "recent_volume_usd": 1106.8,
       "static_excluded": null
     },
     {
@@ -4231,7 +4231,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19328.89,
+      "recent_volume_usd": 23941.08,
       "static_excluded": null
     },
     {
@@ -4241,17 +4241,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 190.18,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_CHEEMS_USD",
-      "base": "CHEEMS",
-      "quote": "USD",
-      "data_start": "2025-05-27",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 6552.19,
+      "recent_volume_usd": 9102.83,
       "static_excluded": null
     },
     {
@@ -4261,7 +4251,17 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 366.6,
+      "recent_volume_usd": 2096.65,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_CHEEMS_USD",
+      "base": "CHEEMS",
+      "quote": "USD",
+      "data_start": "2025-05-27",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 16498.64,
       "static_excluded": null
     },
     {
@@ -4271,7 +4271,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1851.78,
+      "recent_volume_usd": 466.01,
       "static_excluded": null
     },
     {
@@ -4281,7 +4281,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 23.17,
       "static_excluded": null
     },
     {
@@ -4291,7 +4291,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2064.29,
+      "recent_volume_usd": 3003.21,
       "static_excluded": null
     },
     {
@@ -4311,7 +4311,7 @@
       "data_start": "2025-05-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1.87,
+      "recent_volume_usd": 0.0,
       "static_excluded": null
     },
     {
@@ -4321,7 +4321,7 @@
       "data_start": "2025-06-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2020.91,
+      "recent_volume_usd": 11810.75,
       "static_excluded": null
     },
     {
@@ -4331,7 +4331,7 @@
       "data_start": "2025-06-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2940.31,
+      "recent_volume_usd": 7570.07,
       "static_excluded": null
     },
     {
@@ -4361,7 +4361,7 @@
       "data_start": "2025-06-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 34.79,
       "static_excluded": null
     },
     {
@@ -4371,7 +4371,7 @@
       "data_start": "2025-06-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4954.22,
+      "recent_volume_usd": 6631.3,
       "static_excluded": null
     },
     {
@@ -4381,7 +4381,7 @@
       "data_start": "2025-06-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 74.27,
       "static_excluded": null
     },
     {
@@ -4391,7 +4391,7 @@
       "data_start": "2025-06-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5050.11,
+      "recent_volume_usd": 11044.76,
       "static_excluded": null
     },
     {
@@ -4401,7 +4401,7 @@
       "data_start": "2025-06-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1331.14,
+      "recent_volume_usd": 23828.89,
       "static_excluded": null
     },
     {
@@ -4411,7 +4411,7 @@
       "data_start": "2025-06-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 3814.54,
       "static_excluded": null
     },
     {
@@ -4431,7 +4431,7 @@
       "data_start": "2025-06-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 54.57,
+      "recent_volume_usd": 649.88,
       "static_excluded": null
     },
     {
@@ -4441,7 +4441,7 @@
       "data_start": "2025-06-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 172.58,
+      "recent_volume_usd": 438.47,
       "static_excluded": null
     },
     {
@@ -4451,7 +4451,7 @@
       "data_start": "2025-06-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11921.12,
+      "recent_volume_usd": 18379.07,
       "static_excluded": null
     },
     {
@@ -4461,7 +4461,7 @@
       "data_start": "2025-06-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1130.0,
+      "recent_volume_usd": 677.69,
       "static_excluded": null
     },
     {
@@ -4471,7 +4471,7 @@
       "data_start": "2025-06-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10394.02,
+      "recent_volume_usd": 50772.12,
       "static_excluded": null
     },
     {
@@ -4481,7 +4481,7 @@
       "data_start": "2025-06-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 73164.04,
+      "recent_volume_usd": 91727.85,
       "static_excluded": null
     },
     {
@@ -4491,7 +4491,7 @@
       "data_start": "2025-06-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1359.81,
+      "recent_volume_usd": 4159.08,
       "static_excluded": null
     },
     {
@@ -4501,7 +4501,7 @@
       "data_start": "2025-06-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 34849.7,
+      "recent_volume_usd": 39579.81,
       "static_excluded": null
     },
     {
@@ -4511,7 +4511,7 @@
       "data_start": "2025-06-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 58159.44,
+      "recent_volume_usd": 29445.23,
       "static_excluded": null
     },
     {
@@ -4521,7 +4521,7 @@
       "data_start": "2025-07-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 64415.92,
+      "recent_volume_usd": 36200.71,
       "static_excluded": null
     },
     {
@@ -4541,7 +4541,7 @@
       "data_start": "2025-07-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 94195.9,
+      "recent_volume_usd": 86867.49,
       "static_excluded": null
     },
     {
@@ -4551,7 +4551,7 @@
       "data_start": "2025-07-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 52787.31,
+      "recent_volume_usd": 141692.42,
       "static_excluded": null
     },
     {
@@ -4561,7 +4561,7 @@
       "data_start": "2025-07-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 25096.65,
+      "recent_volume_usd": 6263.56,
       "static_excluded": null
     },
     {
@@ -4571,7 +4571,7 @@
       "data_start": "2025-07-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3818.76,
+      "recent_volume_usd": 64821.08,
       "static_excluded": null
     },
     {
@@ -4581,7 +4581,7 @@
       "data_start": "2025-07-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 332.95,
+      "recent_volume_usd": 73.42,
       "static_excluded": null
     },
     {
@@ -4601,7 +4601,7 @@
       "data_start": "2025-07-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11780.63,
+      "recent_volume_usd": 36228.27,
       "static_excluded": null
     },
     {
@@ -4611,7 +4611,7 @@
       "data_start": "2025-07-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 115.76,
       "static_excluded": null
     },
     {
@@ -4621,7 +4621,7 @@
       "data_start": "2025-07-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 144922.23,
+      "recent_volume_usd": 449497.97,
       "static_excluded": null
     },
     {
@@ -4631,7 +4631,7 @@
       "data_start": "2025-07-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1471.82,
+      "recent_volume_usd": 2283.52,
       "static_excluded": null
     },
     {
@@ -4641,7 +4641,7 @@
       "data_start": "2025-07-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 29.2,
       "static_excluded": null
     },
     {
@@ -4651,7 +4651,7 @@
       "data_start": "2025-07-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2410.01,
+      "recent_volume_usd": 31640.47,
       "static_excluded": null
     },
     {
@@ -4661,7 +4661,7 @@
       "data_start": "2025-07-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5895.71,
+      "recent_volume_usd": 74880.71,
       "static_excluded": null
     },
     {
@@ -4671,7 +4671,7 @@
       "data_start": "2025-07-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 297.49,
+      "recent_volume_usd": 4332.52,
       "static_excluded": null
     },
     {
@@ -4681,7 +4681,7 @@
       "data_start": "2025-07-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 67854.05,
+      "recent_volume_usd": 246626.03,
       "static_excluded": null
     },
     {
@@ -4691,7 +4691,7 @@
       "data_start": "2025-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 708.74,
+      "recent_volume_usd": 2425.31,
       "static_excluded": null
     },
     {
@@ -4701,7 +4701,7 @@
       "data_start": "2025-07-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 32.17,
+      "recent_volume_usd": 334.19,
       "static_excluded": null
     },
     {
@@ -4711,7 +4711,7 @@
       "data_start": "2025-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4387.35,
+      "recent_volume_usd": 9837.21,
       "static_excluded": null
     },
     {
@@ -4721,7 +4721,7 @@
       "data_start": "2025-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10519.01,
+      "recent_volume_usd": 350.59,
       "static_excluded": null
     },
     {
@@ -4731,7 +4731,7 @@
       "data_start": "2025-07-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 60.12,
+      "recent_volume_usd": 22316.89,
       "static_excluded": null
     },
     {
@@ -4751,7 +4751,7 @@
       "data_start": "2025-07-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 183.05,
+      "recent_volume_usd": 176785.51,
       "static_excluded": null
     },
     {
@@ -4761,7 +4761,7 @@
       "data_start": "2025-07-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3745.81,
+      "recent_volume_usd": 4282.6,
       "static_excluded": null
     },
     {
@@ -4771,7 +4771,7 @@
       "data_start": "2025-07-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 15653.24,
+      "recent_volume_usd": 24642.08,
       "static_excluded": null
     },
     {
@@ -4781,7 +4781,7 @@
       "data_start": "2025-07-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29802.15,
+      "recent_volume_usd": 22145.93,
       "static_excluded": null
     },
     {
@@ -4791,7 +4791,7 @@
       "data_start": "2025-07-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6619.92,
+      "recent_volume_usd": 4755.87,
       "static_excluded": null
     },
     {
@@ -4801,7 +4801,7 @@
       "data_start": "2025-07-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 300207.07,
+      "recent_volume_usd": 221062.67,
       "static_excluded": null
     },
     {
@@ -4811,7 +4811,7 @@
       "data_start": "2025-07-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 757.25,
       "static_excluded": null
     },
     {
@@ -4821,7 +4821,7 @@
       "data_start": "2025-07-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 800.2,
+      "recent_volume_usd": 10644.64,
       "static_excluded": null
     },
     {
@@ -4831,7 +4831,7 @@
       "data_start": "2025-07-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 120.65,
       "static_excluded": null
     },
     {
@@ -4841,7 +4841,7 @@
       "data_start": "2025-07-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1962.4,
+      "recent_volume_usd": 8066.7,
       "static_excluded": null
     },
     {
@@ -4851,7 +4851,7 @@
       "data_start": "2025-07-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 149.76,
       "static_excluded": null
     },
     {
@@ -4861,7 +4861,7 @@
       "data_start": "2025-07-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18245.64,
+      "recent_volume_usd": 16782.05,
       "static_excluded": null
     },
     {
@@ -4871,7 +4871,7 @@
       "data_start": "2025-08-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2833.36,
+      "recent_volume_usd": 4579.95,
       "static_excluded": null
     },
     {
@@ -4891,7 +4891,7 @@
       "data_start": "2025-08-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 21891.81,
+      "recent_volume_usd": 128953.54,
       "static_excluded": null
     },
     {
@@ -4901,7 +4901,7 @@
       "data_start": "2025-08-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 979.91,
+      "recent_volume_usd": 8783.96,
       "static_excluded": null
     },
     {
@@ -4911,7 +4911,7 @@
       "data_start": "2025-08-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1057.01,
+      "recent_volume_usd": 4433.27,
       "static_excluded": null
     },
     {
@@ -4921,7 +4921,7 @@
       "data_start": "2025-08-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 198082.71,
+      "recent_volume_usd": 401304.57,
       "static_excluded": null
     },
     {
@@ -4931,7 +4931,7 @@
       "data_start": "2025-08-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 377562.43,
+      "recent_volume_usd": 145011.35,
       "static_excluded": null
     },
     {
@@ -4941,7 +4941,7 @@
       "data_start": "2025-08-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1034.65,
+      "recent_volume_usd": 419.48,
       "static_excluded": null
     },
     {
@@ -4951,7 +4951,7 @@
       "data_start": "2025-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 42545.7,
+      "recent_volume_usd": 209222.81,
       "static_excluded": null
     },
     {
@@ -4961,7 +4961,7 @@
       "data_start": "2025-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 100199.85,
+      "recent_volume_usd": 78740.85,
       "static_excluded": null
     },
     {
@@ -4971,7 +4971,7 @@
       "data_start": "2025-08-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 151.38,
+      "recent_volume_usd": 6824.4,
       "static_excluded": null
     },
     {
@@ -4981,7 +4981,7 @@
       "data_start": "2025-08-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 460.03,
+      "recent_volume_usd": 2394.18,
       "static_excluded": null
     },
     {
@@ -4991,7 +4991,7 @@
       "data_start": "2025-08-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2001.7,
+      "recent_volume_usd": 3380.03,
       "static_excluded": null
     },
     {
@@ -5001,7 +5001,7 @@
       "data_start": "2025-08-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20237.25,
+      "recent_volume_usd": 104306.52,
       "static_excluded": null
     },
     {
@@ -5011,7 +5011,7 @@
       "data_start": "2025-08-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4155.02,
+      "recent_volume_usd": 11636.69,
       "static_excluded": null
     },
     {
@@ -5021,7 +5021,7 @@
       "data_start": "2025-08-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18920.02,
+      "recent_volume_usd": 11788.99,
       "static_excluded": null
     },
     {
@@ -5031,7 +5031,7 @@
       "data_start": "2025-08-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14371.5,
+      "recent_volume_usd": 14760.45,
       "static_excluded": null
     },
     {
@@ -5041,7 +5041,7 @@
       "data_start": "2025-08-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 143.9,
+      "recent_volume_usd": 248.06,
       "static_excluded": null
     },
     {
@@ -5051,7 +5051,7 @@
       "data_start": "2025-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14045.92,
+      "recent_volume_usd": 365.9,
       "static_excluded": null
     },
     {
@@ -5061,7 +5061,7 @@
       "data_start": "2025-08-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5489.76,
+      "recent_volume_usd": 26365.42,
       "static_excluded": null
     },
     {
@@ -5071,7 +5071,7 @@
       "data_start": "2025-08-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 203.29,
+      "recent_volume_usd": 8582478.8,
       "static_excluded": null
     },
     {
@@ -5081,7 +5081,7 @@
       "data_start": "2025-09-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 269555.42,
+      "recent_volume_usd": 976611.66,
       "static_excluded": null
     },
     {
@@ -5091,7 +5091,7 @@
       "data_start": "2025-09-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 78240.52,
+      "recent_volume_usd": 66782.49,
       "static_excluded": "wrapped"
     },
     {
@@ -5101,7 +5101,7 @@
       "data_start": "2025-09-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4026.53,
+      "recent_volume_usd": 30630.02,
       "static_excluded": null
     },
     {
@@ -5111,7 +5111,7 @@
       "data_start": "2025-09-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 27164.87,
+      "recent_volume_usd": 44704.21,
       "static_excluded": null
     },
     {
@@ -5121,7 +5121,7 @@
       "data_start": "2025-09-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4096.79,
+      "recent_volume_usd": 61817.76,
       "static_excluded": null
     },
     {
@@ -5131,7 +5131,7 @@
       "data_start": "2025-09-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 552.75,
       "static_excluded": null
     },
     {
@@ -5141,7 +5141,7 @@
       "data_start": "2025-09-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1437.93,
+      "recent_volume_usd": 3285.47,
       "static_excluded": null
     },
     {
@@ -5151,7 +5151,7 @@
       "data_start": "2025-09-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4189.9,
+      "recent_volume_usd": 1959.2,
       "static_excluded": "wrapped"
     },
     {
@@ -5161,7 +5161,7 @@
       "data_start": "2025-09-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 12769.7,
       "static_excluded": null
     },
     {
@@ -5171,7 +5171,7 @@
       "data_start": "2025-09-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 21573.49,
+      "recent_volume_usd": 63359.62,
       "static_excluded": null
     },
     {
@@ -5181,7 +5181,7 @@
       "data_start": "2025-09-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39.93,
+      "recent_volume_usd": 115.9,
       "static_excluded": null
     },
     {
@@ -5191,7 +5191,7 @@
       "data_start": "2025-09-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 75452.73,
+      "recent_volume_usd": 489689.3,
       "static_excluded": null
     },
     {
@@ -5201,7 +5201,7 @@
       "data_start": "2025-09-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1875.23,
+      "recent_volume_usd": 1869.73,
       "static_excluded": null
     },
     {
@@ -5211,7 +5211,7 @@
       "data_start": "2025-09-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 23628.42,
+      "recent_volume_usd": 345653.86,
       "static_excluded": null
     },
     {
@@ -5221,7 +5221,7 @@
       "data_start": "2025-09-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1145.9,
+      "recent_volume_usd": 889.21,
       "static_excluded": null
     },
     {
@@ -5241,7 +5241,7 @@
       "data_start": "2025-09-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6964.44,
+      "recent_volume_usd": 50306.45,
       "static_excluded": null
     },
     {
@@ -5251,7 +5251,7 @@
       "data_start": "2025-09-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 276228.71,
+      "recent_volume_usd": 1133235.51,
       "static_excluded": null
     },
     {
@@ -5261,7 +5261,7 @@
       "data_start": "2025-09-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5565.19,
+      "recent_volume_usd": 87434.53,
       "static_excluded": null
     },
     {
@@ -5271,7 +5271,7 @@
       "data_start": "2025-09-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 10.34,
       "static_excluded": null
     },
     {
@@ -5281,7 +5281,7 @@
       "data_start": "2025-09-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1555.26,
+      "recent_volume_usd": 3477.78,
       "static_excluded": null
     },
     {
@@ -5291,7 +5291,7 @@
       "data_start": "2025-09-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9969.4,
+      "recent_volume_usd": 7929.15,
       "static_excluded": null
     },
     {
@@ -5301,7 +5301,7 @@
       "data_start": "2025-09-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 53170.16,
+      "recent_volume_usd": 53177.03,
       "static_excluded": null
     },
     {
@@ -5311,7 +5311,7 @@
       "data_start": "2025-09-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6622.53,
+      "recent_volume_usd": 50701.49,
       "static_excluded": null
     },
     {
@@ -5321,7 +5321,7 @@
       "data_start": "2025-09-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 57.66,
       "static_excluded": null
     },
     {
@@ -5331,7 +5331,7 @@
       "data_start": "2025-09-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19244.23,
+      "recent_volume_usd": 107892.97,
       "static_excluded": null
     },
     {
@@ -5341,7 +5341,7 @@
       "data_start": "2025-09-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 799.18,
+      "recent_volume_usd": 1081.69,
       "static_excluded": null
     },
     {
@@ -5351,7 +5351,7 @@
       "data_start": "2025-09-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2463.37,
+      "recent_volume_usd": 19495.72,
       "static_excluded": null
     },
     {
@@ -5361,7 +5361,7 @@
       "data_start": "2025-09-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 314640.99,
       "static_excluded": null
     },
     {
@@ -5371,7 +5371,7 @@
       "data_start": "2025-09-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 41317.12,
       "static_excluded": null
     },
     {
@@ -5381,7 +5381,7 @@
       "data_start": "2025-09-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 21.29,
+      "recent_volume_usd": 335.05,
       "static_excluded": null
     },
     {
@@ -5391,7 +5391,7 @@
       "data_start": "2025-09-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 29473.98,
+      "recent_volume_usd": 42894.95,
       "static_excluded": null
     },
     {
@@ -5401,7 +5401,7 @@
       "data_start": "2025-09-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11876.27,
+      "recent_volume_usd": 15015.42,
       "static_excluded": null
     },
     {
@@ -5411,7 +5411,7 @@
       "data_start": "2025-09-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3159.16,
+      "recent_volume_usd": 10686.53,
       "static_excluded": null
     },
     {
@@ -5421,7 +5421,7 @@
       "data_start": "2025-09-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 55.61,
+      "recent_volume_usd": 594.48,
       "static_excluded": null
     },
     {
@@ -5441,7 +5441,7 @@
       "data_start": "2025-10-01",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 182360.52,
+      "recent_volume_usd": 140475.58,
       "static_excluded": null
     },
     {
@@ -5451,7 +5451,7 @@
       "data_start": "2025-10-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 52182.43,
+      "recent_volume_usd": 62143.59,
       "static_excluded": null
     },
     {
@@ -5461,7 +5461,7 @@
       "data_start": "2025-10-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 276.74,
+      "recent_volume_usd": 1257.59,
       "static_excluded": null
     },
     {
@@ -5471,7 +5471,7 @@
       "data_start": "2025-10-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9380.87,
+      "recent_volume_usd": 121928.98,
       "static_excluded": null
     },
     {
@@ -5481,7 +5481,7 @@
       "data_start": "2025-10-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19.39,
+      "recent_volume_usd": 169.95,
       "static_excluded": null
     },
     {
@@ -5491,7 +5491,7 @@
       "data_start": "2025-10-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 997.5,
+      "recent_volume_usd": 2816.49,
       "static_excluded": null
     },
     {
@@ -5501,7 +5501,7 @@
       "data_start": "2025-10-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 255.56,
+      "recent_volume_usd": 41831.65,
       "static_excluded": null
     },
     {
@@ -5511,7 +5511,7 @@
       "data_start": "2025-10-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5473.98,
+      "recent_volume_usd": 126556.37,
       "static_excluded": null
     },
     {
@@ -5521,7 +5521,7 @@
       "data_start": "2025-10-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 451.94,
       "static_excluded": null
     },
     {
@@ -5531,7 +5531,7 @@
       "data_start": "2025-10-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1006.58,
       "static_excluded": null
     },
     {
@@ -5541,7 +5541,7 @@
       "data_start": "2025-10-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 263210.39,
+      "recent_volume_usd": 241909.55,
       "static_excluded": null
     },
     {
@@ -5551,7 +5551,7 @@
       "data_start": "2025-10-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 331.36,
+      "recent_volume_usd": 326.87,
       "static_excluded": null
     },
     {
@@ -5561,7 +5561,7 @@
       "data_start": "2025-10-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6003.83,
+      "recent_volume_usd": 13850.74,
       "static_excluded": null
     },
     {
@@ -5571,7 +5571,7 @@
       "data_start": "2025-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39837.08,
+      "recent_volume_usd": 14402.3,
       "static_excluded": null
     },
     {
@@ -5581,7 +5581,7 @@
       "data_start": "2025-10-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13235.15,
+      "recent_volume_usd": 3594.48,
       "static_excluded": null
     },
     {
@@ -5591,7 +5591,7 @@
       "data_start": "2025-10-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2325.25,
+      "recent_volume_usd": 117649.43,
       "static_excluded": null
     },
     {
@@ -5601,7 +5601,7 @@
       "data_start": "2025-10-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 41282.85,
+      "recent_volume_usd": 2341038.63,
       "static_excluded": null
     },
     {
@@ -5611,7 +5611,7 @@
       "data_start": "2025-10-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1914.29,
+      "recent_volume_usd": 59.04,
       "static_excluded": null
     },
     {
@@ -5621,7 +5621,7 @@
       "data_start": "2025-10-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 3320.58,
       "static_excluded": null
     },
     {
@@ -5631,7 +5631,7 @@
       "data_start": "2025-10-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4565.05,
+      "recent_volume_usd": 6662.29,
       "static_excluded": null
     },
     {
@@ -5641,7 +5641,7 @@
       "data_start": "2025-10-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20.78,
+      "recent_volume_usd": 412.56,
       "static_excluded": null
     },
     {
@@ -5661,7 +5661,7 @@
       "data_start": "2025-10-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 99842.1,
+      "recent_volume_usd": 87260.12,
       "static_excluded": null
     },
     {
@@ -5671,7 +5671,7 @@
       "data_start": "2025-10-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 13.93,
+      "recent_volume_usd": 11.78,
       "static_excluded": null
     },
     {
@@ -5681,7 +5681,7 @@
       "data_start": "2025-10-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19242.46,
+      "recent_volume_usd": 74815.23,
       "static_excluded": null
     },
     {
@@ -5691,7 +5691,7 @@
       "data_start": "2025-10-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1378.09,
+      "recent_volume_usd": 8967.23,
       "static_excluded": null
     },
     {
@@ -5731,7 +5731,7 @@
       "data_start": "2025-10-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4469.55,
+      "recent_volume_usd": 3983.77,
       "static_excluded": null
     },
     {
@@ -5741,7 +5741,7 @@
       "data_start": "2025-10-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 36.09,
+      "recent_volume_usd": 4747.5,
       "static_excluded": null
     },
     {
@@ -5751,7 +5751,7 @@
       "data_start": "2025-10-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4005.44,
+      "recent_volume_usd": 495.31,
       "static_excluded": null
     },
     {
@@ -5761,7 +5761,7 @@
       "data_start": "2025-10-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2141.94,
+      "recent_volume_usd": 2049.48,
       "static_excluded": null
     },
     {
@@ -5771,7 +5771,7 @@
       "data_start": "2025-10-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5111.93,
+      "recent_volume_usd": 5468.69,
       "static_excluded": null
     },
     {
@@ -5781,7 +5781,7 @@
       "data_start": "2025-10-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5806.79,
+      "recent_volume_usd": 11753.01,
       "static_excluded": null
     },
     {
@@ -5801,7 +5801,7 @@
       "data_start": "2025-10-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 109.85,
+      "recent_volume_usd": 207.22,
       "static_excluded": null
     },
     {
@@ -5811,7 +5811,7 @@
       "data_start": "2025-11-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 48735.15,
+      "recent_volume_usd": 62909.38,
       "static_excluded": null
     },
     {
@@ -5821,7 +5821,7 @@
       "data_start": "2025-11-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 2086.71,
       "static_excluded": null
     },
     {
@@ -5831,7 +5831,7 @@
       "data_start": "2025-11-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2.05,
+      "recent_volume_usd": 61.04,
       "static_excluded": null
     },
     {
@@ -5841,7 +5841,7 @@
       "data_start": "2025-11-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8529.03,
+      "recent_volume_usd": 1288.2,
       "static_excluded": null
     },
     {
@@ -5851,7 +5851,7 @@
       "data_start": "2025-11-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 83159.06,
+      "recent_volume_usd": 128282.13,
       "static_excluded": null
     },
     {
@@ -5861,7 +5861,7 @@
       "data_start": "2025-11-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 108872.46,
+      "recent_volume_usd": 159751.12,
       "static_excluded": null
     },
     {
@@ -5891,7 +5891,7 @@
       "data_start": "2025-11-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3080.4,
+      "recent_volume_usd": 996.45,
       "static_excluded": null
     },
     {
@@ -5901,7 +5901,7 @@
       "data_start": "2025-11-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14801.48,
+      "recent_volume_usd": 123.58,
       "static_excluded": null
     },
     {
@@ -5921,7 +5921,7 @@
       "data_start": "2025-11-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 321841.65,
+      "recent_volume_usd": 1892530.82,
       "static_excluded": null
     },
     {
@@ -5931,7 +5931,7 @@
       "data_start": "2025-11-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6765.39,
+      "recent_volume_usd": 26543.72,
       "static_excluded": null
     },
     {
@@ -5941,7 +5941,7 @@
       "data_start": "2025-11-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7027.29,
+      "recent_volume_usd": 29248.86,
       "static_excluded": null
     },
     {
@@ -5951,7 +5951,7 @@
       "data_start": "2025-11-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3409.28,
+      "recent_volume_usd": 3948.34,
       "static_excluded": null
     },
     {
@@ -5961,7 +5961,7 @@
       "data_start": "2025-11-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11.55,
+      "recent_volume_usd": 25851.52,
       "static_excluded": null
     },
     {
@@ -5971,7 +5971,7 @@
       "data_start": "2025-11-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 8889.32,
+      "recent_volume_usd": 16778.6,
       "static_excluded": null
     },
     {
@@ -5981,7 +5981,7 @@
       "data_start": "2025-11-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9855.87,
+      "recent_volume_usd": 38372.73,
       "static_excluded": null
     },
     {
@@ -5991,7 +5991,7 @@
       "data_start": "2025-11-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1932.01,
+      "recent_volume_usd": 230.13,
       "static_excluded": null
     },
     {
@@ -6001,7 +6001,7 @@
       "data_start": "2025-11-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 432.94,
       "static_excluded": null
     },
     {
@@ -6021,7 +6021,7 @@
       "data_start": "2025-11-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10541.59,
+      "recent_volume_usd": 16705.71,
       "static_excluded": null
     },
     {
@@ -6031,7 +6031,7 @@
       "data_start": "2025-11-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 219.46,
+      "recent_volume_usd": 5004.61,
       "static_excluded": null
     },
     {
@@ -6041,7 +6041,7 @@
       "data_start": "2025-11-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 420488.95,
+      "recent_volume_usd": 260658.59,
       "static_excluded": null
     },
     {
@@ -6051,7 +6051,7 @@
       "data_start": "2025-11-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2004.22,
+      "recent_volume_usd": 31334.79,
       "static_excluded": null
     },
     {
@@ -6061,7 +6061,7 @@
       "data_start": "2025-11-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1404.38,
       "static_excluded": null
     },
     {
@@ -6071,7 +6071,7 @@
       "data_start": "2025-11-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 143.25,
       "static_excluded": null
     },
     {
@@ -6081,7 +6081,7 @@
       "data_start": "2025-11-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 109.4,
       "static_excluded": null
     },
     {
@@ -6091,7 +6091,7 @@
       "data_start": "2025-11-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 364.38,
       "static_excluded": null
     },
     {
@@ -6101,7 +6101,7 @@
       "data_start": "2025-11-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 204714.58,
+      "recent_volume_usd": 630111.73,
       "static_excluded": null
     },
     {
@@ -6111,7 +6111,7 @@
       "data_start": "2025-11-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 553.3,
+      "recent_volume_usd": 900.39,
       "static_excluded": null
     },
     {
@@ -6121,7 +6121,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 219.39,
+      "recent_volume_usd": 21205.62,
       "static_excluded": null
     },
     {
@@ -6131,7 +6131,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12816.63,
+      "recent_volume_usd": 4573.76,
       "static_excluded": null
     },
     {
@@ -6141,7 +6141,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 96216.59,
+      "recent_volume_usd": 142250.36,
       "static_excluded": null
     },
     {
@@ -6151,17 +6151,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 91875.2,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_NVDAX_USD",
-      "base": "NVDAX",
-      "quote": "USD",
-      "data_start": "2025-11-25",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 40096.19,
+      "recent_volume_usd": 96627.84,
       "static_excluded": null
     },
     {
@@ -6171,7 +6161,17 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20188.76,
+      "recent_volume_usd": 93.41,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_NVDAX_USD",
+      "base": "NVDAX",
+      "quote": "USD",
+      "data_start": "2025-11-25",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 24755.53,
       "static_excluded": null
     },
     {
@@ -6181,7 +6181,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 174.79,
+      "recent_volume_usd": 52.27,
       "static_excluded": null
     },
     {
@@ -6201,7 +6201,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 122133.24,
+      "recent_volume_usd": 19107.16,
       "static_excluded": null
     },
     {
@@ -6211,22 +6211,12 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 232.61,
+      "recent_volume_usd": 3227.98,
       "static_excluded": null
     },
     {
       "symbol_id": "KRAKEN_SPOT_MSFTX_USD",
       "base": "MSFTX",
-      "quote": "USD",
-      "data_start": "2025-11-25",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_TQQQX_USD",
-      "base": "TQQQX",
       "quote": "USD",
       "data_start": "2025-11-25",
       "data_end": null,
@@ -6245,13 +6235,23 @@
       "static_excluded": null
     },
     {
+      "symbol_id": "KRAKEN_SPOT_TQQQX_USD",
+      "base": "TQQQX",
+      "quote": "USD",
+      "data_start": "2025-11-25",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
       "symbol_id": "KRAKEN_SPOT_GLDX_USD",
       "base": "GLDX",
       "quote": "USD",
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 61.65,
       "static_excluded": null
     },
     {
@@ -6311,7 +6311,7 @@
       "data_start": "2025-11-25",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19.91,
+      "recent_volume_usd": 10873.48,
       "static_excluded": null
     },
     {
@@ -6365,6 +6365,16 @@
       "static_excluded": null
     },
     {
+      "symbol_id": "KRAKEN_SPOT_NVOX_USD",
+      "base": "NVOX",
+      "quote": "USD",
+      "data_start": "2025-11-25",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
       "symbol_id": "KRAKEN_SPOT_LLYX_USD",
       "base": "LLYX",
       "quote": "USD",
@@ -6387,16 +6397,6 @@
     {
       "symbol_id": "KRAKEN_SPOT_TONXX_USD",
       "base": "TONXX",
-      "quote": "USD",
-      "data_start": "2025-11-25",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_NVOX_USD",
-      "base": "NVOX",
       "quote": "USD",
       "data_start": "2025-11-25",
       "data_end": null,
@@ -6477,16 +6477,6 @@
     {
       "symbol_id": "KRAKEN_SPOT_APPX_USD",
       "base": "APPX",
-      "quote": "USD",
-      "data_start": "2025-11-25",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_VX_USD",
-      "base": "VX",
       "quote": "USD",
       "data_start": "2025-11-25",
       "data_end": null,
@@ -6587,6 +6577,16 @@
     {
       "symbol_id": "KRAKEN_SPOT_TMOX_USD",
       "base": "TMOX",
+      "quote": "USD",
+      "data_start": "2025-11-25",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_VX_USD",
+      "base": "VX",
       "quote": "USD",
       "data_start": "2025-11-25",
       "data_end": null,
@@ -6731,7 +6731,7 @@
       "data_start": "2025-11-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5135.06,
+      "recent_volume_usd": 6923.64,
       "static_excluded": null
     },
     {
@@ -6741,7 +6741,7 @@
       "data_start": "2025-11-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 54001.92,
+      "recent_volume_usd": 115405.14,
       "static_excluded": null
     },
     {
@@ -6751,7 +6751,7 @@
       "data_start": "2025-12-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 59.39,
+      "recent_volume_usd": 783.74,
       "static_excluded": null
     },
     {
@@ -6761,7 +6761,7 @@
       "data_start": "2025-12-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 183870.76,
+      "recent_volume_usd": 850123.45,
       "static_excluded": null
     },
     {
@@ -6771,7 +6771,7 @@
       "data_start": "2025-12-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 304102.98,
+      "recent_volume_usd": 13592.4,
       "static_excluded": null
     },
     {
@@ -6781,7 +6781,7 @@
       "data_start": "2025-12-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 33350.37,
+      "recent_volume_usd": 27689.54,
       "static_excluded": null
     },
     {
@@ -6791,7 +6791,7 @@
       "data_start": "2025-12-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 245836.09,
+      "recent_volume_usd": 876888.87,
       "static_excluded": null
     },
     {
@@ -6801,7 +6801,7 @@
       "data_start": "2025-12-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1896.76,
+      "recent_volume_usd": 797.73,
       "static_excluded": null
     },
     {
@@ -6821,7 +6821,7 @@
       "data_start": "2025-12-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 487.56,
+      "recent_volume_usd": 5244.93,
       "static_excluded": null
     },
     {
@@ -6831,7 +6831,7 @@
       "data_start": "2025-12-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 169026.6,
+      "recent_volume_usd": 64285.87,
       "static_excluded": null
     },
     {
@@ -6841,7 +6841,7 @@
       "data_start": "2025-12-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 925.99,
+      "recent_volume_usd": 1669.87,
       "static_excluded": null
     },
     {
@@ -6851,7 +6851,7 @@
       "data_start": "2025-12-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2073.72,
+      "recent_volume_usd": 8476.49,
       "static_excluded": null
     },
     {
@@ -6871,7 +6871,7 @@
       "data_start": "2025-12-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 61.07,
+      "recent_volume_usd": 1681.72,
       "static_excluded": null
     },
     {
@@ -6901,7 +6901,7 @@
       "data_start": "2025-12-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 6846.3,
+      "recent_volume_usd": 24628.98,
       "static_excluded": null
     },
     {
@@ -6911,7 +6911,7 @@
       "data_start": "2025-12-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1906.65,
+      "recent_volume_usd": 39381.02,
       "static_excluded": null
     },
     {
@@ -6921,7 +6921,7 @@
       "data_start": "2025-12-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 50.36,
+      "recent_volume_usd": 21.1,
       "static_excluded": null
     },
     {
@@ -6941,7 +6941,7 @@
       "data_start": "2026-01-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9641.28,
+      "recent_volume_usd": 69744.15,
       "static_excluded": null
     },
     {
@@ -6951,7 +6951,7 @@
       "data_start": "2026-01-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4361.88,
+      "recent_volume_usd": 7443.37,
       "static_excluded": null
     },
     {
@@ -6961,7 +6961,7 @@
       "data_start": "2026-01-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7210.22,
+      "recent_volume_usd": 85288.27,
       "static_excluded": null
     },
     {
@@ -6971,7 +6971,7 @@
       "data_start": "2026-01-08",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7100.36,
+      "recent_volume_usd": 4783.76,
       "static_excluded": null
     },
     {
@@ -6981,7 +6981,7 @@
       "data_start": "2026-01-09",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1013.14,
+      "recent_volume_usd": 95.16,
       "static_excluded": null
     },
     {
@@ -6991,7 +6991,7 @@
       "data_start": "2026-01-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 97527.91,
+      "recent_volume_usd": 252752.48,
       "static_excluded": null
     },
     {
@@ -7091,7 +7091,7 @@
       "data_start": "2026-01-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11850.44,
+      "recent_volume_usd": 11146.62,
       "static_excluded": null
     },
     {
@@ -7101,7 +7101,7 @@
       "data_start": "2026-01-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 98989.44,
+      "recent_volume_usd": 861886.09,
       "static_excluded": null
     },
     {
@@ -7111,7 +7111,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 134814.62,
+      "recent_volume_usd": 258182.46,
       "static_excluded": null
     },
     {
@@ -7121,7 +7121,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 11278.55,
+      "recent_volume_usd": 18130.64,
       "static_excluded": null
     },
     {
@@ -7131,7 +7131,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5614.48,
+      "recent_volume_usd": 9023.24,
       "static_excluded": null
     },
     {
@@ -7141,7 +7141,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1233.23,
+      "recent_volume_usd": 1653.71,
       "static_excluded": null
     },
     {
@@ -7151,7 +7151,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 108992.54,
+      "recent_volume_usd": 352702.09,
       "static_excluded": null
     },
     {
@@ -7161,7 +7161,7 @@
       "data_start": "2026-01-20",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1485.71,
       "static_excluded": null
     },
     {
@@ -7171,7 +7171,7 @@
       "data_start": "2026-01-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7896.59,
+      "recent_volume_usd": 32315.32,
       "static_excluded": null
     },
     {
@@ -7181,7 +7181,7 @@
       "data_start": "2026-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 30401.88,
+      "recent_volume_usd": 101106.92,
       "static_excluded": null
     },
     {
@@ -7191,7 +7191,7 @@
       "data_start": "2026-01-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1431.04,
+      "recent_volume_usd": 10520.72,
       "static_excluded": null
     },
     {
@@ -7201,7 +7201,7 @@
       "data_start": "2026-01-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 967.96,
+      "recent_volume_usd": 3077.76,
       "static_excluded": null
     },
     {
@@ -7211,7 +7211,7 @@
       "data_start": "2026-01-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 2554.87,
       "static_excluded": null
     },
     {
@@ -7221,7 +7221,7 @@
       "data_start": "2026-01-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 16187329.63,
+      "recent_volume_usd": 63428036.47,
       "static_excluded": null
     },
     {
@@ -7251,7 +7251,7 @@
       "data_start": "2026-01-28",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12637.27,
+      "recent_volume_usd": 26779.48,
       "static_excluded": null
     },
     {
@@ -7261,7 +7261,7 @@
       "data_start": "2026-01-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2326.68,
+      "recent_volume_usd": 26399.06,
       "static_excluded": null
     },
     {
@@ -7271,7 +7271,7 @@
       "data_start": "2026-01-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4534.99,
+      "recent_volume_usd": 1953.33,
       "static_excluded": null
     },
     {
@@ -7281,7 +7281,7 @@
       "data_start": "2026-01-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 794.07,
+      "recent_volume_usd": 264.44,
       "static_excluded": null
     },
     {
@@ -7291,7 +7291,7 @@
       "data_start": "2026-01-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 36740.39,
+      "recent_volume_usd": 53102.92,
       "static_excluded": null
     },
     {
@@ -7301,7 +7301,7 @@
       "data_start": "2026-02-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3691.7,
+      "recent_volume_usd": 26042.57,
       "static_excluded": null
     },
     {
@@ -7311,7 +7311,7 @@
       "data_start": "2026-02-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1.9,
+      "recent_volume_usd": 2148.83,
       "static_excluded": null
     },
     {
@@ -7321,7 +7321,7 @@
       "data_start": "2026-02-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 99430.07,
       "static_excluded": null
     },
     {
@@ -7331,7 +7331,7 @@
       "data_start": "2026-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20042.82,
+      "recent_volume_usd": 84726.93,
       "static_excluded": "wrapped"
     },
     {
@@ -7341,18 +7341,8 @@
       "data_start": "2026-02-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 14.01,
+      "recent_volume_usd": 179523.27,
       "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_SUP_USD",
-      "base": "SUP",
-      "quote": "USD",
-      "data_start": "2026-02-04",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 7402.52,
-      "static_excluded": "leveraged"
     },
     {
       "symbol_id": "KRAKEN_SPOT_SLVX_USD",
@@ -7363,6 +7353,16 @@
       "is_active": true,
       "recent_volume_usd": 0.0,
       "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_SUP_USD",
+      "base": "SUP",
+      "quote": "USD",
+      "data_start": "2026-02-04",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 137932.36,
+      "static_excluded": "leveraged"
     },
     {
       "symbol_id": "KRAKEN_SPOT_COPXX_USD",
@@ -7421,7 +7421,7 @@
       "data_start": "2026-02-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 692.25,
+      "recent_volume_usd": 2231.57,
       "static_excluded": null
     },
     {
@@ -7441,7 +7441,7 @@
       "data_start": "2026-02-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 150174.93,
+      "recent_volume_usd": 380279.34,
       "static_excluded": null
     },
     {
@@ -7451,7 +7451,7 @@
       "data_start": "2026-02-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 32683.87,
+      "recent_volume_usd": 39496.85,
       "static_excluded": null
     },
     {
@@ -7461,7 +7461,7 @@
       "data_start": "2026-02-10",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1172.32,
+      "recent_volume_usd": 30412.2,
       "static_excluded": null
     },
     {
@@ -7471,7 +7471,7 @@
       "data_start": "2026-02-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1986.8,
+      "recent_volume_usd": 72029.87,
       "static_excluded": null
     },
     {
@@ -7481,7 +7481,7 @@
       "data_start": "2026-02-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20.37,
+      "recent_volume_usd": 13665.46,
       "static_excluded": null
     },
     {
@@ -7491,7 +7491,7 @@
       "data_start": "2026-02-17",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1573.46,
+      "recent_volume_usd": 721.14,
       "static_excluded": null
     },
     {
@@ -7501,7 +7501,7 @@
       "data_start": "2026-02-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10056.99,
+      "recent_volume_usd": 15672.0,
       "static_excluded": null
     },
     {
@@ -7521,7 +7521,7 @@
       "data_start": "2026-02-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10931.69,
+      "recent_volume_usd": 49960.81,
       "static_excluded": null
     },
     {
@@ -7531,7 +7531,7 @@
       "data_start": "2026-02-26",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 105.62,
+      "recent_volume_usd": 836.13,
       "static_excluded": null
     },
     {
@@ -7541,7 +7541,7 @@
       "data_start": "2026-02-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10075.72,
+      "recent_volume_usd": 48625.94,
       "static_excluded": null
     },
     {
@@ -7551,7 +7551,7 @@
       "data_start": "2026-03-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4726.83,
+      "recent_volume_usd": 35289.89,
       "static_excluded": null
     },
     {
@@ -7561,7 +7561,7 @@
       "data_start": "2026-03-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2269.52,
+      "recent_volume_usd": 2749.59,
       "static_excluded": null
     },
     {
@@ -7571,7 +7571,7 @@
       "data_start": "2026-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 10810.08,
+      "recent_volume_usd": 37341.87,
       "static_excluded": null
     },
     {
@@ -7581,7 +7581,7 @@
       "data_start": "2026-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 7314.2,
+      "recent_volume_usd": 13514.62,
       "static_excluded": null
     },
     {
@@ -7591,7 +7591,7 @@
       "data_start": "2026-03-04",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4639.35,
+      "recent_volume_usd": 907.71,
       "static_excluded": null
     },
     {
@@ -7601,7 +7601,7 @@
       "data_start": "2026-03-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 24388.73,
+      "recent_volume_usd": 9379.1,
       "static_excluded": null
     },
     {
@@ -7611,7 +7611,7 @@
       "data_start": "2026-03-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2240.86,
+      "recent_volume_usd": 7651.81,
       "static_excluded": null
     },
     {
@@ -7621,7 +7621,7 @@
       "data_start": "2026-03-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1915.29,
+      "recent_volume_usd": 4278.09,
       "static_excluded": null
     },
     {
@@ -7631,7 +7631,7 @@
       "data_start": "2026-03-06",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 260.53,
       "static_excluded": null
     },
     {
@@ -7851,7 +7851,7 @@
       "data_start": "2026-03-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 9049.15,
+      "recent_volume_usd": 21156.11,
       "static_excluded": null
     },
     {
@@ -7861,7 +7861,7 @@
       "data_start": "2026-03-12",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 20469.03,
+      "recent_volume_usd": 11779.47,
       "static_excluded": null
     },
     {
@@ -7871,7 +7871,7 @@
       "data_start": "2026-03-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 18119.9,
+      "recent_volume_usd": 45246.91,
       "static_excluded": null
     },
     {
@@ -7881,7 +7881,7 @@
       "data_start": "2026-03-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 4851.45,
       "static_excluded": null
     },
     {
@@ -7891,7 +7891,7 @@
       "data_start": "2026-03-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3179.35,
+      "recent_volume_usd": 14562.11,
       "static_excluded": null
     },
     {
@@ -7901,7 +7901,7 @@
       "data_start": "2026-03-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3251.23,
+      "recent_volume_usd": 8128.54,
       "static_excluded": null
     },
     {
@@ -7911,7 +7911,7 @@
       "data_start": "2026-03-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 194.52,
+      "recent_volume_usd": 614.97,
       "static_excluded": null
     },
     {
@@ -7921,7 +7921,7 @@
       "data_start": "2026-03-18",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 39.57,
+      "recent_volume_usd": 3042.42,
       "static_excluded": null
     },
     {
@@ -7931,7 +7931,7 @@
       "data_start": "2026-03-23",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3704.78,
+      "recent_volume_usd": 2560.43,
       "static_excluded": null
     },
     {
@@ -7941,7 +7941,7 @@
       "data_start": "2026-03-24",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 40.63,
+      "recent_volume_usd": 73.13,
       "static_excluded": null
     },
     {
@@ -7951,7 +7951,7 @@
       "data_start": "2026-03-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 80654.04,
+      "recent_volume_usd": 26030.45,
       "static_excluded": null
     },
     {
@@ -7961,7 +7961,7 @@
       "data_start": "2026-03-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 292.93,
+      "recent_volume_usd": 8749.56,
       "static_excluded": null
     },
     {
@@ -8271,7 +8271,7 @@
       "data_start": "2026-03-31",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19.08,
+      "recent_volume_usd": 11530.61,
       "static_excluded": null
     },
     {
@@ -8281,7 +8281,7 @@
       "data_start": "2026-04-02",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 19.35,
+      "recent_volume_usd": 687.9,
       "static_excluded": null
     },
     {
@@ -8291,7 +8291,7 @@
       "data_start": "2026-04-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1216.85,
+      "recent_volume_usd": 14396.39,
       "static_excluded": null
     },
     {
@@ -8301,7 +8301,7 @@
       "data_start": "2026-04-15",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2121.49,
+      "recent_volume_usd": 153.95,
       "static_excluded": null
     },
     {
@@ -8311,7 +8311,7 @@
       "data_start": "2026-04-16",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 416.14,
+      "recent_volume_usd": 57.6,
       "static_excluded": null
     },
     {
@@ -8321,7 +8321,7 @@
       "data_start": "2026-04-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 48.24,
       "static_excluded": null
     },
     {
@@ -8331,7 +8331,7 @@
       "data_start": "2026-04-21",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 86852.29,
+      "recent_volume_usd": 129997.62,
       "static_excluded": null
     },
     {
@@ -8341,7 +8341,7 @@
       "data_start": "2026-04-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 5700.28,
+      "recent_volume_usd": 39220.93,
       "static_excluded": null
     },
     {
@@ -8351,7 +8351,7 @@
       "data_start": "2026-04-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 16526.91,
+      "recent_volume_usd": 39360.41,
       "static_excluded": null
     },
     {
@@ -8361,7 +8361,7 @@
       "data_start": "2026-04-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 4407.63,
+      "recent_volume_usd": 1017.29,
       "static_excluded": "wrapped"
     },
     {
@@ -8371,7 +8371,7 @@
       "data_start": "2026-04-22",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 0.0,
+      "recent_volume_usd": 1091.39,
       "static_excluded": null
     },
     {
@@ -8391,7 +8391,7 @@
       "data_start": "2026-04-27",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12537.64,
+      "recent_volume_usd": 20602.05,
       "static_excluded": null
     },
     {
@@ -8401,7 +8401,7 @@
       "data_start": "2026-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 497652.96,
+      "recent_volume_usd": 591947.0,
       "static_excluded": null
     },
     {
@@ -8411,7 +8411,7 @@
       "data_start": "2026-04-29",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12376.18,
+      "recent_volume_usd": 53915.95,
       "static_excluded": null
     },
     {
@@ -8421,7 +8421,7 @@
       "data_start": "2026-04-30",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 72174.2,
+      "recent_volume_usd": 79777.59,
       "static_excluded": null
     },
     {
@@ -8431,7 +8431,7 @@
       "data_start": "2026-05-03",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 370998.83,
+      "recent_volume_usd": 821207.85,
       "static_excluded": null
     },
     {
@@ -8441,7 +8441,7 @@
       "data_start": "2026-05-05",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 3325.09,
+      "recent_volume_usd": 10451.05,
       "static_excluded": null
     },
     {
@@ -8451,7 +8451,7 @@
       "data_start": "2026-05-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 224.7,
+      "recent_volume_usd": 236.68,
       "static_excluded": null
     },
     {
@@ -8461,7 +8461,7 @@
       "data_start": "2026-05-07",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 296.81,
+      "recent_volume_usd": 38.83,
       "static_excluded": null
     },
     {
@@ -8471,7 +8471,7 @@
       "data_start": "2026-05-11",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 2539.64,
+      "recent_volume_usd": 14677.38,
       "static_excluded": null
     },
     {
@@ -8481,7 +8481,7 @@
       "data_start": "2026-05-13",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 727.78,
+      "recent_volume_usd": 3950.67,
       "static_excluded": null
     },
     {
@@ -8491,7 +8491,7 @@
       "data_start": "2026-05-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 134033.17,
+      "recent_volume_usd": 166648.32,
       "static_excluded": null
     },
     {
@@ -8501,7 +8501,7 @@
       "data_start": "2026-05-14",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 1822.76,
+      "recent_volume_usd": 37532.08,
       "static_excluded": null
     },
     {
@@ -8511,7 +8511,7 @@
       "data_start": "2026-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 127945.01,
+      "recent_volume_usd": 322567.45,
       "static_excluded": null
     },
     {
@@ -8521,7 +8521,7 @@
       "data_start": "2026-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 12678.32,
+      "recent_volume_usd": 90732.47,
       "static_excluded": null
     },
     {
@@ -8531,7 +8531,7 @@
       "data_start": "2026-05-19",
       "data_end": null,
       "is_active": true,
-      "recent_volume_usd": 16709.9,
+      "recent_volume_usd": 67744.38,
       "static_excluded": null
     },
     {
@@ -8547,6 +8547,16 @@
     {
       "symbol_id": "KRAKEN_SPOT_VIDAX_USD",
       "base": "VIDAX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_ONDSX_USD",
+      "base": "ONDSX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8575,8 +8585,18 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_JAAAX_USD",
-      "base": "JAAAX",
+      "symbol_id": "KRAKEN_SPOT_NETX_USD",
+      "base": "NETX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_FAAAX_USD",
+      "base": "FAAAX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8587,6 +8607,16 @@
     {
       "symbol_id": "KRAKEN_SPOT_FEZX_USD",
       "base": "FEZX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_SOXXX_USD",
+      "base": "SOXXX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8615,36 +8645,6 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_EWUX_USD",
-      "base": "EWUX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_NLRX_USD",
-      "base": "NLRX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_ONDSX_USD",
-      "base": "ONDSX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
       "symbol_id": "KRAKEN_SPOT_RCATX_USD",
       "base": "RCATX",
       "quote": "USD",
@@ -8665,88 +8665,8 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_FLBLX_USD",
-      "base": "FLBLX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_NETX_USD",
-      "base": "NETX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_FAAAX_USD",
-      "base": "FAAAX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_SOXXX_USD",
-      "base": "SOXXX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_IRENX_USD",
-      "base": "IRENX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_SATAX_USD",
-      "base": "SATAX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_GDXX_USD",
-      "base": "GDXX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_LNGX_USD",
-      "base": "LNGX",
-      "quote": "USD",
-      "data_start": "2026-05-22",
-      "data_end": null,
-      "is_active": true,
-      "recent_volume_usd": 0.0,
-      "static_excluded": null
-    },
-    {
-      "symbol_id": "KRAKEN_SPOT_VOOX_USD",
-      "base": "VOOX",
+      "symbol_id": "KRAKEN_SPOT_JAAAX_USD",
+      "base": "JAAAX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8757,6 +8677,16 @@
     {
       "symbol_id": "KRAKEN_SPOT_HIMSX_USD",
       "base": "HIMSX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_FLBLX_USD",
+      "base": "FLBLX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8785,8 +8715,68 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_YLDEX_USD",
-      "base": "YLDEX",
+      "symbol_id": "KRAKEN_SPOT_VOOX_USD",
+      "base": "VOOX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_SATAX_USD",
+      "base": "SATAX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_GDXX_USD",
+      "base": "GDXX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_EWUX_USD",
+      "base": "EWUX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_NLRX_USD",
+      "base": "NLRX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_IRENX_USD",
+      "base": "IRENX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_LNGX_USD",
+      "base": "LNGX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8815,8 +8805,8 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_USPXX_USD",
-      "base": "USPXX",
+      "symbol_id": "KRAKEN_SPOT_FSMLX_USD",
+      "base": "FSMLX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -8825,8 +8815,18 @@
       "static_excluded": null
     },
     {
-      "symbol_id": "KRAKEN_SPOT_FSMLX_USD",
-      "base": "FSMLX",
+      "symbol_id": "KRAKEN_SPOT_YLDEX_USD",
+      "base": "YLDEX",
+      "quote": "USD",
+      "data_start": "2026-05-22",
+      "data_end": null,
+      "is_active": true,
+      "recent_volume_usd": 0.0,
+      "static_excluded": null
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_USPXX_USD",
+      "base": "USPXX",
       "quote": "USD",
       "data_start": "2026-05-22",
       "data_end": null,
@@ -9465,5 +9465,5 @@
       "static_excluded": null
     }
   ],
-  "written_at": "2026-05-23T08:01:48.609793+00:00"
+  "written_at": "2026-05-24T15:37:24.094784+00:00"
 }
