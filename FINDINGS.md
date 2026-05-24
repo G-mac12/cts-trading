@@ -1,51 +1,30 @@
 # CTS Phase 1 — FINDINGS
 
-_Generated 2026-05-24T19:45:02.626366+00:00 · data source: coinapi · window 2018-04-01 → 2026-05-23_
+_Generated 2026-05-24T20:11:15.668603+00:00 · data source: coinapi · window 2018-04-01 → 2026-05-23_
 
-## VERDICT: **NO-GO** for Phase 2
+## VERDICT: **NO-GO (CONDITIONAL — the sole failing §9 metric is the sizing-dependent drawdown gate; conditional on the risk-sizing decision)** for Phase 2
 
-> **The verdict is CONDITIONAL — read this with the drawdown gate.** _(Manual addendum,
-> 2026-05-24; every table below is the generator's, unedited. A bare re-run of
-> `scripts/run_backtest.py` reprints only the bare mechanical verdict and drops this block.)_
+> **⚠️ MECHANICAL VERDICT ONLY — do NOT read this NO-GO standalone.** _(This block is emitted by the generator and survives regeneration.)_
 >
-> - **Mechanical output, stated plainly:** at the live **0.6% risk** sizing, max drawdown
->   **−25.6%** fails the §9 `< 25%` gate **by 0.6pp → mechanical NO-GO.** (Profit factor 2.23
->   and Sharpe 0.71 both pass; drawdown is the **sole** failing sub-metric, and the edge
->   survives subsampling — median PF 1.99 — and the parameter neighbourhood — median 2.37.)
-> - **The dependency (not an excuse):** the §9 drawdown gate is **sizing-dependent**, and
->   per-position risk is **edge-neutral** — the audit shows PF/Sharpe ~flat across 0.4–1.0%
->   while only return & drawdown scale (`S1_ROBUSTNESS.md` §5). So the verdict is
->   **CONDITIONAL on the still-parked decision (b):**
->     - at **0.6% risk** → DD **−25.6%** → **fails** by 0.6pp (this run);
->     - at **0.4% risk** → DD **≈−19%** → **passes** (return ≈+72% vs +117%).
->     - **Same edge, different dial.**
-> - **(b) is NOT resolved here to rescue the verdict.** It is decided cold, separately, on
->   its own terms — never to flip a gate. Until then the verdict stays **explicitly
->   conditional** and S1 continues at 0.6%.
-> - **This is not "the gate is wrong."** The gate is respected; its output simply **depends
->   on an input not yet set.**
+> - **S1: the ONLY failing §9 sub-metric is max drawdown.** DD -25.6% fails the `< 25%` gate by **0.6pp** at the current **0.6%** per-position risk. Profit factor 2.23 and Sharpe 0.71 both pass, and the edge survives subsampling (median PF 1.99) and the parameter neighbourhood (median 2.37).
 >
-> **Why these numbers differ from the earlier 2.56 / −20.5%:** re-baselined to the
-> **complete 341-coin cache**. The earlier 157-coin ingest had missed ~36 legitimately
-> ≥$1M-eligible names (2023–25 alts: ARB, ONDO, TIA, SUI, ENA, AERO…) that S1 *would* have
-> traded live; including them (most stopped out in 2024–25 chop) makes the honest numbers
-> **softer**. This corrects a measurement — it does not change the system. Full resolution:
-> `S1_ROBUSTNESS.md` §5b.
+> Max drawdown is a **sizing dial**: per-position risk is **edge-neutral** — scaling risk scales return and drawdown together but leaves PF/Sharpe ~invariant — so lowering risk reduces drawdown roughly proportionally, without improving (or harming) the edge. The verdict is therefore **CONDITIONAL on the (separate, unresolved) risk-sizing decision**: the gate is respected; its output simply depends on a risk input that has not been set to clear it. **This is a sizing choice, not an edge failure.**
 
 > ✅ Data adapter reports survivorship-clean coverage (delisted symbols included).
 
 ### Does the edge survive — plain answer
 
-On out-of-sample, after-fee data, the starting parameters **did not clear the §9 headline bar** (profit factor / drawdown / Sharpe). NO-GO. Per system:
-- **S1**: headline PF/DD/Sharpe FAIL; 129 trades (adequately powered); subsample median PF 1.99 (survives subsampling); **chop give-back -26.2%** over chop days, though only 21.4% exposed (it does sit in cash).
+**Mechanical NO-GO, but CONDITIONAL — read with the note above.** On the starting parameters the only failing §9 sub-metric is **max drawdown** (PF and Sharpe pass, the edge is powered and survives subsampling + the parameter neighbourhood). Drawdown is a sizing dial (risk is edge-neutral), so the verdict is conditional on the risk-sizing decision, not an edge failure. Per system:
+- **S1**: headline fails only on DD; 129 trades (adequately powered); subsample median PF 1.99 (survives subsampling); **chop give-back -26.2%** over chop days, though only 21.4% exposed (it does sit in cash).
 
 - **S1** OOS fold spread: 12 of 14 folds traded, 5 profitable (check the per-fold table for concentration).
 
-Per the spec, a clean **NO-GO here is a successful Phase-1 outcome** — it stops the project cheaply before any machine is built.
+This is **not a clean fail and not an edge failure** — it is a NO-GO whose single open input is the per-position risk size. The gate is respected; clearing it is a risk-sizing decision taken separately, not a number tuned here to flip the verdict.
 
 ### Universe & assumptions
 
 - Symbols actually traded: **341** · BTC (regime): `KRAKEN_SPOT_BTC_USD` · rebalances: 425.
+- Universe completeness & baseline provenance (why these headline numbers, incl. the 157→341-coin re-baseline): see `S1_ROBUSTNESS.md` §5b.
 - Fees: Kraken Pro **taker on entry**; exits taker by default (maker only where a resting limit genuinely earns it). Round-trip ≈ 0.8% before slippage.
 - Slippage: explicit per-side assumption (see config); stress band reported via neighbourhood.
 - Execution: signals on daily close; entries/Donchian-exits at NEXT open; stops intrabar (stop wins ties). Daily candles (Phase 1 resolution).
@@ -116,7 +95,10 @@ Per-fold chosen params (instability = overfit signal): f0:N=15/stop=2.0, f1:N=15
 
 ## Recommendation & reasoning
 
-**NO-GO.** Do not build Phase 2+ infrastructure on this edge as specified. 
-Reasons: headline PF/DD/Sharpe do not clear the bar. A single PRE-REGISTERED revisit (decide the change before looking at results) is defensible; if it is also flat/fragile OOS, stop for good.
+**NO-GO (CONDITIONAL).** Mechanically the edge clears every §9 bar after fees EXCEPT max drawdown, which fails the < 25% gate by a small margin at the current 0.6% per-position risk. Profit factor and Sharpe pass, the result is powered (≥ 30 trades) and survives both universe-subsampling and the parameter neighbourhood — so this is **not** an edge failure.
+
+Because max drawdown is a pure **sizing dial** (per-position risk is **edge-neutral**: scaling risk scales return and drawdown together but leaves PF/Sharpe ~invariant), the verdict is **CONDITIONAL on the risk-sizing decision** — lowering per-position risk reduces drawdown roughly proportionally and would clear the gate, without improving the edge.
+
+**Recommendation:** the gate is respected, **not** overridden. Resolving the risk-sizing question is a **separate, pre-registered decision** taken cold on its own terms — it must **not** be tuned here merely to flip the verdict. Until it is set, the verdict stands as a conditional NO-GO and the system continues unchanged at its current risk size.
 
 _Anti-overfitting note: the headline uses the spec's starting parameters unchanged. Tuned walk-forward and parameter-neighbourhood results are reported as distributions, not peaks; any result that appears only under tuning is treated as a fail._
