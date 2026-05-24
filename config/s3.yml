@@ -1,0 +1,35 @@
+# S3 — daily cross-sectional momentum rotation. SEPARATE from S1 (S1 untouched).
+# Segments + exclusions live in config/s3_segments.yml.
+
+signal:
+  lookback_days: 90        # return window for the relative-strength numerator
+  skip_days: 7             # skip most-recent days (avoid short-term reversal)
+  vol_window_days: 90      # realized-vol window (denominator) — = lookback by default
+  # signal = return(t-skip-lookback -> t-skip) / realized_vol(same window). Risk-adjusted,
+  # deliberately different from S1's raw 30d return (longer + vol-normalised).
+
+universe:
+  min_adv_usd: 1_000_000   # 30d avg $-volume floor (set in S3-B from the names-per-floor table)
+  adv_window_days: 30
+  min_listing_age_days: 365
+
+portfolio:
+  max_slots: 6             # DYNAMIC: hold min(max_slots, eligible-after-caps); never lower the floor to fill
+  segment_cap: 2           # tunable / SWEPT in S3-D (2 / 3 / 0=none)
+  hysteresis_buffer: 3     # tunable / SWEPT in S3-D: keep a held name if still within top (slots+buffer)
+  total_deployment_pct: 100.0
+  max_position_pct: 34.0   # no single name above this
+
+regime:
+  ma_short: 50
+  ma_long: 100             # BTC risk-on gate (same shared market signal as S1); off -> cash
+
+equity:
+  start_gbp: 2000.0
+  gbp_usd_rate: 1.27
+
+cost:
+  taker_pct: 0.40          # Kraken Pro taker (conservative; rotation pays this on turnover both ways)
+  slippage_base_bps: 5.0   # base half-spread, basis points
+  slippage_impact_coef: 10.0  # extra bps per 1% of (order$ / ADV)
+  slippage_mult: 1.0       # 1.0 = base cost; the S3-D sensitivity run sets 2.0
