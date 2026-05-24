@@ -20,10 +20,16 @@ the live system, the config, or the paper run. Reproduce with `scripts/s1_robust
 4. **Risk sizing is edge-neutral — confirmed empirically.** PF/Sharpe ~flat across
    0.4–1.0% risk while return & drawdown scale. Validates the E3 "resize is risk control,
    not curve-fitting" claim.
-5. **New honest flag: the broader universe degraded S1.** On today's 341-coin cache the
-   headline is **PF 2.23 / maxDD −25.6% / Sharpe 0.71** vs the documented 157-coin E3
-   baseline **2.56 / −20.5% / 0.78**. Drawdown now *nudges past* the §9 25% line at 0.6%
-   risk. The config didn't change — the data cache grew. See §5.
+5. **The broader universe degraded S1 — and it's a MORE honest number, not an artifact.**
+   On today's 341-coin cache the headline is **PF 2.23 / maxDD −25.6% / Sharpe 0.71** vs the
+   documented 157-coin E3 baseline **2.56 / −20.5% / 0.78**. Resolved by measurement
+   (§5 + `scripts/s1_universe_check.py`): S1 traded **0** names below its $1M point-in-time
+   floor — the difference is **not** sub-$1M junk. It comes from ~36 *legitimately ≥$1M*
+   names the smaller ingest had missed (2023–25 alts: ARB, ONDO, TIA, SUI, ENA, AERO…),
+   which S1 would have traded live and which mostly stopped out. So the 157 baseline was
+   mildly survivorship-**optimistic**; the 341 number is the more complete estimate.
+   Drawdown now nudges past the §9 25% line at 0.6% risk. **Flagged for your decision — no
+   change made.**
 
 ---
 
@@ -66,6 +72,14 @@ years** (2019, 2020, 2023, 2024, 2025) and the two weak years are a known trend-
 mirage. **But the caveat is real and goes in the monitoring sheet:** do not expect ~2.2–2.6
 PF in an ordinary, non-trending year; expect PF ~1.0–2.0, with the big numbers only when a
 sustained trend shows up.
+
+> **Interpretation (explicit).** S1's edge is **real-but-bull-weighted** — a structural
+> property of trend-following, **NOT** the S3 noise trap. The distinguishing evidence:
+> positive in **5 of 7 years**, **bear-safe** (0 trades in bear, ~flat), and it **survives
+> its parameter neighbourhood** (§3–§4). Consequence: **a flat or sub-2 PF in a chop/bear
+> year is EXPECTED behaviour, not a tripwire.** This is exactly why the "what is NOT a
+> tripwire" list in `S1_MONITORING.md` §5 exists — quiet/low-PF stretches when there is no
+> trend are the system working as designed, not the edge breaking.
 
 ---
 
@@ -150,11 +164,45 @@ re-size was risk control, not curve-fitting.
 **−20.5%** (inside the §9 25% limit). On **today's broader 341-coin cache**, the *same*
 0.6% gives **−25.6%** — a hair **past** the limit — and the headline PF/Sharpe also slipped
 (2.56→2.23, 0.78→0.71). Nothing in the config changed; the **data cache grew** during the
-S3 ingest, adding thinner names that S1 occasionally trades. Two takeaways:
-- The live/paper universe **matters**, and the §9 numbers are mildly universe-dependent.
-- If we want DD back under 25% on *this* universe, the **edge-neutral** lever is a slightly
-  smaller risk % (0.4% gives −19.0% here). **I am not changing it** — that's an S1 change
-  and we're in a hold; it's flagged for your decision, with the data above.
+S3 ingest. The obvious worry: is S1 now trading sub-$1M junk the live filter would reject?
+**Resolved by measurement** below.
+
+### 5b. Cache/baseline resolution (`scripts/s1_universe_check.py`, read-only)
+
+S1's backtest schedule applies the **$1M point-in-time** filter, so every name it trades
+must have cleared $1M *at the rebalance*. Measured on the 341-coin cache:
+
+| quantity | count |
+|---|---:|
+| cache names (after static exclusions) | 341 |
+| **never** cleared $1M PIT across the full window (true non-traded superset) | **148** |
+| ever cleared $1M PIT | 193 |
+| ever ELIGIBLE point-in-time (≥$1M **and** ≥90d history) | 152 |
+| distinct names S1 actually **traded** | 59 |
+| **traded names below $1M PIT** | **0** |
+
+**Answer to "do the extra names sit below $1M?"** Partly yes, partly no — and the
+distinction is the whole point:
+- The **148** names that never clear $1M PIT are confirmed a **non-traded superset** — S1
+  touches **zero** of them. The lowest-liquidity name S1 ever traded peaked at **$1.81M**
+  (MKR); all 59 traded names are ≥$1M. So S1 is **not** trading sub-$1M junk. ✔
+- **But the 2.56→2.23 difference is NOT caused by those names.** It comes from ~36
+  *legitimately ≥$1M* names the original 157-ingest had **missed** — mostly 2023–25 alts
+  (ARB $6.6M, ONDO $7.1M, TIA $8.9M, SUI $28.8M, ENA $12.4M, AERO $2.6M, AKT $2.9M, INJ,
+  LDO, MINA, VVV, PENGU…). These **would** have been in S1's live universe historically;
+  S1 traded them (+12 trades) and most **stopped out** in the 2024–25 chop, which is what
+  deepened the drawdown. The 10 biggest losing trades are all ordinary **stops** on liquid
+  names ($2.6M–$459M PIT) — genuine whipsaws, not liquidity artifacts.
+
+**Conclusion (honest, less convenient one).** This is the "picture changes" branch: the
+extra names are real members of S1's ≥$1M live universe, so the 341 number must **not** be
+filed as "informational over a non-traded superset." Instead, the **157-coin 2.56 / −20.5%
+was mildly survivorship-optimistic** (its ingest under-sampled the eligible universe), and
+the **341-coin 2.23 / −25.6% is the more complete, more honest estimate** of S1's live
+behaviour. The committed FINDINGS baseline therefore warrants updating to the 341 numbers —
+**flagged for your decision; no baseline rewrite or risk change made** (we're in a hold).
+The drawdown crossing 25% at 0.6% risk is the same discussion: the edge-neutral fix is a
+smaller risk % (0.4% → −19.0% here), to decide separately with a fresh go-ahead.
 
 ---
 
@@ -170,7 +218,11 @@ caution. Risk sizing is confirmed edge-neutral.
 
 **What changes as a result:** nothing in the running system (this is a hold). The fragility
 is logged here and folded into `S1_MONITORING.md` — specifically, *expect PF ~1.0–2.0 in
-ordinary years and only headline numbers in trend years*, and the universe-dependent
-drawdown is now an explicit, pre-registered watch-item. Any actual change to S1 (e.g.
-risk → 0.5% to re-seat DD under 25% on the broad universe, or wiring `regime_exit`) remains
-a separate, pre-registered decision requiring your go-ahead.
+ordinary years and only headline numbers in trend years*. The cache/baseline question is
+**resolved** (§5b): S1 trades no sub-$1M names, but the broader cache is a *more complete*
+view of its real ≥$1M universe, so **2.23 / −25.6% is the more honest baseline** and the
+157-coin 2.56 was mildly optimistic. Two items are now **flagged for your decision** (no
+action taken): (a) updating the committed FINDINGS baseline to the 341 numbers; (b) whether
+to re-seat drawdown under the §9 25% line via the edge-neutral risk lever (0.4% → −19.0%).
+Any actual change to S1 — including those two and wiring `regime_exit` — remains a separate,
+pre-registered decision requiring your go-ahead.
