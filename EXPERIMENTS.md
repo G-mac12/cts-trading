@@ -124,3 +124,56 @@ net PF > 1.0 · S3↔S1 correlation < 0.6 · survive 2× slippage · sweep-robus
 Did **not** loosen any signal/threshold to rescue it. The S3 harness (`src/cts/s3/`,
 `scripts/s3_*.py`) stays in the repo as a tested, **retired** reference — it is **not**
 wired into the paper-trader or dashboard. S1 untouched throughout.
+
+---
+
+## S4 — Intraday Opening-Range Breakout · 2026-05-24 · **STOPPED at Gate-0 (cost-infeasible)**
+
+A genuinely new question (not "make S1 trade more", which S3 already tested): is there an
+*intraday* breakout edge in crypto, and does it survive Kraken costs at ~£2k? Spec:
+`S4_ORB_SPEC.md`. The spec is built to **fail cheaply** — Phase 0 is a cost-viability KILL
+GATE answered BEFORE any strategy is built. It stopped us, as predicted.
+
+**Data (the long pole):** CoinAPI *does* serve intraday Kraken OHLCV. Pulled BTC/ETH/SOL
+**hourly**, 2022-01-01→2026-05-23 (~38.3k bars each) into an **isolated** cache
+(`data/cache/coinapi_intraday/`, `__1HRS`) — S1's daily cache untouched. Credit model
+measured = ceil(bars/100)/request; spend **1,149 credits** (probe) + 5 calibration.
+
+**Phase-0 model** (`scripts/s4_phase0.py`, read-only feasibility, NOT the gated harness):
+a sensible daily-reset ORB — opening range = first 4 UTC hours, entry on hourly close above
+the range high with RVOL≥1.5 and above session VWAP, S1's daily BTC regime gate, exit at
+1.5×ATR stop or end-of-session. Cost = Kraken taker 0.40%/side (0.80% round trip) + per-name
+spread (2–8 bps) + S3 ADV-proxy slippage on **intraday** bar volume; base and 2×.
+
+| probe (pooled) | trades | tr/yr | win% | mean gross/trade | break-even (cost) | mean net/trade | net PF | net PF 2× |
+|---|---|---|---|---|---|---|---|---|
+| BTC/ETH/SOL hourly | 837 | ~100 | 39% | **0.112%** | **0.945%** | **−0.833%** | **0.38** | **0.15** |
+
+**Gate-0 verdict: STOP — cost-infeasible at £2k/Kraken intraday.** The gross capture an ORB
+actually delivers (~0.11%/trade; winners ~2.0%, but only 39% win) is ~**8× too small** to
+clear the round-trip cost hurdle, which is dominated by the **0.80% taker fee floor**. Mean
+net is negative on *every* parameterisation.
+
+**Structural, not parameter-fragile** (sensitivity, same data, no rescue attempt):
+
+| OR window × stop (taker 0.40%) | mean gross/trade | net PF |
+|---|---|---|
+| 2h/4h/6h × 1.0/1.5/2.0×ATR (9 combos) | 0.013% – 0.164% | 0.28 – 0.43 |
+| best params @ **maker 0.25%** (optimistic) | 0.112% | 0.53 |
+
+No opening-range/stop choice gets gross capture within an order of magnitude of the
+0.80% fee floor; even optimistic maker fees leave net PF 0.53 (< 1.0). The conclusion is
+structural to ~£2k on Kraken's lowest fee tier, not an artifact of tuning.
+
+**Did NOT build Phase 1.** No ORB signal module, no intraday engine, no paper wiring — the
+kill gate is the whole point. Kept as tested Phase-0 evidence: the intraday ingest
+(`scripts/s4_ingest_intraday.py`, adapter `intraday_ohlcv`), the feasibility model
+(`scripts/s4_phase0.py`), and the cached hourly probe data. Same discipline as S2/S3/
+pullback: gate-or-stop, no loosening. **S1 untouched at 0.6%, daily, throughout.**
+
+**Lesson:** the one untested edge family (intraday) is killed by the most mundane force
+(fees), exactly where the spec predicted. At £2k on Kraken, round-tripping intraday costs
+~0.8%+ while a breakout bar captures ~0.1% on average — the timeframe is cost-locked. Would
+only reopen if (a) the fee tier dropped materially (much larger book) or (b) a
+fundamentally higher-capture intraday signal were proposed — both separate, pre-registered
+decisions.

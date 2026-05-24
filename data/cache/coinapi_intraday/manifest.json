@@ -1,0 +1,41 @@
+{
+  "source": "coinapi_intraday",
+  "period_id": "1HRS",
+  "survivorship_clean": true,
+  "exchange": "KRAKEN",
+  "range": [
+    "2022-01-01",
+    "2026-05-24"
+  ],
+  "probe_set": [
+    "KRAKEN_SPOT_BTC_USD",
+    "KRAKEN_SPOT_ETH_USD",
+    "KRAKEN_SPOT_SOL_USD"
+  ],
+  "request_cost_credits": 1149,
+  "symbols": [
+    {
+      "symbol_id": "KRAKEN_SPOT_BTC_USD",
+      "bars": 38284,
+      "credits": 383,
+      "start": "2022-01-01 00:00:00+00:00",
+      "end": "2026-05-23 23:00:00+00:00"
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_ETH_USD",
+      "bars": 38283,
+      "credits": 383,
+      "start": "2022-01-01 00:00:00+00:00",
+      "end": "2026-05-23 23:00:00+00:00"
+    },
+    {
+      "symbol_id": "KRAKEN_SPOT_SOL_USD",
+      "bars": 38275,
+      "credits": 383,
+      "start": "2022-01-01 00:00:00+00:00",
+      "end": "2026-05-23 23:00:00+00:00"
+    }
+  ],
+  "note": "S4 Phase-0 intraday probe; isolated from S1 daily cache (coinapi/*__1DAY).",
+  "written_at": "2026-05-24T21:18:29.212896+00:00"
+}

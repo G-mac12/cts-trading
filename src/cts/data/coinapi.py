@@ -56,6 +56,33 @@ def rows_to_ohlcv(rows: list) -> pd.DataFrame:
     return out[~out.index.duplicated(keep="last")].sort_index()
 
 
+# Intraday period -> bar duration (used to advance the pagination cursor).
+_PERIOD_DELTA = {
+    "1HRS": timedelta(hours=1), "30MIN": timedelta(minutes=30),
+    "15MIN": timedelta(minutes=15), "10MIN": timedelta(minutes=10),
+    "5MIN": timedelta(minutes=5), "1MIN": timedelta(minutes=1),
+}
+
+
+def rows_to_intraday_ohlcv(rows: list) -> pd.DataFrame:
+    """Like ``rows_to_ohlcv`` but KEEPS the intraday timestamp (no ``.normalize()``)
+    so hourly/minute bars are not collapsed onto the date. Same positional-alignment
+    discipline (build columns on the RangeIndex, then assign the datetime index)."""
+    if not rows:
+        return pd.DataFrame(columns=OHLCV_COLUMNS, index=pd.DatetimeIndex([], tz="UTC", name="time"))
+    df = pd.DataFrame(rows)
+    out = pd.DataFrame({
+        "open": df["price_open"].astype("float64"),
+        "high": df["price_high"].astype("float64"),
+        "low": df["price_low"].astype("float64"),
+        "close": df["price_close"].astype("float64"),
+        "volume": df["volume_traded"].astype("float64"),
+    })
+    out.index = pd.to_datetime(df["time_period_start"], utc=True)
+    out.index.name = "time"
+    return out[~out.index.duplicated(keep="last")].sort_index()
+
+
 class CoinAPIAdapter(DataAdapter):
     survivorship_clean = True
     source_name = "coinapi"
@@ -160,3 +187,27 @@ class CoinAPIAdapter(DataAdapter):
             "limit": 100000,
         }
         return rows_to_ohlcv(self._get(f"/ohlcv/{symbol_id}/history", params=params))
+
+    def intraday_ohlcv(self, symbol_id: str, start, end, period_id: str = "1HRS") -> pd.DataFrame:
+        """Paginated intraday OHLCV (UTC). CoinAPI returns ascending pages capped at
+        `limit`; we advance the cursor to one bar past the last row until a short page
+        signals the end. Credits accrue per request via `_get` (ceil(rows/100))."""
+        delta = _PERIOD_DELTA.get(period_id, timedelta(hours=1))
+        cur = pd.Timestamp(start, tz="UTC")
+        end_dt = pd.Timestamp(end, tz="UTC")
+        page_limit = 100000
+        collected: list = []
+        while cur < end_dt:
+            rows = self._get(f"/ohlcv/{symbol_id}/history", params={
+                "period_id": period_id,
+                "time_start": cur.strftime("%Y-%m-%dT%H:%M:%S"),
+                "time_end": end_dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                "limit": page_limit,
+            })
+            if not rows:
+                break
+            collected.extend(rows)
+            if len(rows) < page_limit:  # last page
+                break
+            cur = pd.to_datetime(rows[-1]["time_period_start"], utc=True) + delta
+        return rows_to_intraday_ohlcv(collected)
