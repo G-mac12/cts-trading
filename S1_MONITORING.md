@@ -33,10 +33,13 @@ S1 @ $1M liquidity floor / 0.6% risk, 8-year survivorship-clean OOS, measured on
 > names — which S1 *would* have traded live — are included; most stopped out in 2024–25
 > chop, so the honest numbers are **softer** (2.23 / −25.6%). This is correcting a
 > measurement to the honest one, not a change to the system. See `S1_ROBUSTNESS.md` §5b.
-> **Note the drawdown now slightly exceeds the §9 25% line at 0.6% risk** — that is a
-> *separate, parked decision* (b): risk-sizing is **edge-neutral** (per the audit), so
-> 0.6%→0.4% is purely a drawdown/return tradeoff (≈−25.6% vs ≈−19%, return ≈+117% vs +72%),
-> **not** an edge improvement. It will be decided on its own terms later. **No change now.**
+> **Note the drawdown now slightly exceeds the §9 25% line at 0.6% risk.** Decision (b)
+> on this is **RESOLVED (2026-05-24): keep 0.6%** (deliberate cold call, no config change).
+> Risk-sizing is **edge-neutral** (per the audit), so 0.6%→0.4% would be purely a
+> drawdown/return tradeoff (≈−25.6% vs ≈−19% DD, ≈+117% vs +72% return) — we chose the
+> fuller return and **accept the deeper drawdown**, including that live DD may run somewhat
+> past −25.6% (the tripwires below govern when to act). The mechanical FINDINGS verdict
+> stays a deliberately-accepted NO-GO on the DD gate. See `EXPERIMENTS.md` + `S1_ROBUSTNESS.md`.
 
 > These are *backtest* numbers on historical data. Live will be **worse** than backtest
 > almost by definition (slippage realism, regime luck, no hindsight on the universe). The
@@ -86,9 +89,9 @@ trades), not the signal breaking. Decompose by regime before concluding.
 
 ## 3. Drawdown tripwires (live, from peak equity)
 
-Backtest worst drawdown (re-baselined) = **−25.6%** at 0.6% risk. Note this is itself a
-hair past the §9 −25% line — see the parked decision (b) below; bands are set against the
-**actual −25.6% backtest envelope** we run at today.
+Backtest worst drawdown (re-baselined) = **−25.6%** at 0.6% risk. This is itself a hair past
+the §9 −25% line — **deliberately accepted** (decision (b), resolved; see below). Bands are set
+against the **actual −25.6% backtest envelope** we run at today, and live DD may exceed it.
 
 | live drawdown | band | action |
 |---|---|---|
@@ -100,12 +103,14 @@ hair past the §9 −25% line — see the parked decision (b) below; bands are s
 Drawdown is the **fastest** real signal (you don't need 30 trades to see a −30% drop), so
 it gets a hard line even when the trade count is still too low for a PF verdict.
 
-> **Parked decision (b) — risk sizing.** Per-position risk (0.6%) sets the *amplitude* of
-> drawdown, not the edge: the audit confirms PF/Sharpe are ~flat across 0.4–1.0% while
-> return & drawdown scale. So cutting risk **0.6%→0.4%** would re-seat the backtest DD to
-> ≈−19% (back under the §9 25% line) at the cost of return (≈+72% vs +117%) — a pure
-> drawdown/return tradeoff, **not** an edge improvement. **This is a separate pre-registered
-> decision, not made now; S1 runs at 0.6%.** See the risk-sweep in `S1_ROBUSTNESS.md` §5.
+> **Decision (b) — risk sizing — RESOLVED 2026-05-24: keep 0.6%.** Per-position risk (0.6%)
+> sets the *amplitude* of drawdown, not the edge: the audit confirms PF/Sharpe are ~flat
+> across 0.4–1.0% while return & drawdown scale. Cutting **0.6%→0.4%** would re-seat the
+> backtest DD to ≈−19% (under the §9 25% line) at the cost of return (≈+72% vs +117%) — a pure
+> drawdown/return tradeoff, **not** an edge improvement. **We deliberately chose 0.6%** — the
+> fuller-return side — and **accept the ≈−25.6% backtested max DD and that live DD may run
+> somewhat past it** without auto-intervening (the bands above govern when to act). No config
+> change. See `EXPERIMENTS.md` + risk-sweep in `S1_ROBUSTNESS.md` §5.
 
 ---
 

@@ -177,3 +177,38 @@ pullback: gate-or-stop, no loosening. **S1 untouched at 0.6%, daily, throughout.
 only reopen if (a) the fee tier dropped materially (much larger book) or (b) a
 fundamentally higher-capture intraday signal were proposed — both separate, pre-registered
 decisions.
+
+---
+
+## S1 risk-sizing — decision (b) · 2026-05-24 · **RESOLVED (deliberate): keep 0.6%**
+
+After re-baselining FINDINGS to the honest 341-coin numbers (PF 2.23 / **maxDD −25.6%** /
+Sharpe 0.71), the −25.6% drawdown at 0.6% risk fails the §9 `<25%` gate by 0.6pp → the
+mechanical verdict is a CONDITIONAL NO-GO, conditional on the per-position risk size. This
+records the decision on that, made **cold and deliberately — not default-by-inaction.**
+
+**Decision: keep risk at 0.6%. No config change.** The choice was between two points on an
+**edge-neutral** dial (the audit confirms PF/Sharpe are ~flat across 0.4–1.0% risk; only
+return and drawdown scale):
+
+| risk/position | backtest maxDD | backtest return | PF / Sharpe |
+|---|---|---|---|
+| **0.6% (chosen)** | **≈−25.6%** | **≈+117%** | 2.23 / 0.71 |
+| 0.4% (alternative) | ≈−19.0% | ≈+72% | ~2.31 / ~0.65 |
+
+**Rationale:** because sizing is edge-neutral, this is purely a return/drawdown tradeoff, not
+an edge improvement. We chose the **fuller return profile** and accept the **deeper drawdown.**
+
+**Explicitly accepted:** −25.6% is the *backtested historical max*, not a cap — **live
+drawdowns can exceed it.** This decision includes accepting that live DD may run somewhat past
+−25.6% **without auto-intervening**; the `S1_MONITORING.md` tripwires (review at −25.6%→−30%,
+halt beyond −30%) govern when to actually act.
+
+**On the gate:** lowering risk to 0.4% would clear the §9 DD line, but we are **not** doing
+that to flip a gate. The mechanical NO-GO on the DD sub-metric therefore **stands and is
+deliberately accepted** — S1 continues in daily paper at 0.6%. The FINDINGS gate is left
+untouched (it correctly still reads NO-GO on DD); this is a human acceptance recorded here,
+not an override of the gate.
+
+This resolves the only parked item. **No open threads remain.** Any future change to S1 risk
+(or wiring `regime_exit`) is a separate, pre-registered decision. S1 stays 0.6%, daily.

@@ -204,8 +204,12 @@ numbers (PF 2.23 / DD −25.6% / Sharpe 0.71, subsample median 1.99) and fully r
 consistency. At 0.6% risk the −25.6% drawdown fails the §9 `<25%` gate by 0.6pp, so the
 **mechanical verdict is now NO-GO**; FINDINGS represents it as **CONDITIONAL on decision (b)**
 (0.6% → fails by 0.6pp; 0.4% → passes at ≈−19%; same edge, different dial) — the gate is
-respected, not overridden. **Decision (b) stays PARKED** — risk is unchanged at 0.6%; it is
-decided cold and separately, never to flip a gate.
+respected, not overridden. **Decision (b): RESOLVED 2026-05-24 — keep 0.6%** (deliberate cold
+call, no config change; see `EXPERIMENTS.md`). We chose the fuller-return side of an
+edge-neutral tradeoff and **accept the ≈−25.6% backtested max drawdown** (and that live DD may
+run somewhat past it — the monitoring tripwires govern when to act). The mechanical NO-GO on
+the DD gate therefore **stands and is deliberately accepted** — we did not lower risk to flip
+the gate.
 
 ---
 
@@ -228,9 +232,14 @@ view of its real ≥$1M universe, so **2.23 / −25.6% is the more honest baseli
 - **(a) DONE** — `FINDINGS.md` re-baselined to the 341 numbers and regenerated; verdict is
   **mechanical NO-GO, represented as CONDITIONAL on (b)** (the §9 DD gate is sizing-dependent
   and risk is edge-neutral). `S1_MONITORING.md` now references 2.23 / −25.6%.
-- **(b) PARKED** — whether to re-seat drawdown under the §9 25% line via the edge-neutral risk
-  lever (0.4% → −19.0%) is a *separate* pre-registered decision, taken cold on its own terms,
-  **not** to flip the gate. Risk stays at 0.6% now.
+- **(b) RESOLVED (2026-05-24) — keep 0.6%** (no config change). A deliberate cold decision, not
+  default-by-inaction: chose 0.6% (≈−25.6% backtested max DD, ≈+117% return) over 0.4%
+  (≈−19% DD, ≈+72%). Rationale: risk is edge-neutral (PF/Sharpe flat 0.4–1.0%), so it's a pure
+  return/drawdown tradeoff and we took the fuller return, accepting the deeper drawdown — *and*
+  accepting that live DD may exceed −25.6% (it's the backtested historical max, not a cap;
+  tripwires govern intervention). The mechanical NO-GO on the DD gate stands and is accepted.
+  Logged in `EXPERIMENTS.md`.
 
-Any actual change to S1 — including (b) and wiring `regime_exit` — remains a separate,
-pre-registered decision requiring your go-ahead.
+This was the only parked item — **no open threads remain.** Any *future* change to S1 (incl.
+revisiting risk or wiring `regime_exit`) remains a separate, pre-registered decision requiring
+your go-ahead.
