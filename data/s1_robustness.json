@@ -1,0 +1,245 @@
+{
+  "window": [
+    "2018-04-01",
+    "2026-05-23"
+  ],
+  "universe_coins": 341,
+  "headline": {
+    "trades": 129,
+    "pf": 2.232,
+    "return": 1.1657,
+    "maxDD": -0.2559,
+    "sharpe": 0.713
+  },
+  "per_year": [
+    {
+      "year": 2019,
+      "trades": 6,
+      "net_pnl": 148.1,
+      "share_of_total_pnl": 0.05,
+      "return_in_year": 0.0583,
+      "profit_factor": 5.074
+    },
+    {
+      "year": 2020,
+      "trades": 13,
+      "net_pnl": 2509.8,
+      "share_of_total_pnl": 0.848,
+      "return_in_year": 0.3265,
+      "profit_factor": 25.684
+    },
+    {
+      "year": 2021,
+      "trades": 29,
+      "net_pnl": -591.2,
+      "share_of_total_pnl": -0.2,
+      "return_in_year": 0.2874,
+      "profit_factor": 0.11
+    },
+    {
+      "year": 2023,
+      "trades": 23,
+      "net_pnl": 431.6,
+      "share_of_total_pnl": 0.146,
+      "return_in_year": 0.1506,
+      "profit_factor": 1.993
+    },
+    {
+      "year": 2024,
+      "trades": 32,
+      "net_pnl": 614.8,
+      "share_of_total_pnl": 0.208,
+      "return_in_year": 0.0321,
+      "profit_factor": 1.972
+    },
+    {
+      "year": 2025,
+      "trades": 21,
+      "net_pnl": 24.0,
+      "share_of_total_pnl": 0.008,
+      "return_in_year": 0.0031,
+      "profit_factor": 1.067
+    },
+    {
+      "year": 2026,
+      "trades": 5,
+      "net_pnl": -176.1,
+      "share_of_total_pnl": -0.059,
+      "return_in_year": -0.031,
+      "profit_factor": 0.0
+    }
+  ],
+  "drop_best_year": {
+    "best_year": 2020,
+    "best_year_net_pnl": 2509.8,
+    "pf_all": 2.232,
+    "pf_excluding_best_year": 1.196,
+    "trades_excluding_best_year": 116
+  },
+  "per_regime": {
+    "bull": {
+      "days": 1285.0,
+      "pct_of_period": 0.4335357624831309,
+      "compounded_return": 1.9788694839673808,
+      "max_drawdown": -0.14105463311399935,
+      "exposure": 0.7571984435797665,
+      "trades_entered": 126.0,
+      "trades_net_pnl": 3057.267296488874
+    },
+    "bear": {
+      "days": 1138.0,
+      "pct_of_period": 0.38394062078272606,
+      "compounded_return": -0.014759163067796233,
+      "max_drawdown": -0.014759163067796233,
+      "exposure": 0.016695957820738138,
+      "trades_entered": 0.0,
+      "trades_net_pnl": 0.0
+    },
+    "chop": {
+      "days": 541.0,
+      "pct_of_period": 0.18252361673414305,
+      "compounded_return": -0.2620798694811459,
+      "max_drawdown": -0.2626591448874116,
+      "exposure": 0.2144177449168207,
+      "trades_entered": 3.0,
+      "trades_net_pnl": -96.32670578062059
+    }
+  },
+  "donchian_sweep": [
+    {
+      "trades": 193,
+      "pf": 1.147,
+      "return": 0.1225,
+      "maxDD": -0.213,
+      "sharpe": 0.197,
+      "entry": 10,
+      "exit": 5
+    },
+    {
+      "trades": 167,
+      "pf": 1.425,
+      "return": 0.3557,
+      "maxDD": -0.2144,
+      "sharpe": 0.391,
+      "entry": 15,
+      "exit": 7
+    },
+    {
+      "trades": 129,
+      "pf": 2.232,
+      "return": 1.1657,
+      "maxDD": -0.2559,
+      "sharpe": 0.713,
+      "entry": 20,
+      "exit": 10
+    },
+    {
+      "trades": 124,
+      "pf": 2.018,
+      "return": 0.9468,
+      "maxDD": -0.2922,
+      "sharpe": 0.619,
+      "entry": 25,
+      "exit": 12
+    },
+    {
+      "trades": 118,
+      "pf": 2.037,
+      "return": 0.9357,
+      "maxDD": -0.3206,
+      "sharpe": 0.6,
+      "entry": 30,
+      "exit": 15
+    },
+    {
+      "trades": 104,
+      "pf": 2.043,
+      "return": 0.8137,
+      "maxDD": -0.3444,
+      "sharpe": 0.543,
+      "entry": 40,
+      "exit": 20
+    },
+    {
+      "trades": 97,
+      "pf": 2.015,
+      "return": 0.7479,
+      "maxDD": -0.3713,
+      "sharpe": 0.498,
+      "entry": 55,
+      "exit": 27
+    }
+  ],
+  "rebalance_sweep": [
+    {
+      "trades": 135,
+      "pf": 2.469,
+      "return": 1.3651,
+      "maxDD": -0.2642,
+      "sharpe": 0.772,
+      "days": 5,
+      "rebals": 595
+    },
+    {
+      "trades": 129,
+      "pf": 2.232,
+      "return": 1.1657,
+      "maxDD": -0.2559,
+      "sharpe": 0.713,
+      "days": 7,
+      "rebals": 425
+    },
+    {
+      "trades": 121,
+      "pf": 2.649,
+      "return": 1.4793,
+      "maxDD": -0.2524,
+      "sharpe": 0.818,
+      "days": 10,
+      "rebals": 298
+    },
+    {
+      "trades": 119,
+      "pf": 2.106,
+      "return": 0.8439,
+      "maxDD": -0.2481,
+      "sharpe": 0.618,
+      "days": 14,
+      "rebals": 213
+    }
+  ],
+  "risk_sweep": [
+    {
+      "trades": 135,
+      "pf": 2.307,
+      "return": 0.7187,
+      "maxDD": -0.1901,
+      "sharpe": 0.648,
+      "risk": 0.4
+    },
+    {
+      "trades": 129,
+      "pf": 2.232,
+      "return": 1.1657,
+      "maxDD": -0.2559,
+      "sharpe": 0.713,
+      "risk": 0.6
+    },
+    {
+      "trades": 126,
+      "pf": 2.104,
+      "return": 1.3657,
+      "maxDD": -0.323,
+      "sharpe": 0.686,
+      "risk": 0.8
+    },
+    {
+      "trades": 121,
+      "pf": 2.095,
+      "return": 1.8071,
+      "maxDD": -0.3579,
+      "sharpe": 0.728,
+      "risk": 1.0
+    }
+  ]
+}
