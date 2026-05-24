@@ -166,6 +166,7 @@ def build_html(analysis, paper, equity) -> str:
 
 
 _HEAD = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="5">
 <title>CTS Dashboard</title><style>
 body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#0d1117;color:#c9d1d9;margin:0;padding:20px;max-width:760px}
 h1{margin:0 0 2px}h2{margin:26px 0 10px;border-bottom:1px solid #30363d;padding-bottom:6px;font-size:17px}
