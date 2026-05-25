@@ -1,25 +1,24 @@
 {
-  "generated_at": "2026-05-24T04:48:17.475867+00:00",
+  "generated_at": "2026-05-25T05:06:49.609070+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-23",
+  "as_of": "2026-05-24",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
-  "universe_symbols": 157,
+  "universe_symbols": 341,
   "regime_on": true,
   "watchlist": [
     "ZEC",
-    "XMR",
-    "DOGE",
-    "TRX",
+    "DASH",
     "INJ",
-    "LUNA",
-    "AKT",
-    "XMR",
+    "NEAR",
     "ONDO",
+    "TAO",
     "TON",
+    "PENGU",
     "VVV",
-    "USELESS"
+    "CC",
+    "HYPE"
   ],
   "variants": {
     "S1-baseline": {

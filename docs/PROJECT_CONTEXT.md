@@ -1,33 +1,30 @@
 # CTS — Project Context (auto-updated daily)
 
-_Generated 2026-05-24T09:17:32+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
+_Generated 2026-05-25T05:06:49+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
 
 ## Paper status (forward, simulated)
-- As of **2026-05-23** (paper started 2026-05-22).
+- As of **2026-05-24** (paper started 2026-05-22).
 - Market regime: **RISK-ON — eligible to trade**.
 - **S1-baseline**: equity $2540 · return 0.0% · 0 trades · 0 open.
 - **S1-chopfix**: equity $2540 · return 0.0% · 0 trades · 0 open.
-- Watchlist: ZEC, XMR, DOGE, TRX, INJ, LUNA, AKT, XMR, ONDO, TON, VVV, USELESS.
-
-## Validated edge (backtest, after fees, out-of-sample)
-- **System S1**: profit factor 2.56 · max DD -20.5% · Sharpe 0.78 · 117 trades.
+- Watchlist: ZEC, DASH, INJ, NEAR, ONDO, TAO, TON, PENGU, VVV, CC, HYPE.
 
 ## Recent changes (log)
+- 2026-05-24 — S1 decision (b) RESOLVED: keep 0.6% risk (deliberate, no config change)
+- 2026-05-24 — S4 (intraday ORB): Gate-0 cost-viability -> STOP, cost-infeasible (no Phase 1 built)
+- 2026-05-24 — Make the CONDITIONAL verdict mechanical (durable across FINDINGS regeneration)
+- 2026-05-24 — Re-baseline S1 to honest 341-coin numbers; verdict is CONDITIONAL NO-GO
+- 2026-05-24 — S1 robustness: resolve cache/baseline question + explicit concentration read
+- 2026-05-24 — S1 hold: monitoring tripwire sheet + bounded robustness audit (S1 untouched)
+- 2026-05-24 — s3-D/E: gate run -> RETIRE (failed all 7 OOS checks); logged in EXPERIMENTS.md
+- 2026-05-24 — s3-C: ranking signal + daily rotation engine + net-cost model (S1 untouched)
+- 2026-05-24 — s3-B: broaden universe (337 coins) + clean segment map to 100% classified
+- 2026-05-24 — s3: point-in-time names-per-floor universe scan (checkpoint tool, read-only)
+- 2026-05-24 — docs: add S3_SPEC.md (daily cross-sectional momentum design spec) — source of truth
+- 2026-05-24 — context: rename to docs/PROJECT_CONTEXT.md to mirror the GTS Project-sync pattern
 - 2026-05-24 — state: daily auto-updated STATE.md (status + change log) for Project sync
 - 2026-05-24 — docs: add SYSTEM_OVERVIEW.md — single-page current-state map for brainstorming/Projects
 - 2026-05-24 — pages: add .nojekyll for plain-HTML serving
-- 2026-05-24 — dashboard: auto-refresh every 5s
-- 2026-05-24 — paper: daily update 2026-05-24
-- 2026-05-23 — paper: daily update 2026-05-23
-- 2026-05-23 — merge: reconcile bot daily update
-- 2026-05-23 — dashboard: full tracking view (equity curve, regime, positions, trade log)
-- 2026-05-23 — paper: daily update 2026-05-23
-- 2026-05-23 — ci: run paper-trader daily on GitHub Actions (no server needed)
-- 2026-05-23 — deploy: droplet kit for 24/7 hands-off paper trading (simulated)
-- 2026-05-23 — findings: realigned baseline (S1 @ $1M / 0.6%), S2 retired
-- 2026-05-23 — dashboard: self-contained local HTML view of backtest + paper status
-- 2026-05-23 — adopt realigned baseline: $1M eligibility floor + 0.6% per-position risk
-- 2026-05-23 — experiments: E3 result — S1 @ $1M / 0.6% risk PASSES (realigned baseline)
 
 ## More
 - Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`
