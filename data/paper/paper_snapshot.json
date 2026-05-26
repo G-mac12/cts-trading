@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-25T05:06:49.609070+00:00",
+  "generated_at": "2026-05-26T04:46:03.941407+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-24",
+  "as_of": "2026-05-25",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
@@ -43,7 +43,9 @@
       "open_positions": [],
       "trades": [],
       "next_session_orders": {
-        "entries": [],
+        "entries": [
+          "NEAR"
+        ],
         "exits": []
       }
     },
@@ -69,7 +71,9 @@
       "open_positions": [],
       "trades": [],
       "next_session_orders": {
-        "entries": [],
+        "entries": [
+          "NEAR"
+        ],
         "exits": []
       }
     }

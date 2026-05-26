@@ -1,15 +1,16 @@
 # CTS — Project Context (auto-updated daily)
 
-_Generated 2026-05-25T05:06:49+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
+_Generated 2026-05-26T04:46:04+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
 
 ## Paper status (forward, simulated)
-- As of **2026-05-24** (paper started 2026-05-22).
+- As of **2026-05-25** (paper started 2026-05-22).
 - Market regime: **RISK-ON — eligible to trade**.
 - **S1-baseline**: equity $2540 · return 0.0% · 0 trades · 0 open.
 - **S1-chopfix**: equity $2540 · return 0.0% · 0 trades · 0 open.
 - Watchlist: ZEC, DASH, INJ, NEAR, ONDO, TAO, TON, PENGU, VVV, CC, HYPE.
 
 ## Recent changes (log)
+- 2026-05-25 — paper: daily update 2026-05-25
 - 2026-05-24 — S1 decision (b) RESOLVED: keep 0.6% risk (deliberate, no config change)
 - 2026-05-24 — S4 (intraday ORB): Gate-0 cost-viability -> STOP, cost-infeasible (no Phase 1 built)
 - 2026-05-24 — Make the CONDITIONAL verdict mechanical (durable across FINDINGS regeneration)
@@ -24,7 +25,6 @@ _Generated 2026-05-25T05:06:49+00:00 · SIMULATED — no real money · dashboard
 - 2026-05-24 — context: rename to docs/PROJECT_CONTEXT.md to mirror the GTS Project-sync pattern
 - 2026-05-24 — state: daily auto-updated STATE.md (status + change log) for Project sync
 - 2026-05-24 — docs: add SYSTEM_OVERVIEW.md — single-page current-state map for brainstorming/Projects
-- 2026-05-24 — pages: add .nojekyll for plain-HTML serving
 
 ## More
 - Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`
