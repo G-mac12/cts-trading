@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-26T04:46:03.941407+00:00",
+  "generated_at": "2026-05-27T04:57:04.143582+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-25",
+  "as_of": "2026-05-26",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
@@ -25,14 +25,14 @@
       "regime_exit": false,
       "n_entry": 20,
       "n_exit": 10,
-      "equity_last": 2540.0,
+      "equity_last": 2530.404108748177,
       "forward_metrics": {
         "profit_factor": 0.0,
-        "total_return": 0.0,
-        "cagr": 0.0,
-        "max_drawdown": 0.0,
-        "sharpe": 0.0,
-        "sortino": 0.0,
+        "total_return": -0.003777909941662605,
+        "cagr": -0.29205375581196524,
+        "max_drawdown": -0.003777909941662605,
+        "sharpe": -9.5524865872714,
+        "sortino": NaN,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": 0.0,
@@ -40,12 +40,19 @@
         "exposure": 0.0
       },
       "n_forward_trades": 0,
-      "open_positions": [],
+      "open_positions": [
+        {
+          "symbol": "NEAR",
+          "entry_date": "2026-05-26",
+          "entry_price": 2.77105,
+          "units": 40.984516,
+          "stop": 2.399203,
+          "mark": 2.548
+        }
+      ],
       "trades": [],
       "next_session_orders": {
-        "entries": [
-          "NEAR"
-        ],
+        "entries": [],
         "exits": []
       }
     },
@@ -53,14 +60,14 @@
       "regime_exit": true,
       "n_entry": 20,
       "n_exit": 10,
-      "equity_last": 2540.0,
+      "equity_last": 2530.404108748177,
       "forward_metrics": {
         "profit_factor": 0.0,
-        "total_return": 0.0,
-        "cagr": 0.0,
-        "max_drawdown": 0.0,
-        "sharpe": 0.0,
-        "sortino": 0.0,
+        "total_return": -0.003777909941662605,
+        "cagr": -0.29205375581196524,
+        "max_drawdown": -0.003777909941662605,
+        "sharpe": -9.5524865872714,
+        "sortino": NaN,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": 0.0,
@@ -68,12 +75,19 @@
         "exposure": 0.0
       },
       "n_forward_trades": 0,
-      "open_positions": [],
+      "open_positions": [
+        {
+          "symbol": "NEAR",
+          "entry_date": "2026-05-26",
+          "entry_price": 2.77105,
+          "units": 40.984516,
+          "stop": 2.399203,
+          "mark": 2.548
+        }
+      ],
       "trades": [],
       "next_session_orders": {
-        "entries": [
-          "NEAR"
-        ],
+        "entries": [],
         "exits": []
       }
     }
