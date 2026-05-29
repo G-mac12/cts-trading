@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-28T04:51:47.154059+00:00",
+  "generated_at": "2026-05-29T04:55:16.529031+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-27",
+  "as_of": "2026-05-28",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
@@ -25,32 +25,34 @@
       "regime_exit": false,
       "n_entry": 20,
       "n_exit": 10,
-      "equity_last": 2527.8200350187344,
+      "equity_last": 2523.765493487402,
       "forward_metrics": {
         "profit_factor": 0.0,
-        "total_return": -0.004795261803647866,
-        "cagr": -0.2959431019661718,
-        "max_drawdown": -0.004795261803647866,
-        "sharpe": -11.207022803337678,
-        "sortino": -9.407267818330432,
+        "total_return": -0.0063915379970858055,
+        "cagr": -0.32298811846187514,
+        "max_drawdown": -0.0063915379970858055,
+        "sharpe": -13.711709739592276,
+        "sortino": -14.03321520144087,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
-        "expectancy": 0.0,
-        "trade_count": 0.0,
-        "exposure": 0.0
+        "expectancy": -16.234506512597786,
+        "trade_count": 1.0,
+        "exposure": 0.42857142857142855
       },
-      "n_forward_trades": 0,
-      "open_positions": [
+      "n_forward_trades": 1,
+      "open_positions": [],
+      "trades": [
         {
           "symbol": "NEAR",
           "entry_date": "2026-05-26",
+          "exit_date": "2026-05-28",
           "entry_price": 2.77105,
-          "units": 40.984516,
-          "stop": 2.399203,
-          "mark": 2.48495
+          "exit_price": 2.395604,
+          "net_pnl": -16.23,
+          "return_pct": -0.1429,
+          "reason": "stop"
         }
       ],
-      "trades": [],
       "next_session_orders": {
         "entries": [],
         "exits": []
@@ -60,32 +62,34 @@
       "regime_exit": true,
       "n_entry": 20,
       "n_exit": 10,
-      "equity_last": 2527.8200350187344,
+      "equity_last": 2523.765493487402,
       "forward_metrics": {
         "profit_factor": 0.0,
-        "total_return": -0.004795261803647866,
-        "cagr": -0.2959431019661718,
-        "max_drawdown": -0.004795261803647866,
-        "sharpe": -11.207022803337678,
-        "sortino": -9.407267818330432,
+        "total_return": -0.0063915379970858055,
+        "cagr": -0.32298811846187514,
+        "max_drawdown": -0.0063915379970858055,
+        "sharpe": -13.711709739592276,
+        "sortino": -14.03321520144087,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
-        "expectancy": 0.0,
-        "trade_count": 0.0,
-        "exposure": 0.0
+        "expectancy": -16.234506512597786,
+        "trade_count": 1.0,
+        "exposure": 0.42857142857142855
       },
-      "n_forward_trades": 0,
-      "open_positions": [
+      "n_forward_trades": 1,
+      "open_positions": [],
+      "trades": [
         {
           "symbol": "NEAR",
           "entry_date": "2026-05-26",
+          "exit_date": "2026-05-28",
           "entry_price": 2.77105,
-          "units": 40.984516,
-          "stop": 2.399203,
-          "mark": 2.48495
+          "exit_price": 2.395604,
+          "net_pnl": -16.23,
+          "return_pct": -0.1429,
+          "reason": "stop"
         }
       ],
-      "trades": [],
       "next_session_orders": {
         "entries": [],
         "exits": []
