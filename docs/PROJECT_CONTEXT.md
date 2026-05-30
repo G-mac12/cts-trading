@@ -1,15 +1,16 @@
 # CTS — Project Context (auto-updated daily)
 
-_Generated 2026-05-29T04:55:16+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
+_Generated 2026-05-30T04:36:11+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
 
 ## Paper status (forward, simulated)
-- As of **2026-05-28** (paper started 2026-05-22).
+- As of **2026-05-29** (paper started 2026-05-22).
 - Market regime: **RISK-ON — eligible to trade**.
 - **S1-baseline**: equity $2524 · return -0.6% · 1 trades · 0 open.
 - **S1-chopfix**: equity $2524 · return -0.6% · 1 trades · 0 open.
 - Watchlist: ZEC, DASH, INJ, NEAR, ONDO, TAO, TON, PENGU, VVV, CC, HYPE.
 
 ## Recent changes (log)
+- 2026-05-29 — paper: daily update 2026-05-29
 - 2026-05-28 — paper: daily update 2026-05-28
 - 2026-05-27 — paper: daily update 2026-05-27
 - 2026-05-26 — paper: daily update 2026-05-26
@@ -24,7 +25,6 @@ _Generated 2026-05-29T04:55:16+00:00 · SIMULATED — no real money · dashboard
 - 2026-05-24 — s3-C: ranking signal + daily rotation engine + net-cost model (S1 untouched)
 - 2026-05-24 — s3-B: broaden universe (337 coins) + clean segment map to 100% classified
 - 2026-05-24 — s3: point-in-time names-per-floor universe scan (checkpoint tool, read-only)
-- 2026-05-24 — docs: add S3_SPEC.md (daily cross-sectional momentum design spec) — source of truth
 
 ## More
 - Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`
