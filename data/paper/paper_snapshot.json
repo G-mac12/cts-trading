@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-31T05:05:21.848177+00:00",
+  "generated_at": "2026-06-01T05:26:48.174855+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-30",
+  "as_of": "2026-05-31",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
@@ -9,15 +9,16 @@
   "regime_on": true,
   "watchlist": [
     "ZEC",
-    "DASH",
+    "XLM",
     "INJ",
+    "LUNA",
+    "AKT",
+    "FET",
     "NEAR",
     "ONDO",
-    "TAO",
     "TON",
-    "PENGU",
     "VVV",
-    "CC",
+    "WLD",
     "HYPE"
   ],
   "variants": {
@@ -29,15 +30,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.2536419558385946,
+        "cagr": -0.22898257408141143,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -11.324378094224095,
-        "sortino": -10.524911401080653,
+        "sharpe": -10.52881728912011,
+        "sortino": -9.35547680096058,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.3333333333333333
+        "exposure": 0.3
       },
       "n_forward_trades": 1,
       "open_positions": [],
@@ -66,15 +67,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.2536419558385946,
+        "cagr": -0.22898257408141143,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -11.324378094224095,
-        "sortino": -10.524911401080653,
+        "sharpe": -10.52881728912011,
+        "sortino": -9.35547680096058,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.3333333333333333
+        "exposure": 0.3
       },
       "n_forward_trades": 1,
       "open_positions": [],
