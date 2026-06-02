@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-01T05:26:48.174855+00:00",
+  "generated_at": "2026-06-02T05:13:46.582251+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-05-31",
+  "as_of": "2026-06-01",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
   "universe_symbols": 341,
-  "regime_on": true,
+  "regime_on": false,
   "watchlist": [
     "ZEC",
     "XLM",
@@ -30,15 +30,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.22898257408141143,
+        "cagr": -0.20866973789418652,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -10.52881728912011,
-        "sortino": -9.35547680096058,
+        "sharpe": -9.883319250725418,
+        "sortino": -8.419929120864522,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.3
+        "exposure": 0.2727272727272727
       },
       "n_forward_trades": 1,
       "open_positions": [],
@@ -67,15 +67,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.22898257408141143,
+        "cagr": -0.20866973789418652,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -10.52881728912011,
-        "sortino": -9.35547680096058,
+        "sharpe": -9.883319250725418,
+        "sortino": -8.419929120864522,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.3
+        "exposure": 0.2727272727272727
       },
       "n_forward_trades": 1,
       "open_positions": [],
