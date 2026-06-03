@@ -1,10 +1,10 @@
 # CTS Paper Trading — status
 
-_As of 2026-06-01 · paper started 2026-05-22 · source coinapi · 341 coins_
+_As of 2026-06-02 · paper started 2026-05-22 · source coinapi · 341 coins_
 
 > SIMULATED ONLY — no real orders, no real money. Fills modelled with Kraken Pro taker fees + conservative slippage.
 
-**Forward track:** 2026-05-22 → 2026-06-01
+**Forward track:** 2026-05-22 → 2026-06-02
 
 | Variant | Fwd return | Fwd trades | Profit factor | Max DD | Equity (USD) | Open |
 |---|---|---|---|---|---|---|

@@ -1,15 +1,16 @@
 # CTS — Project Context (auto-updated daily)
 
-_Generated 2026-06-02T05:13:46+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
+_Generated 2026-06-03T05:28:16+00:00 · SIMULATED — no real money · dashboard: https://g-mac12.github.io/cts-trading/_
 
 ## Paper status (forward, simulated)
-- As of **2026-06-01** (paper started 2026-05-22).
+- As of **2026-06-02** (paper started 2026-05-22).
 - Market regime: **RISK-OFF — in cash**.
 - **S1-baseline**: equity $2524 · return -0.6% · 1 trades · 0 open.
 - **S1-chopfix**: equity $2524 · return -0.6% · 1 trades · 0 open.
 - Watchlist: ZEC, XLM, INJ, LUNA, AKT, FET, NEAR, ONDO, TON, VVV, WLD, HYPE.
 
 ## Recent changes (log)
+- 2026-06-02 — paper: daily update 2026-06-02
 - 2026-06-01 — paper: daily update 2026-06-01
 - 2026-05-31 — paper: daily update 2026-05-31
 - 2026-05-30 — paper: daily update 2026-05-30
@@ -24,7 +25,6 @@ _Generated 2026-06-02T05:13:46+00:00 · SIMULATED — no real money · dashboard
 - 2026-05-24 — Re-baseline S1 to honest 341-coin numbers; verdict is CONDITIONAL NO-GO
 - 2026-05-24 — S1 robustness: resolve cache/baseline question + explicit concentration read
 - 2026-05-24 — S1 hold: monitoring tripwire sheet + bounded robustness audit (S1 untouched)
-- 2026-05-24 — s3-D/E: gate run -> RETIRE (failed all 7 OOS checks); logged in EXPERIMENTS.md
 
 ## More
 - Overview: `SYSTEM_OVERVIEW.md` · Verdict: `FINDINGS.md` · Experiments: `EXPERIMENTS.md`
