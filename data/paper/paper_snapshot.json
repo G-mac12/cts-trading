@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-03T05:28:16.566104+00:00",
+  "generated_at": "2026-06-04T05:24:00.802824+00:00",
   "paper_start": "2026-05-22",
-  "as_of": "2026-06-02",
+  "as_of": "2026-06-03",
   "inception_equity_usd": 2540.0,
   "data_source": "coinapi",
   "survivorship_clean": true,
@@ -30,15 +30,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.19165272857319038,
+        "cagr": -0.17719268261753718,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -9.345378688404725,
-        "sortino": -7.654481018967748,
+        "sharpe": -8.887780498983512,
+        "sortino": -7.016607600720435,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.25
+        "exposure": 0.23076923076923078
       },
       "n_forward_trades": 1,
       "open_positions": [],
@@ -67,15 +67,15 @@
       "forward_metrics": {
         "profit_factor": 0.0,
         "total_return": -0.0063915379970858055,
-        "cagr": -0.19165272857319038,
+        "cagr": -0.17719268261753718,
         "max_drawdown": -0.0063915379970858055,
-        "sharpe": -9.345378688404725,
-        "sortino": -7.654481018967748,
+        "sharpe": -8.887780498983512,
+        "sortino": -7.016607600720435,
         "win_rate": 0.0,
         "payoff_ratio": 0.0,
         "expectancy": -16.234506512597786,
         "trade_count": 1.0,
-        "exposure": 0.25
+        "exposure": 0.23076923076923078
       },
       "n_forward_trades": 1,
       "open_positions": [],
